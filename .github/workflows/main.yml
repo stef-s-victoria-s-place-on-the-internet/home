@@ -9,6 +9,17 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
+      
+    - name: Install # The project is built using npm and placed in the 'build' folder.
+      run: |
+        yarn install
+        yarn build
+        
+    - name: Upload Artifacts # The project is then uploaded as an artifact named 'site'.
+      uses: actions/upload-artifact@v1
+      with:
+        name: site
+        path: dist
 
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
