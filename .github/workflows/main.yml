@@ -1,7 +1,7 @@
 name: Build and Deploy
 on:
-  push:	
-    branches:	
+  push:
+    branches:
       - master
 jobs:
   build-and-deploy:
@@ -9,12 +9,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-      
+
     - name: Install # The project is built using npm and placed in the 'build' folder.
       run: |
         yarn install
-        yarn build
-        
+        yarn generate:gh-pages
+
     - name: Upload Artifacts # The project is then uploaded as an artifact named 'site'.
       uses: actions/upload-artifact@v1
       with:
