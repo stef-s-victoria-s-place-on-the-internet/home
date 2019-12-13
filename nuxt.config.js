@@ -1,6 +1,6 @@
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
-    base: '/<repository-name>/'
+    base: '/oneacre-2020/'
   }
 } : {}
 
@@ -11,7 +11,7 @@ export default {
    */
   head: {
     // title: process.env.npm_package_name || '',
-    title: 'oneacre #3',
+    title: 'oneacre #4',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
