@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div>
+      <nuxt-link to="/" class="button--green">back</nuxt-link>
       <Markdown :file="require('./content.md')" />
     </div>
   </div>
