@@ -1,12 +1,4 @@
 import Mode from 'frontmatter-markdown-loader/mode'
-const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? {
-        router: {
-          base: '/oneacre-2020/'
-        }
-      }
-    : {}
 
 export default {
   mode: 'spa',
@@ -57,10 +49,6 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
-  /*
-   ** Route generate configuration
-   */
-  ...routerBase,
   /*
    ** Build configuration
    */
