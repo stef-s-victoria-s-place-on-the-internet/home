@@ -1,8 +1,12 @@
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/oneacre-2020/'
-  }
-} : {}
+import Mode from 'frontmatter-markdown-loader/mode'
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/oneacre-2020/'
+        }
+      }
+    : {}
 
 export default {
   mode: 'spa',
@@ -10,8 +14,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    // title: process.env.npm_package_name || '',
-    title: 'oneacre #4',
+    title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -65,6 +68,14 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        options: {
+          mode: [Mode.VUE_COMPONENT]
+        }
+      })
+    }
   }
 }

@@ -1,36 +1,18 @@
 <template>
   <div class="container">
     <div>
-      <logo />
-      <h1 class="title">
-        oneacre title here
-      </h1>
-      <h2 class="subtitle">
-        experimental publishing
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <Markdown :file="require('./content.md')" />
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Markdown from '~/components/Markdown.vue'
 
 export default {
   components: {
-    Logo
-  }
+    Markdown
+  },
 }
 </script>
 
@@ -41,7 +23,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
 .title {
