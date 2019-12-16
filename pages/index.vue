@@ -5,7 +5,7 @@
         oneacre
       </h1>
       <h2 class="subtitle">
-        experimental publishing
+        we are back bitches! 
       </h2>
       <div class="links">
         <nuxt-link to="/publication-1" class="button--green">
