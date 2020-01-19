@@ -1,8 +1,8 @@
 {
-  "name": "oneacre",
+  "name": "template",
   "version": "1.0.0",
-  "description": "experimental publishing",
-  "author": "Stef Kors, Titus Knegtel, Victoria Douka-Doukopoulou",
+  "description": "nuxt template",
+  "author": "Stef Kors",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -14,16 +14,22 @@
   },
   "dependencies": {
     "@nuxt/markdown": "^0.0.21",
-    "@nuxtjs/axios": "^5.9.3",
+    "@nuxtjs/axios": "^5.9.2",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "eslint": "^6.8.0",
-    "nuxt": "^2.11.0"
+    "moment": "^2.24.0",
+    "nuxt": "^2.11.0",
+    "prismic-javascript": "^2.1.5",
+    "prismic-vue": "https://github.com/prismicio/prismic-vue.git#nuxt",
+    "vue-dragscroll": "^1.10.2"
   },
   "devDependencies": {
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
     "frontmatter-markdown-loader": "^3.1.0",
-    "prettier": "^1.16.4"
+    "node-sass": "^4.13.0",
+    "prettier": "^1.16.4",
+    "sass-loader": "^8.0.1"
   }
 }

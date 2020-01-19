@@ -1,4 +1,14 @@
 import Mode from 'frontmatter-markdown-loader/mode'
+const PrismicConfig = require('./prismic.config')
+
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/Yun-2020'
+        }
+      }
+    : {}
 
 export default {
   mode: 'spa',
@@ -6,17 +16,27 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Yun Ingrid Eel',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: 'Yun Ingrid Lee is an artist, composer, and performer interested in invisibility, noise, and collective sensing.'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        innerHTML:
+          '{ window.prismic = { endpoint: "' +
+          PrismicConfig.apiEndpoint +
+          '"} }'
+      },
+      { src: '//static.cdn.prismic.io/prismic.min.js' }
+    ],
+    __dangerouslyDisableSanitizers: ['script']
   },
   /*
    ** Customize the progress-bar color
@@ -29,7 +49,12 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  ...routerBase,
+  plugins: [
+    '~/plugins/link-resolver.js',
+    '~/plugins/html-serializer.js',
+    '~/plugins/prismic-vue.js'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -52,6 +77,7 @@ export default {
   /*
    ** Build configuration
    */
+
   build: {
     /*
      ** You can extend webpack config here
@@ -63,7 +89,8 @@ export default {
         options: {
           mode: [Mode.VUE_COMPONENT]
         }
-      })
+      }),
+        (config.resolve.alias['vue'] = 'vue/dist/vue.common')
     }
   }
 }
