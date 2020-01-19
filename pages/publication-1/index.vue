@@ -1,24 +1,19 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="title">
-        oneacre
-      </h1>
-      <h2 class="subtitle">
-        we are back bitches! 
-      </h2>
-      <div class="links">
-        <nuxt-link to="/publication-1" class="button--green">
-          First markdown test
-        </nuxt-link>
-      </div>
+      <nuxt-link to="/" class="button--green">back</nuxt-link>
+      <Markdown :file="require('./content.md')" />
     </div>
   </div>
 </template>
 
 <script>
+import Markdown from '~/components/Markdown.vue'
+
 export default {
-  components: {}
+  components: {
+    Markdown
+  },
 }
 </script>
 
@@ -29,7 +24,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
 .title {

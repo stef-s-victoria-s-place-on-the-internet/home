@@ -1,8 +1,6 @@
-# Deploy
+# oneacre
 
-- gh-pages + CNAME
-- [dependabot](https://github.com/settings/installations/1051370) and [dependabot settings](https://app.dependabot.com/accounts/StefKors)
-- [WIP action](https://github.com/settings/installations/5730349)
+> we are back bitches
 
 ## Build Setup
 
