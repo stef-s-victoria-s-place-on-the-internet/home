@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@nuxt/markdown": "^0.0.21",
-    "@nuxtjs/axios": "^5.9.4",
+    "@nuxtjs/axios": "^5.9.5",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "eslint": "^6.8.0",
