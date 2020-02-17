@@ -1,4 +1,13 @@
 ---
 label: Publication Template
 hide_body: true
-fields: []
+fields:
+- name: header
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: header
