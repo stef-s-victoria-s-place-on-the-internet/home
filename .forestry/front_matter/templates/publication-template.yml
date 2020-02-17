@@ -11,3 +11,5 @@ fields:
     schema:
       format: markdown
   label: header
+pages:
+- "./pages/pages/publication2.md"
