@@ -11,5 +11,12 @@ fields:
     schema:
       format: markdown
   label: header
+- name: blocks
+  type: blocks
+  label: Blocks
+  template_types: []
+  config:
+    min: 
+    max: 
 pages:
 - "./pages/pages/publication2.md"
