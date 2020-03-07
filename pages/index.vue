@@ -5,7 +5,7 @@
         oneacre
       </h1>
       <h2 class="subtitle">
-        we are back bitches! 
+        we are back bitches!
       </h2>
       <div class="links">
         <nuxt-link to="/publication-1" class="button--green">
@@ -29,7 +29,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  max-width: 900px;
 }
 
 .title {
