@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
-    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "generate:docs": "jsdoc -c jsdoc.config.json"
   },
   "dependencies": {
     "@nuxt/markdown": "^0.0.21",
@@ -24,6 +25,10 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "frontmatter-markdown-loader": "^3.2.0",
-    "prettier": "^1.16.4"
+    "jsdoc": "^3.6.3",
+    "minami": "^1.2.3",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.16.4",
+    "sass-loader": "^8.0.2"
   }
 }

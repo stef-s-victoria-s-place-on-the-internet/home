@@ -52,4 +52,12 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
+p {
+  margin-bottom: 1rem;
+}
+
+p + p {
+  margin-top: 1rem;
+}
 </style>
