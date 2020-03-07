@@ -1,0 +1,23 @@
+---
+label: Publication Template
+hide_body: true
+fields:
+- name: header
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: header
+- name: blocks
+  type: blocks
+  label: Blocks
+  template_types: []
+  config:
+    min: 
+    max: 
+pages:
+- "./pages/pages/morecontent.md"
+- "./pages/pages/publication2.md"
