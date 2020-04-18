@@ -1,32 +1,5 @@
 const { clamp } = require('lodash')
 /**
- * @summary Returns percentage of page scrolled
- * @name scrollPercentage
- * @method
- *
- * @description It uses the window and returns the percentage of page scrolled.
- * Should be used in the created() and destoryed() lifeside methods
- *
- *   created() {
- *    window.addEventListener('scroll', this.handleScroll)
- *  },
- *  destroyed() {
- *    window.removeEventListener('scroll', this.handleScroll)
- *  },
- *
- * @returns {Integer} percentage of page scrolled
- * @author: Stef Kors
- */
-// const scrollPercentage = () => {
-//   return (
-//     ((document.documentElement.scrollTop + document.body.scrollTop) / // 570
-//       (document.documentElement.scrollHeight - // 1299
-//         document.documentElement.clientHeight)) * // 575
-//     100
-//   )
-// }
-
-/**
  * @summary Returns percentage of element scrolled
  * @name scrollPercentage
  * @method
@@ -80,22 +53,3 @@ const format = object => {
 }
 
 export { scrollPercentage, format }
-
-// const elementEnd = (heightOfElement + sizeOfElement)
-
-// elementTop = 0
-// elementHeight = 100
-// scrollpostion = 60
-
-// 100-30=70
-// (0 +100) - 70 = 30
-
-// const elementHeight = document.querySelector('.substrate').scrollHeight
-// const elementTop = document.querySelector('.substrate').offsetTop
-// const scrollPosition = document.documentElement.scrollTop
-
-// const currentPosition = elementHeight - scrollPosition
-// const scrollPercentage = (elementTop+elementHeight) - currentPosition
-
-// elementTop / scrollpostion = 0
-// elemnentTop+ elementHeight = 100
