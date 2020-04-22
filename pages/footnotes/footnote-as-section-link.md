@@ -1,0 +1,9 @@
+# Untitled
+
+In the mid-1960s the women’s movement was just beginning to move again, after a fifty-year halt. There was a groundswell gathering. I felt it, but I didn’t know it was a groundswell; I just thought it was something wrong with me. I considered myself a feminist: I didn’t see how could you be a thinking woman and not be a feminist; but I had never taken a step beyond the ground gained for us by Emmeline Pankhurst and Virginia Woolf [1](https://www.notion.so/c8fd300e9bd246d2b5f9768442a7744c#7c2d870aef0649d884a0b8911eaeb134)
+
+Along about 1967, I began to feel a certain unease, a need to step on a little farther, perhaps, on my own. I began to want to define and understand the meaning of sexuality and the meaning of gender, in my life and in our society. Much had gathered in the unconscious — both personal and collective — which must either be brought up into consciousness or else turn destructive. It was that same need, I think, that had led de Beauvoir to write The Second Sex, and Friedan to write The Feminine Mystique, and that was, as the same time, leading Katie Millett and other to write their books, and to create the new feminism. But I was not a theoretician [2](https://www.notion.so/c8fd300e9bd246d2b5f9768442a7744c#8173ccfeacc84680bbd41c0950bec640) , a political thinker or activist, or a sociologist. I was and am a fiction writer, The way I did my thinking was to write a novel. That novel, The Left Hand of Darkness, is the record of my consciousness, the process of my thinking.
+
+1.Feminism has enlarged its ground and strengthened its theory and practice immensely, and enduringly, in these past twenty years; but has anyone actually taken a step “beyond” Virginia Woolf ? The image, implying an ideal of “progress,” is not one I wouls use now.
+
+2.Well, quite a lot of us, anyhow.

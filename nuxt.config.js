@@ -1,4 +1,5 @@
 import Mode from 'frontmatter-markdown-loader/mode'
+import {markdownCustomCompiler} from './helpers/markdownCustomCompiler'
 
 export default {
   mode: 'spa',
@@ -61,7 +62,15 @@ export default {
         test: /\.md$/,
         loader: 'frontmatter-markdown-loader',
         options: {
-          mode: [Mode.VUE_COMPONENT]
+          mode: [Mode.VUE_COMPONENT],
+          markdown: (body) => {
+            return markdownCustomCompiler(body)
+          },
+          // markdownIt: {
+          //   html: true,
+          //   linkify: true,
+          //   breaks: true
+          // }
         }
       })
     }

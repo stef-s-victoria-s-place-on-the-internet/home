@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <nuxt-link to="/" class="button--green">back</nuxt-link>
-      <Markdown :file="require('./content.md')" />
+      <Markdown :file="require('./import-route.md')" />
     </div>
   </div>
 </template>
@@ -12,12 +12,12 @@ import Markdown from '~/components/Markdown.vue'
 
 export default {
   components: {
-    Markdown
+    Markdown,
   },
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .container {
   margin: 0 auto;
   min-height: 100vh;

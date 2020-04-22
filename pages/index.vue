@@ -1,14 +1,23 @@
 <template>
   <div class="container">
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
-      dolorem sunt praesentium similique numquam magni harum illo est adipisci
-      quae voluptatem aut placeat, asperiores voluptate voluptatibus! Optio
-      culpa corrupti nemo? Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. In, eum doloribus. Nulla libero corporis tempore cum ullam. Quaerat
-      ut natus corrupti nostrum expedita eaque. Libero unde pariatur optio ut
-      dignissimos!
-    </p>
+    <menu>
+      <nuxt-link to="/footnotes" class="button--green">footnote test</nuxt-link>
+      <nuxt-link to="/editor" class="button--green">editor</nuxt-link>
+      <nuxt-link :to="'/dearborn/write/' + (+new Date).toString(36).slice(-15)" class="button--green"
+        >collaboration</nuxt-link
+      >
+    </menu>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
+        dolorem sunt praesentium similique numquam magni harum illo est adipisci
+        quae voluptatem aut placeat, asperiores voluptate voluptatibus! Optio
+        culpa corrupti nemo? Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. In, eum doloribus. Nulla libero corporis tempore cum ullam.
+        Quaerat ut natus corrupti nostrum expedita eaque. Libero unde pariatur
+        optio ut dignissimos!
+      </p>
+    </div>
   </div>
 </template>
 
@@ -45,7 +54,13 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
+  max-width: 60ch;
+  margin: 10ch auto;
+
+  menu {
+    padding: 10ch 0;
+  }
 }
 </style>

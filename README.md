@@ -20,3 +20,9 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+---
+
+Further investigation:
+
+- https://hmsk.github.io/frontmatter-markdown-loader/vue.html#b-import-dynamically

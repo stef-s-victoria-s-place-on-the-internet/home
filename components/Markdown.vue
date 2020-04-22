@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <component :is='this.contents' />
+      <component :is="this.contents" />
     </div>
   </div>
 </template>
@@ -16,11 +16,12 @@ export default {
   props: {
     file: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   created() {
     const markdown = this.file
+    console.log(this.file)
     this.contents = markdown.vue.component
   },
 }
