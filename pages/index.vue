@@ -2,10 +2,7 @@
   <div class="container">
     <menu>
       <nuxt-link to="/footnotes" class="button--green">footnote test</nuxt-link>
-      <nuxt-link to="/editor" class="button--green">editor</nuxt-link>
-      <nuxt-link :to="'/dearborn/write/' + (+new Date).toString(36).slice(-15)" class="button--green"
-        >collaboration</nuxt-link
-      >
+      <nuxt-link to="/dearborn" class="button--green">dearborn</nuxt-link>
     </menu>
     <div>
       <p>
