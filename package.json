@@ -24,7 +24,7 @@
     "markdown-it-footnote": "^3.0.2",
     "nuxt": "^2.14.1",
     "socket.io-client": "^2.3.0",
-    "tiptap": "^1.29.3",
+    "tiptap": "^1.29.5",
     "tiptap-extensions": "^1.32.3"
   },
   "devDependencies": {
