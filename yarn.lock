@@ -9718,7 +9718,7 @@ tiny-emitter@^2.0.0:
   resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.1.0.tgz#1d1a56edfc51c43e863cbb5382a72330e3555423"
   integrity sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
 
-tiptap-commands@^1.14.4, tiptap-commands@^1.14.5:
+tiptap-commands@^1.14.5:
   version "1.14.5"
   resolved "https://registry.yarnpkg.com/tiptap-commands/-/tiptap-commands-1.14.5.tgz#af173513dd05f73c73780744f8d56ebb101a5f60"
   integrity sha512-a1Sc3A7X7/aV5oHOcTCOsP07ln5vGCKoCcyeF3Hfr3GqA4uJvmpoHaWMXirYJFPSs1Sh+txNnZfck5Gi72IfFw==
@@ -9732,10 +9732,10 @@ tiptap-commands@^1.14.4, tiptap-commands@^1.14.5:
     prosemirror-utils "^0.9.6"
     tiptap-utils "^1.10.4"
 
-tiptap-extensions@^1.32.3:
-  version "1.32.3"
-  resolved "https://registry.yarnpkg.com/tiptap-extensions/-/tiptap-extensions-1.32.3.tgz#f3ad151532601ffb4cc9aae059984e792c83c91d"
-  integrity sha512-n9nNoAKA02eCuGDgyRCN7dR5RqnnG7oDl8l6IymTtrBL7DcicV2PUcpYxk/L7If2izgZax+ybC5kliVILjSoTA==
+tiptap-extensions@^1.32.4:
+  version "1.32.4"
+  resolved "https://registry.yarnpkg.com/tiptap-extensions/-/tiptap-extensions-1.32.4.tgz#335ac48bb35401dfb7f028df9f9e8456108312c8"
+  integrity sha512-o3PtOQCD2lb/OooPpqQ69pst4mFAJqXid2kDdBiioRcv5dGTfPsaXfCNK7Kj6rR59vt+fzadFC/PLcSW0LkYaw==
   dependencies:
     lowlight "^1.14.0"
     prosemirror-collab "^1.2.2"
@@ -9746,8 +9746,8 @@ tiptap-extensions@^1.32.3:
     prosemirror-transform "^1.2.7"
     prosemirror-utils "^0.9.6"
     prosemirror-view "^1.15.2"
-    tiptap "^1.29.4"
-    tiptap-commands "^1.14.4"
+    tiptap "^1.29.5"
+    tiptap-commands "^1.14.5"
 
 tiptap-utils@^1.10.4:
   version "1.10.4"
@@ -9759,7 +9759,7 @@ tiptap-utils@^1.10.4:
     prosemirror-tables "^1.1.1"
     prosemirror-utils "^0.9.6"
 
-tiptap@^1.29.4, tiptap@^1.29.5:
+tiptap@^1.29.5:
   version "1.29.5"
   resolved "https://registry.yarnpkg.com/tiptap/-/tiptap-1.29.5.tgz#3f00bd98eea7d7518d2dc168f3e45eae1283db7c"
   integrity sha512-0/xj7mKpBqYQMxJTfdO/turZdMoW0MaSbiTrhv4UwGx91A3h8DJfpoLV6XStUGR9VVtBkyax3+yTjNRs2fXtew==
