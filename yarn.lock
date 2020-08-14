@@ -9718,10 +9718,10 @@ tiny-emitter@^2.0.0:
   resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.1.0.tgz#1d1a56edfc51c43e863cbb5382a72330e3555423"
   integrity sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
 
-tiptap-commands@^1.14.4:
-  version "1.14.4"
-  resolved "https://registry.yarnpkg.com/tiptap-commands/-/tiptap-commands-1.14.4.tgz#b1ca5e29ae7b578597e72889227ebffcea853676"
-  integrity sha512-rshXFhrYJaKxLLKVDD0Zm4aQkvIq5v5NzLwRv9rrnd0Qh0YnJdfQQdw6w0RatdWuXusCmWyM5YdoF9D3hZecgw==
+tiptap-commands@^1.14.4, tiptap-commands@^1.14.5:
+  version "1.14.5"
+  resolved "https://registry.yarnpkg.com/tiptap-commands/-/tiptap-commands-1.14.5.tgz#af173513dd05f73c73780744f8d56ebb101a5f60"
+  integrity sha512-a1Sc3A7X7/aV5oHOcTCOsP07ln5vGCKoCcyeF3Hfr3GqA4uJvmpoHaWMXirYJFPSs1Sh+txNnZfck5Gi72IfFw==
   dependencies:
     prosemirror-commands "^1.1.4"
     prosemirror-inputrules "^1.1.2"
@@ -9759,10 +9759,10 @@ tiptap-utils@^1.10.4:
     prosemirror-tables "^1.1.1"
     prosemirror-utils "^0.9.6"
 
-tiptap@^1.29.3, tiptap@^1.29.4:
-  version "1.29.4"
-  resolved "https://registry.yarnpkg.com/tiptap/-/tiptap-1.29.4.tgz#6a2bb37f8d4a213d11e107fdf9312e56a1ed532c"
-  integrity sha512-brzl1hJQU0s7He4PJSI85e1TndJ4g/omt3mS4rNa/t1YnEU/NPpy2MMh8B8ZSFE23lP6FjaYQm42EfXC8n7B8w==
+tiptap@^1.29.4, tiptap@^1.29.5:
+  version "1.29.5"
+  resolved "https://registry.yarnpkg.com/tiptap/-/tiptap-1.29.5.tgz#3f00bd98eea7d7518d2dc168f3e45eae1283db7c"
+  integrity sha512-0/xj7mKpBqYQMxJTfdO/turZdMoW0MaSbiTrhv4UwGx91A3h8DJfpoLV6XStUGR9VVtBkyax3+yTjNRs2fXtew==
   dependencies:
     prosemirror-commands "1.1.4"
     prosemirror-dropcursor "1.3.2"
@@ -9772,7 +9772,7 @@ tiptap@^1.29.3, tiptap@^1.29.4:
     prosemirror-model "1.11.0"
     prosemirror-state "1.3.3"
     prosemirror-view "1.15.2"
-    tiptap-commands "^1.14.4"
+    tiptap-commands "^1.14.5"
     tiptap-utils "^1.10.4"
 
 tmp@^0.0.33:
