@@ -22,7 +22,7 @@
     "lodash": "^4.17.20",
     "markdown-it": "^11.0.0",
     "markdown-it-footnote": "^3.0.2",
-    "nuxt": "^2.14.1",
+    "nuxt": "^2.14.3",
     "socket.io-client": "^2.3.0",
     "tiptap": "^1.29.5",
     "tiptap-extensions": "^1.32.4"
