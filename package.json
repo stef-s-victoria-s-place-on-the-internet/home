@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@nuxt/markdown": "^0.0.21",
-    "@nuxtjs/axios": "^5.12.1",
+    "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.1",
     "@sindresorhus/slugify": "^1.1.0",
