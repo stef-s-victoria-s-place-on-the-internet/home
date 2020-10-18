@@ -1,0 +1,16 @@
+$font-nova: 'Nova-Regular', sans-serif;
+$font-univers: 'Univers-Light', sans-serif;
+/* Nova */
+@font-face {
+  font-family: 'Nova-Regular';
+  font-weight: 400;
+  font-style: normal;
+  src: url("../assets/fonts/Nova-Regular.woff2") format('woff2'), url("../assets/fonts/Nova-Regular.woff") format('woff');
+}
+/* Univers */
+@font-face {
+  font-family: 'Univers-Light';
+  font-weight: 300;
+  font-style: normal;
+  src: url("../assets/fonts/Univers-Light.woff2") format('woff2'), url("../assets/fonts/Univers-Light.woff") format('woff');
+}
