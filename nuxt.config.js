@@ -36,9 +36,10 @@ export default {
    */
   plugins: [],
   /*
-   ** Nuxt.js dev-modules
-   */
-  buildModules: [],
+  ** Nuxt.js dev-modules
+  */
+ // Doc: https://hackernoon.com/how-i-use-scss-variables-mixins-functions-globally-in-nuxt-js-projects-while-compiling-css-utilit-58bb6ff30438
+  buildModules: ['@nuxtjs/style-resources'],
   /*
    ** Nuxt.js modules
    */
@@ -47,8 +48,14 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
+
+  styleResources: {
+      scss: [
+          'assets/scss/main.scss'
+      ]
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

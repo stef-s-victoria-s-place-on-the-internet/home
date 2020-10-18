@@ -24,8 +24,6 @@ html {
   margin: 0;
 }
 
-$primary: black;
-
 .button--green,
 input {
   display: inline-block;
