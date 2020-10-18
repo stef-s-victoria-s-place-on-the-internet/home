@@ -1,6 +1,6 @@
 <template>
 <div class="intro-logo">
-  <div class="intro-content">
+  <div class="logo-content">
     <p>oneacre<span>.online</span></p>
     <figure>
       <!-- Logo Visual -->
@@ -22,13 +22,19 @@ export default {
     height: 100vh;
     background: $black;
     position: absolute;
+    top: 0;
     @include flex-center;
     animation: fadeOut 1.25s;
     animation-fill-mode: forwards;
-    animation-delay: 2s;
+    animation-delay: 2.5s;
     pointer-events: none;
+    z-index: 1;
+    @include respond-until($screen-xs) {
+        padding: 15vh 0;
+        align-items: flex-end;
+    }
 
-    .intro-content {
+    .logo-content {
         font-size: 6vw;
         font-family: $font-nova;
         color: $white;
