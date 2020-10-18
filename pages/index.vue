@@ -1,21 +1,24 @@
 <template>
-  <div class="container">
-    <p>content</p>
-  </div>
+  <main class="home-wrapper">
+    <!-- Intro -->
+    <block-intro />
+
+    <div class="home-catalog">
+      <!-- Content -->
+    </div>
+  </main>
 </template>
 
 <script>
-export default {}
+import BlockIntro from '~/components/BlockIntro.vue';
+
+
+export default {
+  components:{
+    BlockIntro
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-.container {
-  max-width: 60ch;
-  margin: 10ch auto;
-
-  menu {
-    padding: 10ch 0;
-  }
-}
 </style>
-`
