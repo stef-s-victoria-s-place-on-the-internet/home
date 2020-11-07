@@ -72,7 +72,7 @@ export default {
         content: siteMeta.description,
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon_black.ico' }],
     script: [
       {
         type: 'text/javascript',
