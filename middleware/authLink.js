@@ -2,16 +2,24 @@ import * as _ from 'lodash'
 
 export default async ({ $axios, from }) => {
   try {
-    if (!process.client || _.isEmpty(from.query)) {
+    // catch server side
+    // catch empty query
+    if (!process.client || _.isEmpty(from.query) || isSuccess(from)) {
       return
     }
 
     const id = from.query.id.split('-').pop()
 
-    const publication = await $axios.$post('/api/v2/link', {id})
+    const publication = await $axios.$post('/link', { id })
 
     if (_.isEmpty(publication)) {
       console.log('empty')
+      return
+    }
+
+    if (!_.values(publication).paid) {
+      // TODO: show notice in UI
+      console.log('payment incomplete')
       return
     }
 
@@ -41,13 +49,12 @@ export default async ({ $axios, from }) => {
   }
 }
 
-function redirectWindow(route) {
+const redirectWindow = (route) => {
   window.onNuxtReady(() => {
     window.$nuxt.$router.push(route)
   })
 }
-// // https://www.oneacre.online/?id=ingrid-instagram-K1543515802358
-// 48010513293185144
-// http://localhost:3000/publications/meaning-seeking-animals/?id=ingrid-instagram-K1543515802358
 
-// http://localhost:3000/publications/meaning-seeking-animals/?id=ingrid-instagram-48010513293185144
+const isSuccess = ({ path }) => {
+  return path.includes('success')
+}
