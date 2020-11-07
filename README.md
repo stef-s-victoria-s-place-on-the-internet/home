@@ -27,6 +27,7 @@ Further investigation:
 
 - https://hmsk.github.io/frontmatter-markdown-loader/vue.html#b-import-dynamically
 
+--- 
 
 PUBLICATION LINKS
 http://www.oneacre.online/catalog/poetics-and-politics-of-erasure
