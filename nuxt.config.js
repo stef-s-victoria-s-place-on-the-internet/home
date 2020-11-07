@@ -1,7 +1,7 @@
 import Mode from 'frontmatter-markdown-loader/mode'
 import { markdownCustomCompiler } from './helpers/markdownCustomCompiler'
 
-const url = process.env.NODE_ENV === "development" ? 'http://localhost:8080' : 'http://api.oneacre.online'
+const url = process.env.NODE_ENV === "development" ? 'http://localhost:8080' : 'http://oneacre.online'
 
 const siteMeta = {
   title: 'oneacre.online',
