@@ -1,0 +1,7 @@
+.oa_logo, .oa_mobile_header, .ma_walks, .ma_minimap, #payment {
+  display: none !important;
+}
+
+.ma_soundwalk {
+  display: block !important;
+}

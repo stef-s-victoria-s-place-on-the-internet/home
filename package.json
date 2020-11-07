@@ -23,9 +23,7 @@
     "markdown-it": "^12.0.2",
     "markdown-it-footnote": "^3.0.2",
     "nuxt": "^2.14.7",
-    "socket.io-client": "^3.0.0",
-    "tiptap": "^1.30.0",
-    "tiptap-extensions": "^1.33.2"
+    "vue-scroll": "^2.1.13"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",

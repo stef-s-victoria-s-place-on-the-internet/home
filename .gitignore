@@ -26,7 +26,10 @@ coverage
 .grunt
 
 # Bower dependency directory (https://bower.io/)
-bower_components
+# only on top level, because it's vital for
+# Poetics and Politics or Erasure in /static/bower_components
+/bower_components
+
 
 # node-waf configuration
 .lock-wscript

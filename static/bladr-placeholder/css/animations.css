@@ -1,0 +1,155 @@
+/* ==========================================================================
+Animation: Scale X
+========================================================================== */
+@-webkit-keyframes scale-x {
+  0% {
+    transform: scaleX(1);
+  }
+
+  50% {
+    transform: scaleX(1.2);
+  }
+
+  0% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes scale-y {
+  0% {
+    transform: scaleX(1);
+  }
+
+  50% {
+    transform: scaleX(1.2);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* ==========================================================================
+Animation: Scale
+========================================================================== */
+@-webkit-keyframes scale-y {
+  0% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(1.2);
+  }
+
+  0% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes scale-y {
+  0% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(1.2);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* ==========================================================================
+Animation: Move
+========================================================================== */
+@-webkit-keyframes move-y {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-5vh);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(5vh);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-y {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-5vh);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(5vh);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+Animation: Move X
+========================================================================== */
+@-webkit-keyframes move-x {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5vw);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  75% {
+    transform: translateX(5vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes move-x {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5vw);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  75% {
+    transform: translateX(5vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,66 @@
+<script>
+  // Force all polyfills on
+  if (window.customElements)
+    window.customElements.forcePolyfill = true;
+  ShadyDOM = {
+    force: true
+  };
+  ShadyCSS = {
+    shimcssproperties: true
+  };
+
+</script>
+<script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel='import' href='/bower_components/iron-ajax/iron-ajax.html'>
+<!-- https://www.oneacre.online/scripts/ingrid/text_current.json -->
+<!-- https://4a5a3w0bp7.execute-api.us-west-2.amazonaws.com/beta -->
+<!-- http://www.oneacre.online/elements/textoriginal.json -->
+<!-- https://s3.eu-west-1.amazonaws.com/oferasure/textoriginal.json -->
+<!-- https://s3-eu-west-1.amazonaws.com/oferasure/myjsonfile.json -->
+<dom-module id="erasure-content">
+  <template>
+
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <iron-ajax
+        auto
+        url="https://s3-eu-west-1.amazonaws.com/oferasure/textoriginal.json"
+        handle-as="json"
+        last-response="{{loadedText}}"
+        debounce-duration="300"></iron-ajax>
+
+      <template is="dom-repeat" items="[[loadedText.blocks]]">
+      <erasure-page-section section-content="[[item]]" visitors='[[visitors]]'></erasure-page-section>
+    </template>
+  </template>
+  <script>
+    (function erasureContent()
+    {
+      'use strict';
+
+      Polymer(
+      {
+        is: 'erasure-content',
+
+        properties:
+        {
+          visitors:
+          {
+            type: Object,
+            value: 200 // default visitors
+          }
+        },
+        hasTitle: function hasTitle(title)
+        {
+          return '' === !title;
+        }
+
+      });
+    })();
+
+  </script>
+</dom-module>

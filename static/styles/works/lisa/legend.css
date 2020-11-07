@@ -1,0 +1,114 @@
+.l_w {
+  width: calc(100% - 60px);
+  max-width: 840px;
+  height: calc(100vh - 80px);
+  margin: 0px auto;
+  border: 1px solid #000;
+  background-color: #fff;
+  padding: 40px 60px 60px 60px;
+  overflow: scroll;
+  position: relative;
+  top: 40px;
+}
+
+.l_w h1 {
+  font-size: 90px;
+  font-family: 'mad-sans-bold', sans-serif;
+  line-height: 1.05em;
+  letter-spacing: -1.5px;
+  margin-bottom: 70px;
+}
+
+.db {
+  height: auto !important;
+}
+
+.db h1 {
+  margin-bottom: 0px;
+}
+
+.db h2 {
+  font-size: 24px;
+  margin: 15px 0 45px 0;
+  color: #ff4713;
+}
+
+.l_w a {
+  color: #ff4713;
+  text-decoration: none;
+}
+
+.l_w p {
+  font-size: 19px;
+  font-family: 'junicoderegular', serif;
+  line-height: 1.35em;
+  margin: 0 0 1.35em 0;
+}
+
+.l_w figure {
+  width: 100%;
+  margin: 60px auto;
+}
+
+.l_w figure img {
+  width: 100%;
+  display: block;
+}
+
+.l_w video {
+  width: 100%;
+  border: 1px solid #ff4713;
+}
+
+#payment {
+  display: none;
+}
+
+.progress {
+  width: calc(100% - 62px);
+  height: 30px;
+  max-width: 838px;
+  position: fixed;
+  bottom: 41px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 14px;
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff4713), to(#ff4713)) 0 0/100% 2px, -webkit-gradient(linear, left top, left bottom, from(#ff4713), to(#ff4713)) 0 6px/100% 2px, -webkit-gradient(linear, left top, left bottom, from(#ff4713), to(#ff4713)) 0 12px/100% 2px;
+  background: linear-gradient(#ff4713, #ff4713) 0 0/100% 2px, linear-gradient(#ff4713, #ff4713) 0 6px/100% 2px, linear-gradient(#ff4713, #ff4713) 0 12px/100% 2px;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 1024px) {
+  .l_w {
+    margin: 80px auto 20px auto;
+    padding: 40px 30px 60px 30px;
+    height: calc(100vh - 100px);
+  }
+
+  .progress {
+    bottom: 21px;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .l_w h1 {
+    font-size: 10vw;
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 640px) {}
+
+@media only screen and (max-width: 460px) {
+  .l_w p {
+    font-size: 16px;
+  }
+}

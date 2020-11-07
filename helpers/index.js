@@ -13,15 +13,15 @@ const { clamp } = require('lodash')
  *  destroyed() {
  *    window.removeEventListener('scroll', this.handleScroll)
  *  },
- *  
+ *
  * If no element provided the page will be used as default
- *  
+ *
  * @default page
  *
  * @returns {Integer} percentage
  * @author: Stef Kors, Victoria Douka-Doukopoulou
  */
-const scrollPercentage = (selector) => {
+export const scrollPercentage = (selector) => {
   // Setup the element
   let element = document.querySelector(selector)
 
@@ -48,8 +48,42 @@ const scrollPercentage = (selector) => {
  * @returns {Object} Formatted object
  * @author: Stef Kors
  */
-const format = object => {
+export const format = object => {
   return JSON.stringify(object, null, 4)
 }
 
-export { scrollPercentage, format }
+export const setMeta = (title, description, image) => {
+  return [
+    {
+      hid: 'og:title',
+      name: 'og:title',
+      content: title,
+    },
+    {
+      hid: 'og:image',
+      name: 'og:image',
+      content: image,
+    },
+    {
+      hid: 'twitter:title',
+      name: 'twitter:title',
+      content: title,
+    },
+    {
+      hid: 'twitter:image',
+      name: 'twitter:image',
+      content: image,
+    },
+    {
+      hid: 'twitter:description',
+      name: 'twitter:description',
+      content: description,
+    },
+    {
+      hid: 'description',
+      name: 'description',
+      content: description,
+    }
+  ]
+}
+

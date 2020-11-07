@@ -1,0 +1,521 @@
+* {
+   box-sizing: border-box;
+   -webkit-margin-before: 0;
+   -webkit-margin-after: 0;
+   -webkit-margin-start: 0;
+   -webkit-margin-end: 0;
+   -webkit-padding-start: 0;
+}
+
+*::selection {
+   background: #0000FF;
+   color: #FFF;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+   margin: 0px;
+   padding: 0px;
+   font-family: 'aileronregular', sans-serif;
+   line-height: 1.45em;
+   color: #191919;
+   background-color: #d9d9d9;
+   letter-spacing: 0.5px;
+}
+
+img {
+   /* width: 100%; */
+   display: block;
+}
+
+/* ------------------
+    H E A D E R S
+------------------ */
+
+h1, h2, h3 {
+   font-weight: normal;
+}
+
+h1 {
+   font-size: 80px;
+   line-height: 1em;
+   margin-bottom: 30px;
+   background-color: #FFF;
+   padding: 10px 40px 30px 20px;
+}
+
+h1 span {
+   font-size: 1.175em;
+   font-family: 'terminal_grotesque', sans-serif;
+}
+
+h2 {
+   background-color: #FFF;
+   padding: 10px 60px 10px 20px;
+   margin-top: 40px;
+   display: inline-block;
+   text-transform: lowercase;
+}
+
+/* ------------------
+    B O R D E R
+------------------ */
+
+.oa_wrapper {
+   position: relative;
+}
+
+.oa_border {
+   width: 100%;
+   height: 100vh;
+   position: fixed;
+   border: 3px solid #FFF;
+   z-index: 999;
+   pointer-events: none;
+}
+
+/* ------------------
+    T I T L E
+------------------ */
+
+.oa_title {
+   padding: 60px 0px 80px 0px;
+   border-bottom: 1px solid #000;
+   box-sizing: border-box;
+}
+
+.oa_title img {
+   max-height: 500px;
+}
+
+/* ------------------
+    B U T T O N S
+------------------ */
+
+.oa_buttons {
+   width: 160px;
+   position: fixed;
+   font-size: 16px;
+   font-family: 'NEXTBook-Regular', sans-serif;
+   text-transform: lowercase;
+   text-align: center;
+   box-sizing: border-box;
+   bottom: 40px;
+   left: 40px;
+}
+
+.oa_button {
+   border-top: 1px solid;
+   border-bottom: 1px solid;
+   border-color: #191919;
+   padding: 9px 0px 7px 0px;
+   margin-top: 40px;
+   cursor: pointer;
+   transition: 0.15s;
+}
+
+.oa_button:hover {
+   color: #FFF;
+   background-color: #191919;
+}
+
+/* ------------------
+    C O N T E N T
+------------------ */
+
+.oa_content {
+   font-size: 18px;
+   line-height: 1.45em;
+   border-left: 1px solid #000;
+   box-sizing: border-box;
+}
+
+.oa_content::after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.oa_content p {
+   padding: 20px 30px;
+   margin: 30px 0 0 0;
+   background-color: #FFF;
+   position: relative;
+   opacity: 0;
+}
+
+.oa_content a {
+   color: #FFF;
+   text-decoration: inherit;
+   cursor: pointer;
+}
+
+.oa_content a:hover {
+   border-bottom: 1px solid #FFF;
+}
+
+.oa_text {
+   margin: 0px auto;
+   padding: 80px 20px;
+   max-width: 960px;
+}
+
+.oa_event_info {
+   padding: 20px;
+   font-size: 15px;
+   margin-bottom: 80px;
+   border: 1px solid #191919;
+}
+
+.oa_event_info ul {
+   list-style: none;
+   padding: 0;
+}
+
+.oa_event_info li {
+   padding: 0 0 0.75em 0;
+}
+
+.oa_event_info li::before {
+   content: "";
+   display: inline-block;
+   height: 10px;
+   width: 80px;
+   border-bottom: 1px solid #191919;
+   margin-right: 20px;
+}
+
+.oa_event_info table {
+   margin-left: 100px;
+}
+
+.oa_event_info table td:nth-of-type(even) {
+   padding-left: 15px;
+}
+
+/* -------------------
+    C H A P T E R
+------------------- */
+
+.oa_chapter {
+   font-size: 1em;
+   line-height: 1em;
+   /* text-transform: lowercase; */
+   display: inline-block;
+   margin-top: 40px;
+}
+
+.oa_chapter p {
+   display: inline-block;
+   background-color: rgba(0, 0, 0, 0);
+   padding: 0;
+   margin: 0 0 0.75em 0;
+}
+
+.oa_chapter::before {
+   content: "";
+   display: inline-block;
+   height: 10px;
+   width: 100px;
+   border-bottom: 1px solid #191919;
+   margin-right: 15px;
+}
+
+/* ----------------
+    B R A N C H
+---------------- */
+
+.oa_branch {
+   text-align: right;
+   margin-bottom: 20px;
+}
+
+.oa_branch::before {
+   content: " ";
+   display: inline-block;
+   width: 100px;
+   height: 10px;
+   margin-right: 20px;
+   border-bottom: 1px solid #191919;
+   border-left: 1px solid #191919;
+}
+
+/* ----------------
+    C O M M I T
+---------------- */
+
+.oa_commit {
+   margin-top: 15px;
+   font-size: 15px;
+}
+
+.oa_commit::before {
+   content: " ";
+   display: inline-block;
+   width: 100px;
+   height: 30px;
+   margin-right: 15px;
+   border-bottom: 1px solid #191919;
+   border-left: 1px solid #191919;
+}
+
+.oa_commit span {
+   padding-left: 10px;
+}
+
+.oa_commit_entry {
+   font-size: 16px;
+   line-height: 1.45em;
+   margin: -20px 0px 40px 120px;
+}
+
+.oa_commit_entry p {
+   padding: 15px 30px 12px 30px;
+   background-color: rgba(0, 0, 0, 0);
+   border: 1px solid #191919;
+}
+
+/* ----------------
+    I M A G E S
+---------------- */
+
+.oa_img {
+   margin: 50px 0px 30px 150px;
+   position: relative;
+}
+
+.oa_img img {
+   width: 100%;
+   padding: 20px;
+   background-color: #FFF;
+}
+
+.oa_img::before {
+   content: " ";
+   position: absolute;
+   top: -30px;
+   left: -150px;
+   width: 130px;
+   height: 30px;
+   border-bottom: 1px solid #191919;
+   border-left: 1px solid #191919;
+}
+
+.oa_img figcaption {
+   line-height: 1.25em;
+   margin-top: 10px;
+   font-size: 13px;
+}
+
+.oa_img_drag {
+   width: 100%;
+   max-width: 600px;
+   height: 400px;
+   background-color: #d9d9d9;
+   border: 10px solid #FFF;
+   position: absolute;
+   top: 150px;
+   left: 200px;
+   margin: 0 auto;
+   cursor: move;
+   box-shadow: 15px 25px 20px rgba(0, 0, 0, 0.15);
+   z-index: 100;
+}
+
+/* ----------------
+      L O G O
+---------------- */
+
+.oa_logo {
+  font-size: 26px;
+  padding: 10px 40px 10px 10px;
+  border: 2px solid #191919 !important;
+  color: #191919 !important;
+  display: inline-block;
+  position: fixed;
+  background-color: #fff;
+  font-family: 'NEXTBook-Regular', sans-serif;
+  z-index: 10;
+  top: 40px;
+  left: 40px;
+  cursor: pointer;
+}
+
+.scrollRange {
+  height: 440px;
+  margin-top: 10px;
+}
+
+.oa_logo_inner {
+  width: 100%;
+  left: 0px;
+  padding: 50px 10px 10px 10px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-color: #191919 !important;
+  position: absolute;
+  cursor: pointer;
+}
+
+.oa_logo_color {
+  transition: 0.5s;
+}
+
+.notice {
+  padding: 5px 20px;
+  margin: 40px 1%;
+  background-color: white;
+  border: 1px solid black;
+  width: calc(100vw - 240px);
+  float: right;
+  font-size: .7em;
+}
+
+.oa_mobile_header {
+  width: 100%;
+  padding: 15px 15px 13px;
+  font-size: 25px;
+  border: 1px solid #0000FF;
+  background-color: #FFF;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+  .oa_mobile_header {
+    display: block !important;
+  }
+  .oa_logo {
+    width: 20px;
+    padding: 0;
+    left: 20px;
+    top: 80px;
+  }
+
+  .oa_logo_inner {
+    padding: 50px 0 0;
+    width: 18px;
+    min-height: 78px;
+  }
+
+  .oa_logo_color {
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .oa_footer_title {
+    padding: 0 20px 0 45px;
+  }
+
+  .oa_footer_wrapper {
+    padding: 0 20px 0 45px;
+  }
+
+  .oa_logo {
+    width: 10px;
+    left: 15px;
+  }
+
+  .oa_logo_inner {
+    width: 8px;
+  }
+}
+
+
+/* --------------------------------
+      M E D I A  Q U E R I E S
+-------------------------------- */
+
+/* 1280 */
+
+@media only screen and (max-width: 1280px) {
+   .oa_content {
+      font-size: 16px;
+   }
+   .oa_left, .oa_right {
+      padding: 30px;
+   }
+   .oa_content p {
+      padding: 15px 20px;
+   }
+   .side_note {
+      font-size: 14px;
+   }
+   .oa_commit::before {
+      width: 50px;
+      height: 30px;
+   }
+   .oa_commit_entry {
+      margin-left: 70px;
+   }
+   .oa_img::before {
+      width: 50px;
+      height: 30px;
+      left: -70px;
+   }
+   .oa_img {
+      margin-left: 70px;
+   }
+}
+
+/* 1024 */
+
+@media only screen and (max-width: 1024px) {
+   .oa_left, .oa_right {
+      padding: 20px;
+   }
+   .oa_commit::before {
+      width: 20px;
+      height: 30px;
+   }
+   .oa_commit_entry {
+      margin-left: 40px;
+   }
+   .oa_title {
+      padding-right: 40px;
+   }
+   .oa_img {
+      margin-left: 40px;
+   }
+   .oa_img::before {
+      width: 20px;
+      height: 30px;
+      left: -40px;
+   }
+   #title_image {
+      width: 100%;
+   }
+}
+
+/* 960 */
+
+@media only screen and (max-width: 960px) {
+   .oa_content {
+      font-size: 18px;
+   }
+   .oa_left {
+      width: 100%;
+      padding: 40px;
+   }
+   .oa_right {
+      display: none;
+   }
+   .oa_buttons {
+      display: none;
+   }
+   .oa_right_mobile {
+      display: block;
+   }
+}

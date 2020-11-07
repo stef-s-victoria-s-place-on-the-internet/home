@@ -1,0 +1,121 @@
+.oa_experiment {
+  height: auto;
+}
+
+.auto_height {
+  height: auto;
+}
+
+.attempts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 0 250px;
+  height: auto;
+}
+
+.line {
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  webkit-transform: translate3d(0, 0, 0);
+  -webkit-perspective: 1000;
+  will-change: transform;
+  -webkit-overflow-scrolling: touch;
+  width: 1px;
+  background-color: #0000FF;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.line::after {
+  will-change: transform;
+}
+/* last two lines with text on the left side of line */
+.line:last-of-type span {
+  left: auto;
+  right: 10px;
+}
+
+.line:nth-last-of-type(2) span {
+  left: auto;
+  right: 10px;
+}
+
+.line:nth-last-of-type(3) span {
+  left: auto;
+  right: 10px;
+}
+
+.line:nth-last-of-type(4) span {
+  left: auto;
+  right: 10px;
+}
+
+.line:nth-last-of-type(5) span {
+  left: auto;
+  right: 10px;
+}
+
+.line:nth-last-of-type(6) span {
+  left: auto;
+  right: 10px;
+}
+
+.db_line {
+  position: absolute;
+  bottom: -4px;
+  left: 10px;
+}
+
+.new_line {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.new_line .fixed {
+  max-height: 300px;
+}
+
+.distance_counter {
+  position: absolute;
+  bottom: -4px;
+  right: 10px;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-transition;
+  webkit-transform: translate3d(0, 0, 0);
+  -webkit-overflow-scrolling: touch;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+}
+@media only screen and (max-width: 1450px) {
+  .attempts {
+    padding: 0 150px 300px 250px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .attempts {
+    padding: 0 80px 0 250px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .attempts {
+    padding: 0 30px 0 70px;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .attempts {
+    padding: 0 15px 0 45px;
+  }
+}
