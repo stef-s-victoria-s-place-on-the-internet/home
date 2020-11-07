@@ -13,12 +13,13 @@
           support the creation of further unprintable publications as well as
           the artists that fuel their content.</span
         >
-        <form method="post" action="/addCustomer" class="oa_mid">
+        <form @submit.prevent="checkForm" method="post" class="oa_mid">
           <!-- Name -->
           <input
             class="oa_input"
             type="text"
             name="name"
+            v-model="name"
             placeholder="Name"
             required="required"
           />
@@ -27,6 +28,7 @@
             class="oa_input"
             type="email"
             name="email"
+            v-model="email"
             placeholder="Email"
             required="required"
           />
@@ -35,6 +37,7 @@
             class="oa_input"
             type="exlibris"
             name="exlibris"
+            v-model="exlibris"
             placeholder="Ex Libris - optional"
           />
           <!-- discountcode -->
@@ -42,6 +45,7 @@
             class="oa_input"
             type="discountcode"
             name="discountcode"
+            v-model="discountcode"
             placeholder="Cipher - if applicable "
           />
           <input
@@ -50,11 +54,11 @@
             name="payment_amount"
             min="3"
             max="100"
-            value="3"
+            v-model="payment_amount"
             id="range_value"
           />
           <div id="show_value">
-            Choose your price: € <span id="value">3,00</span>
+            Choose your price: € <span id="value">{{ payment_amount }}</span>
           </div>
           <input
             class="oa_input"
@@ -88,7 +92,7 @@
             sentence or phrase of your choice will be added in the url you
             purchase to designated that the link is part of your collection. ex.
             Ex Libris: possessive pronoun url containing Ex Libris:
-            http://onacre.online/publication-one-possessive-pronoun-48010513293185144
+            http://oneacre.online/publication-one-possessive-pronoun-48010513293185144
           </p>
           <br />
 
@@ -103,6 +107,8 @@
 </template>
 
 <script>
+import isUrl from 'is-url-superb'
+
 export default {
   props: {
     publication: {
@@ -110,11 +116,51 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      payment_amount: 3,
+      name: undefined,
+      discountcode: undefined,
+      email: undefined,
+      exlibris: undefined,
+    }
+  },
+  methods: {
+    async checkForm() {
+      const formData = {
+        name: this.name,
+        email: this.email,
+        exlibris: this.exlibris,
+        payment_amount: this.payment_amount,
+        publication: this.publication,
+        discountcode: this.discountcode,
+      }
+
+      const redirect = await this.$axios.$post('/shop/submit', formData)
+
+      // When we don't recieve an url we should
+      // handle the redirect ourselves
+      if (!isUrl(redirect)) {
+        // remove last item from url
+        const location = window.location.pathname
+        const cleanPath = location.endsWith('/') ? location.slice(0, -1) : location
+        const pathname = cleanPath
+          .split('/')
+          .slice(0, -1)
+          .join('/')
+        const path = `${pathname}/success`
+
+        return this.$router.push({ path, query: { id: redirect } })
+      }
+
+      window.location = redirect
+    },
+  },
 }
 </script>
 
 <style>
-x body {
+body {
   background-image: url('/images/lisa/msa_bg.svg');
   background-size: 1500px;
   background-repeat: repeat;

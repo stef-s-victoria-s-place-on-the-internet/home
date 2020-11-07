@@ -20,6 +20,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@sindresorhus/slugify": "^1.1.0",
     "eslint": "^7.12.1",
+    "is-url-superb": "^4.0.0",
     "lodash": "^4.17.20",
     "markdown-it": "^12.0.2",
     "markdown-it-footnote": "^3.0.2",
