@@ -138,6 +138,11 @@ export default {
 
       const redirect = await this.$axios.$post('/shop/submit', formData)
 
+      // TODO: redirect to correct succes page from mollie
+      // TODO: setup success endpoint
+      // TODO: styling for other publications
+      // TODO: replace mollie testing API key
+
       // When we don't recieve an url we should
       // handle the redirect ourselves
       if (!isUrl(redirect)) {
