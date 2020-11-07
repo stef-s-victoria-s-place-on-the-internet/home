@@ -10,11 +10,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
 
-    - name: Install # The project is built using npm and placed in the 'build' folder.
-      run: |
-        yarn install
-        yarn build:gh-pages
-        yarn generate:gh-pages
+    - name: "$: yarn install"
+      run: yarn install
+
+    - name: "$: yarn build:gh-pages"
+      run: yarn build:gh-pages
+
+    - name: "$: yarn generate:gh-pages"
+      run: yarn generate:gh-pages
 
     - name: Upload Artifacts # The project is then uploaded as an artifact named 'site'.
       uses: actions/upload-artifact@v1
@@ -22,7 +25,7 @@ jobs:
         name: site
         path: dist
 
-    - name: Build and Deploy
+    - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
