@@ -114,7 +114,14 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    // Doc: https://github.com/nuxt-community/sitemap-module
+    // Note: always declare the sitemap module at end of array
+    '@nuxtjs/sitemap'
   ],
+
+  sitemap: {
+    hostname: 'https://oneacre.online',
+  },
 
   styleResources: {
     scss: ['assets/scss/main.scss'],
