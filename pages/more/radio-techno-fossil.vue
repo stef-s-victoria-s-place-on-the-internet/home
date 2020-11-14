@@ -2,9 +2,11 @@
 <div class="shop-wrapper">
   <LogoCircle />
 
-  <!-- Add navigation -->
   <div class="product">
+    <!-- Title -->
     <h1>More by <span>Sophie Dyer</span></h1>
+
+    <!-- Description -->
     <ProductDescription>
       <h4>Description</h4>
       <p>Since 2013, Concrete Flux 流泥 has been a platform for self-determined and unsolicited investigations into urban spaces across China. For Issue 5 we shift focus from the region to explore the possibilities of aesthetic journalism. The
@@ -13,21 +15,24 @@
         itself”. (Bulter, 2010)</p>
     </ProductDescription>
 
-    <section class="product-images">
+    <!-- Images -->
+    <ProductImages>
       <h4>Images</h4>
       <div class="image-content">
         <figure>
-          <!-- <img src="" alt=""> -->
+          <img src="~/assets/shop/concrete-flux/concrete-flux-01.jpg">
         </figure>
         <figure>
-          <!-- <img src="" alt=""> -->
+          <img src="~/assets/shop/concrete-flux/concrete-flux-02.jpg">
         </figure>
         <figure>
-          <!-- <img src="" alt=""> -->
+          <img src="~/assets/shop/concrete-flux/concrete-flux-03.jpg">
         </figure>
       </div>
-    </section>
-    <section class="product-specs">
+    </ProductImages>
+
+    <!-- Specifications -->
+    <ProductSpecs>
       <h4>Information</h4>
       <ul class="info-section">
         <li>
@@ -75,7 +80,7 @@
           <p>Concrete Flux 流泥 CC BY</p>
         </li>
       </ul>
-    </section>
+    </ProductSpecs>
   </div>
 </div>
 </template>
@@ -83,10 +88,14 @@
 <script>
 import LogoCircle from '~/components/S2/identity/LogoCircle.vue'
 import ProductDescription from '~/components/S2/shop/ProductDescription.vue'
+import ProductImages from '~/components/S2/shop/ProductImages.vue'
+import ProductSpecs from '~/components/S2/shop/ProductSpecs.vue'
 
 export default {
   components: {
     ProductDescription,
+    ProductImages,
+    ProductSpecs,
     LogoCircle,
   },
 }
@@ -96,7 +105,7 @@ export default {
 .shop-wrapper {
     width: 100%;
     max-width: 1600px;
-    padding: 2rem;
+    padding: 2rem 2rem 4rem;
     margin: 0 auto;
     display: grid;
     grid-template-columns: fit-content(15rem) fit-content(80rem);
@@ -125,7 +134,6 @@ export default {
             padding-top: 15vh;
             grid-gap: 4rem;
         }
-        @include respond-until($screen-xs) {}
         h1 {
             width: 100%;
             font-size: 6rem;
@@ -169,59 +177,6 @@ export default {
                 padding-bottom: 2rem;
                 @include respond-until($screen-xs) {
                     padding-bottom: 2.5rem;
-                }
-            }
-        }
-        // Images
-        &-images {
-
-            .image-content {
-                display: grid;
-                grid-auto-rows: auto;
-                grid-gap: 1rem;
-            }
-            figure {
-                height: 0;
-                width: 100%;
-                margin: 0;
-                padding-bottom: 56.25%;
-                background: $grey;
-
-                &:nth-of-type(even) {
-                    justify-self: flex-end;
-                }
-            }
-        }
-        &-specs {
-            .info-section {
-                font-size: 1.375rem;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-gap: 0 1.5rem;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                align-items: flex-end;
-                @include respond-until($screen-md) {
-                    font-size: 1.25rem;
-                }
-                @include respond-until($screen-sm) {
-                    grid-template-columns: 1fr;
-                    grid-gap: 1.5rem;
-                }
-
-                li {
-                    padding: 2rem 0 0.25rem;
-                    border-bottom: 1px solid $grey;
-                    @include respond-until($screen-sm) {
-                        padding: 0 0 0.25rem;
-                    }
-
-                    p {
-                        &:first-of-type {
-                            color: rgba($black,0.5);
-                        }
-                    }
                 }
             }
         }
