@@ -1,18 +1,18 @@
 <template>
 <nuxt-link to="/" class="logo">
-  <logo-letter />
+  <LetterSVG />
   <span>oneacre.online</span>
 </nuxt-link>
 </template>
 
 <script>
-import LogoLetter from '~/components/S2/identity/LogoLetter.vue'
+import LetterSVG from '~/components/S2/identity/LetterSVG.vue'
 
 export default {
   name: 'LogoCircle',
 
   components: {
-    LogoLetter,
+    LetterSVG,
   },
 }
 </script>

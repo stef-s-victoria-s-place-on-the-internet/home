@@ -82,7 +82,7 @@
 
 <script>
 import LogoCircle from '~/components/S2/identity/LogoCircle.vue'
-import ProductDescription from '~/components/S2/identity/ProductDescription.vue'
+import ProductDescription from '~/components/S2/shop/ProductDescription.vue'
 
 export default {
   components: {
