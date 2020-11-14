@@ -55,7 +55,9 @@
 
     <div class="oa_mobile_menu">
       <ul>
-        <li><a href="/payment/sophieeline">Purchase a copy</a></li>
+        <li>
+          <NuxtLink to="payment" append>Purchase a copy</NuxtLink>
+        </li>
         <li class="oa_preserve">Newsletter</li>
         <li><a href="" class="oa_footer_btn">Credits</a></li>
       </ul>
@@ -665,9 +667,7 @@
     <!-- Buttons -->
     <div class="oa_buttons">
       <!-- Purchase -->
-      <a href="/payment/sophieeline">
-        <div class="oa_button">Purchase a copy</div>
-      </a>
+      <NuxtLink to="payment" class="oa_button" append>Purchase a copy</NuxtLink>
       <a href="" class="oa_preserve">
         <div class="oa_button">Newsletter</div>
       </a>

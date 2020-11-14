@@ -135,9 +135,7 @@
 		</div>
 	</div>
 <!-- Payment button -->
-	<a href="/payment/lisa" class="oa_button" id="payment">
-		<span>Purchase a copy</span>
-	</a>
+  <NuxtLink to="payment" class="oa_button" id="payment" append>Purchase a copy</NuxtLink>
 </div>
 
 		<!-- Newsletter -->
@@ -173,9 +171,7 @@
 			<span></span>
 		</div>
 		<nav>
-			<a href="/payment/lisa" class="oa_button" id="m_payment">
-				<span>Purchase a copy</span>
-			</a>
+      <NuxtLink to="payment" class="oa_button" id="m_payment" append>Purchase a copy</NuxtLink>
 			<a target="_blank" href="http://eepurl.com/c6jtkv" class="oa_button">
 				<span>Newsletter</span>
 			</a>
