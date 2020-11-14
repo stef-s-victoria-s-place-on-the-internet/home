@@ -1,6 +1,6 @@
 <template>
 <div class="shop-wrapper">
-  <LogoLetter />
+  <LogoCircle />
 
   <!-- Add navigation -->
   <div class="product">
@@ -81,13 +81,13 @@
 </template>
 
 <script>
-import LogoLetter from '~/components/S2/identity/LogoLetter.vue'
+import LogoCircle from '~/components/S2/identity/LogoCircle.vue'
 import ProductDescription from '~/components/S2/identity/ProductDescription.vue'
 
 export default {
   components: {
     ProductDescription,
-    LogoLetter,
+    LogoCircle,
   },
 }
 </script>
