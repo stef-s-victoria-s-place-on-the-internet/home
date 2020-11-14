@@ -41,10 +41,10 @@ export default {
         line-height: 1em;
         flex-direction: column;
         @include flex-center;
-        @include respond-until($screen-l) {
+        @include respond-until($screen-lg) {
             font-size: 7.5vw;
         }
-        @include respond-until($screen-m) {
+        @include respond-until($screen-md) {
             font-size: 9vw;
         }
         @include respond-until($screen-xs) {
