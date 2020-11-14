@@ -1,22 +1,18 @@
 <template>
 <div class="shop-wrapper">
-
-  <!-- Add logo component -->
-  <div class="logo">
-    <LogoLetter />
-    <span>oneacre.online</span>
-  </div>
+  <LogoLetter />
 
   <!-- Add navigation -->
   <div class="product">
     <h1>More by <span>Sophie Dyer</span></h1>
-    <section class="product-description">
+    <ProductDescription>
       <h4>Description</h4>
       <p>Since 2013, Concrete Flux 流泥 has been a platform for self-determined and unsolicited investigations into urban spaces across China. For Issue 5 we shift focus from the region to explore the possibilities of aesthetic journalism. The
         micro-issue inaugurates a new direction for the publishing project, towards a sustained investigation into experimental documentary practices that address new visualities and vocabularies. Around this theme, we have gathered dissatisfied
         journalists, amateur filmmakers, former student leaders, poets and community activists. The resulting articles are experiments in aesthetic journalism as media activism – through a restructuring of the “sensuous parameters of reality
         itself”. (Bulter, 2010)</p>
-    </section>
+    </ProductDescription>
+
     <section class="product-images">
       <h4>Images</h4>
       <div class="image-content">
@@ -86,62 +82,17 @@
 
 <script>
 import LogoLetter from '~/components/S2/identity/LogoLetter.vue'
+import ProductDescription from '~/components/S2/identity/ProductDescription.vue'
 
 export default {
   components: {
+    ProductDescription,
     LogoLetter,
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.logo {
-    width: 15rem;
-    height: 0;
-    position: sticky;
-    top: 2rem;
-    font-size: 3.25rem;
-    font-family: $font-nova;
-    line-height: 1em;
-    padding-bottom: 100%;
-    border: 1px solid;
-    border-radius: 50%;
-    background: $white;
-    cursor: pointer;
-    @include flex-center();
-    @include respond-until($screen-lg) {
-        width: 12.5rem;
-    }
-    @include respond-until($screen-sm) {
-        width: 100%;
-        height: auto;
-        top: 0;
-        border: 0;
-        border-bottom: 1px solid;
-        border-radius: 0;
-        padding: 1rem 0 0.5rem;
-    }
-    @include respond-until($screen-xs) {
-        font-size: 3rem;
-        padding: 0.5rem 0;
-    }
-
-    .logo-o {
-        width: 50%;
-        top: 50%;
-        position: absolute;
-        transform: translateY(-50%);
-        @include respond-until($screen-sm) {
-            display: none;
-        }
-    }
-
-    span {
-        @include respond-from($screen-sm) {
-            display: none;
-        }
-    }
-}
 .shop-wrapper {
     width: 100%;
     max-width: 1600px;
@@ -219,21 +170,6 @@ export default {
                 @include respond-until($screen-xs) {
                     padding-bottom: 2.5rem;
                 }
-            }
-        }
-        // Description
-        &-description {
-            font-size: 2rem;
-            line-height: 1.25em;
-            @include respond-until($screen-lg) {
-                font-size: 1.75rem;
-            }
-            @include respond-until($screen-md) {
-                font-size: 1.75rem;
-            }
-            @include respond-until($screen-xs) {
-                font-size: 1.5rem;
-                line-height: 1.375em;
             }
         }
         // Images
