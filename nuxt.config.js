@@ -1,7 +1,10 @@
 import Mode from 'frontmatter-markdown-loader/mode'
 import { markdownCustomCompiler } from './helpers/markdownCustomCompiler'
 
-const url = process.env.NODE_ENV === "development" ? 'http://localhost:8080' : 'http://oneacre.online'
+const url =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:8080'
+    : 'https://oneacre.online'
 
 const siteMeta = {
   title: 'oneacre.online',
@@ -18,6 +21,7 @@ export default {
    */
   head: {
     title: siteMeta.title,
+    titleTemplate: '%s | oneacre.online',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -86,7 +90,7 @@ export default {
   },
   // router
   router: {
-    middleware: ['authLink']
+    middleware: ['authLink'],
   },
   /*
    ** Customize the progress-bar color
@@ -103,12 +107,11 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  // Doc: https://hackernoon.com/how-i-use-scss-variables-mixins-functions-globally-in-nuxt-js-projects-while-compiling-css-utilit-58bb6ff30438
-  buildModules: ['@nuxtjs/style-resources'],
   /*
    ** Nuxt.js modules
    */
   modules: [
+    '@nuxtjs/style-resources',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
@@ -116,13 +119,13 @@ export default {
     '@nuxtjs/dotenv',
     // Doc: https://github.com/nuxt-community/sitemap-module
     // Note: always declare the sitemap module at end of array
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
   ],
 
   sitemap: {
     hostname: 'https://oneacre.online',
   },
-
+  // Doc: https://hackernoon.com/how-i-use-scss-variables-mixins-functions-globally-in-nuxt-js-projects-while-compiling-css-utilit-58bb6ff30438
   styleResources: {
     scss: ['assets/scss/main.scss'],
   },
@@ -133,7 +136,7 @@ export default {
   axios: {
     proxyHeaders: false,
     credentials: false,
-    baseURL: `${url}/api/v2`
+    baseURL: `${url}/api/v2`,
   },
   /*
    ** Build configuration

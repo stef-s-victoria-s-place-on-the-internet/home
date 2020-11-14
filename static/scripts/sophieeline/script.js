@@ -14,7 +14,6 @@ var otherHeight = 100 - random;
 
 
 $(function() {
-  console.log('testing///');
   // Zoetrope images get triggerd here
   zoetrope('.frame01 img');
   zoetrope('.frame02 img');

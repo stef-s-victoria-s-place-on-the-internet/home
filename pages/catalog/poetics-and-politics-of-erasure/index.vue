@@ -652,6 +652,7 @@ export default {
       description:
         'oneacre.online is an experimental publication project, of size exactly equal to the area of 1 chain by 1 furlong that aims to utilise the omnidirectional website space to seed works.',
       image: '/images/ingrid/oa_meta_img.jpg',
+      visitors: 0
     }
   },
   head() {

@@ -1,6 +1,7 @@
 import * as _ from 'lodash'
+import { getPublicationRoute } from '../helpers'
 
-export default async ({ $axios, from }) => {
+export default async ({ $axios, from, route }) => {
   try {
     // catch server side
     // catch empty query
@@ -17,44 +18,37 @@ export default async ({ $axios, from }) => {
       return
     }
 
-    if (!_.values(publication).paid) {
+    if (!_.values(publication).pop().paid) {
       // TODO: show notice in UI
       console.log('payment incomplete')
       return
     }
 
-    const title = Object.keys(publication)
+    const title = _.keys(publication).pop()
+    let path = undefined
 
-    switch (title[0]) {
-      case 'ingrid':
-        redirectWindow('/publications/poetics-and-politics-of-erasure')
-        break
-      case 'karina':
-        redirectWindow(
-          '/publications/artificial-intelligence-never-has-a-headache'
-        )
-        break
-      case 'sophieeline':
-        redirectWindow('/publications/radio-techno-fossil')
-        break
-      case 'lisa':
-        redirectWindow('/publications/meaning-seeking-animals')
-        break
+    path = getPublicationRoute(title, path)
 
-      default:
-        break
-    }
+    redirectWindow(path, id, route)
   } catch (err) {
     console.log('error in authLink', err)
   }
 }
 
-const redirectWindow = (route) => {
+const redirectWindow = (path = '', id, route) => {
+  const redirectPath = `${path}?id=${id}`
+  // if we are already here, don't redirect
+  if (route.fullPath === redirectPath) {
+    return
+  }
+
   window.onNuxtReady(() => {
-    window.$nuxt.$router.push(route)
+    window.$nuxt.$router.push(redirectPath)
   })
 }
 
 const isSuccess = ({ path }) => {
   return path.includes('success')
 }
+
+

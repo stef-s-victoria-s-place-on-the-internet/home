@@ -1,114 +1,34 @@
 <template>
   <div class="oa_payment_wrapper" :id="publication">
-    <div class="oa_p_label">order summary</div>
+    <div class="oa_p_label">payment complete</div>
     <div class="oa_p_content">
-      <div class="oa_mid">
-        <span
-          >As the publications produced by oneacre.online exist only temporarily
-          on the website, oneacre.online offers the opportunity to preserve a
-          copy of the publication. By acquiring a permanent private link, the
-          publication remains accessible to you or whomever else you choose to
-          share the link with, past the 3 months for which the work will be
-          available at oneacre.online. The donation starting at 3 euros, will
-          support the creation of further unprintable publications as well as
-          the artists that fuel their content.</span
+      <span
+        >You have completed your payment. <br /><br />
+        We have sent email confirmation to:
+        <span class="emphasis">{{ customer.email }}</span> with your personal
+        link. Your personal link is:
+        <span class="emphasis">
+          <NuxtLink :to="getUrl()">
+            {{ getUrl() }}
+          </NuxtLink> </span
+        >. <br /><br />
+        Please feel free to share your link with friends, family and the
+        internet. Thank you for supporting
+        <span class="emphasis"
+          ><a href="https:www.oneacre.online">oneacre.online</a></span
         >
-        <form @submit.prevent="checkForm" method="post" class="oa_mid">
-          <!-- Name -->
-          <input
-            class="oa_input"
-            type="text"
-            name="name"
-            v-model="name"
-            placeholder="Name"
-            required="required"
-          />
-          <!-- Email -->
-          <input
-            class="oa_input"
-            type="email"
-            name="email"
-            v-model="email"
-            placeholder="Email"
-            required="required"
-          />
-          <!-- Ex Libris -->
-          <input
-            class="oa_input"
-            type="exlibris"
-            name="exlibris"
-            v-model="exlibris"
-            placeholder="Ex Libris - optional"
-          />
-          <!-- discountcode -->
-          <input
-            class="oa_input"
-            type="discountcode"
-            name="discountcode"
-            v-model="discountcode"
-            placeholder="Cipher - if applicable "
-          />
-          <input
-            class="horizontal_slider"
-            type="range"
-            name="payment_amount"
-            min="3"
-            max="100"
-            v-model="payment_amount"
-            id="range_value"
-          />
-          <div id="show_value">
-            Choose your price: € <span id="value">{{ payment_amount }}</span>
-          </div>
-          <input
-            class="oa_input"
-            type="hidden"
-            name="publication"
-            :value="publication"
-          />
-          <input
-            class="oa_input"
-            id="oa_submit"
-            type="submit"
-            value="Purchase"
-          />
-        </form>
-
-        <div class="oa_small_font">
-          <p>
-            <br />
-            Much like books, oneacre.online hopes that the acquired links will
-            be borrowed, lend, and shared, perhaps forgotten at a friend’s inbox
-            or messenger app to keep versions of the work alive and circulating
-            when the publication will be no longer be available at
-            oneacre.online.
-          </p>
-          <br />
-
-          <p>
-            Ex Libris: is usually a small print or decorative label pasted into
-            a book, often on the inside front cover, to indicate its owner. Ex
-            Libris follow a similar function at oneacre.online, where a word,
-            sentence or phrase of your choice will be added in the url you
-            purchase to designated that the link is part of your collection. ex.
-            Ex Libris: possessive pronoun url containing Ex Libris:
-            http://oneacre.online/publication-one-possessive-pronoun-48010513293185144
-          </p>
-          <br />
-
-          <p>
-            Cipher: magic word or code that gives a discount or a free copy.
-            Probably somebody told you about it.
-          </p>
-        </div>
-      </div>
+        and
+        <span class="emphasis">{{ artist.name }}</span
+        >.</span
+      >
     </div>
   </div>
 </template>
 
 <script>
+import * as _ from 'lodash'
 import isUrl from 'is-url-superb'
-import { getRedirectPublicationPath } from '~/helpers'
+import { getPublicationRoute } from '~/helpers'
 
 export default {
   props: {
@@ -116,42 +36,30 @@ export default {
       type: String,
       required: true,
     },
+    customer: {
+      type: Object,
+      required: true,
+    },
     artist: {
       type: Object,
       required: true,
     },
   },
-  data() {
-    return {
-      payment_amount: 99,
-      name: 'test stef',
-      discountcode: undefined,
-      email: 'test@example.com',
-      exlibris: undefined,
-      path: getRedirectPublicationPath(),
-    }
-  },
   methods: {
-    async checkForm() {
-      const formData = {
-        name: this.name,
-        email: this.email,
-        redirectUrl: this.path,
-        exlibris: this.exlibris,
-        payment_amount: this.payment_amount,
-        publication: this.publication,
-        discountcode: this.discountcode,
+    getPublicationId() {
+      const { url } = _.values(this.customer.works).pop()
+      return `?id=${url}`
+    },
+    getBaseUrl() {
+      return getPublicationRoute(this.publication)
+    },
+    getUrl(host = false) {
+      const url = this.getBaseUrl() + this.getPublicationId(this.customer)
+      if (host) {
+        return window.location.origin + url
       }
 
-      const redirect = await this.$axios.$post('/shop/catalog/submit', formData)
-      // TODO: replace mollie testing API key
-
-      // When we don't recieve an url we should handle the redirect ourselves
-      if (!isUrl(redirect)) {
-        return this.$router.push({ path: this.path, query: { id: redirect } })
-      }
-
-      window.location = redirect
+      return url
     },
   },
 }
@@ -239,7 +147,6 @@ export default {
   font-size: 16px;
   color: $font-color;
   border: 1px solid $font-color;
-  background-color: $bg-color;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }

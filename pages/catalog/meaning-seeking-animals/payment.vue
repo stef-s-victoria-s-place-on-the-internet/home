@@ -5,7 +5,7 @@
 <script>
 import Form from '~/components/publications/S1/payment/form'
 import { setMeta, publications } from '~/helpers'
-const { karina } = publications
+const { lisa } = publications
 
 export default {
   components: {
@@ -13,8 +13,8 @@ export default {
   },
   data() {
     return {
-      ...karina,
-      artist: karina,
+      ...lisa,
+      artist: lisa,
       description:
         'oneacre.online is an experimental publication project, of size exactly equal to the area of 1 chain by 1 furlong that aims to utilise the omnidirectional website space to seed works.',
     }
@@ -32,12 +32,14 @@ export default {
 </script>
 
 <style lang="scss">
-.karina {
-  --primary: #191919;
-  --secondary: #d9d9d9;
+.lisa {
+  --primary: #ff4713;
+  --secondary: #fff;
   --bg-color: #fff;
-  --font-color: #191919;
+  --font-color: #000;
 
-  background-color: $secondary;
+  background-image: url("/images/lisa/msa_bg.svg");
+  background-size: 1500px;
+  background-repeat: repeat;
 }
 </style>

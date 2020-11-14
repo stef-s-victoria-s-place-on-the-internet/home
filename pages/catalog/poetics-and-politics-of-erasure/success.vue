@@ -5,7 +5,7 @@
 <script>
 import Confirmation from '~/components/publications/S1/payment/confirmation'
 import { setMeta, publications } from '~/helpers'
-const { karina } = publications
+const { ingrid } = publications
 
 export default {
   components: {
@@ -26,8 +26,8 @@ export default {
   },
   data() {
     return {
-      ...karina,
-      artist: karina,
+      ...ingrid,
+      artist: ingrid,
       description:
         'oneacre.online is an experimental publication project, of size exactly equal to the area of 1 chain by 1 furlong that aims to utilise the omnidirectional website space to seed works.',
     }
@@ -45,12 +45,10 @@ export default {
 </script>
 
 <style lang="scss">
-.karina {
-  --primary: #191919;
-  --secondary: #d9d9d9;
-  --bg-color: #fff;
-  --font-color: #191919;
-
-  background-color: $secondary;
+.ingrid {
+  --primary: #fff;
+  --secondary: #fff;
+  --bg-color: #000;
+  --font-color: #fff;
 }
 </style>

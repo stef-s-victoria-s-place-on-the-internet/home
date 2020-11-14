@@ -24,7 +24,7 @@
     <div class="oa_mobile_menu">
       <ul>
         <li>
-          <a href="/payment/karina">Purchase a copy</a>
+          <NuxtLink to="payment" append>Purchase a copy</NuxtLink>
         </li>
         <li class="oa_preserve">Newsletter</li>
       </ul>
@@ -44,9 +44,9 @@
       <!-- Buttons -->
       <div class="oa_buttons">
         <!-- Purchase -->
-        <a href="/payment/karina">
+        <NuxtLink to="payment" append>
           <div class="oa_button">Purchase a copy</div>
-        </a>
+        </NuxtLink>
         <!-- Newsletter -->
         <a href="" class="oa_preserve">
           <div class="oa_button">Newsletter</div>
@@ -2757,12 +2757,13 @@
 </template>
 
 <script>
-import { setMeta } from '~/helpers'
+import { setMeta, publications } from '~/helpers'
+const { karina } = publications
 
 export default {
   data() {
     return {
-      title: 'artificial-intelligence-never-has-a-headache',
+      title: karina.title,
       description:
         'oneacre.online is an experimental publication project, of size exactly equal to the area of 1 chain by 1 furlong that aims to utilise the omnidirectional website space to seed works.',
       image: '/images/karina/oa_meta_img.jpg',
@@ -2800,5 +2801,3 @@ export default {
   },
 }
 </script>
-
-<style scoped></style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>shop catalog</h1>
+    <h1>shop product page</h1>
   </div>
 </template>
 
