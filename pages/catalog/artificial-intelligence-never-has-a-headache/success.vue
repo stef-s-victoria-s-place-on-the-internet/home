@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Confirmation from '~/components/publications/S1/payment/confirmation'
+import Confirmation from '~/components/S1/payment/confirmation'
 import { setMeta, publications } from '~/helpers'
 const { karina } = publications
 

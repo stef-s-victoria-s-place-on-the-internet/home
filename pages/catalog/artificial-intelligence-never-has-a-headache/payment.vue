@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Form from '~/components/publications/S1/payment/form'
+import Form from '~/components/S1/payment/form'
 import { setMeta, publications } from '~/helpers'
 const { karina } = publications
 

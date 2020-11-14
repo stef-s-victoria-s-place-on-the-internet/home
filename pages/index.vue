@@ -35,7 +35,7 @@
 
 <script>
 // { name, email, adress, country, postalcode, products, redirectUrl }
-import BlockIntro from '~/components/BlockIntro.vue'
+import BlockIntro from '~/components/S2/BlockIntro.vue'
 
 export default {
   components: {

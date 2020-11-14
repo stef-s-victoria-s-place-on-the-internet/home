@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import LogoLetter from '~/components/svg/LogoLetter.vue'
+import LogoLetter from '~/components/S2/identity/LogoLetter.vue'
 
 export default {
   name: 'LogoCircle',

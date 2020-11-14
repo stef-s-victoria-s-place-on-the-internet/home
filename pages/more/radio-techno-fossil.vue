@@ -82,7 +82,7 @@
 </template>
 
 <script>
-import LogoCircle from '~/components/LogoCircle.vue'
+import LogoCircle from '~/components/S2/identity/LogoCircle.vue'
 
 export default {
   components: {
