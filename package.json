@@ -5,6 +5,7 @@
   "author": "Stef Kors, Titus Knegtel, Victoria Douka-Doukopoulou",
   "private": true,
   "scripts": {
+    "dev-api": "API='https://www.oneacre.online' nuxt",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",

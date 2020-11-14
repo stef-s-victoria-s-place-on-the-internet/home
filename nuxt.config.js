@@ -3,8 +3,10 @@ import { markdownCustomCompiler } from './helpers/markdownCustomCompiler'
 
 const url =
   process.env.NODE_ENV === 'development'
-    ? 'http://localhost:8080'
+    ? process.env.API || 'http://localhost:8080'
     : 'https://www.oneacre.online'
+
+    console.log(url);
 
 const siteMeta = {
   title: 'oneacre.online',
