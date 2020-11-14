@@ -194,8 +194,8 @@
 
 <script>
 import { setMeta } from '~/helpers'
-import Minimap from '~/components/meaning-seeking-animals/Minimap'
-import Posts from '~/components/meaning-seeking-animals/Posts'
+import Minimap from '~/components/S1/meaning-seeking-animals/MinimapSVG'
+import Posts from '~/components/S1/meaning-seeking-animals/Posts'
 
 export default {
   async asyncData({ $axios }) {

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Confirmation from '~/components/publications/S1/payment/confirmation'
+import Confirmation from '~/components/S1/payment/confirmation'
 import 'vue-resize/dist/vue-resize.css'
 import { setMeta, publications } from '~/helpers'
 const { sophieeline } = publications

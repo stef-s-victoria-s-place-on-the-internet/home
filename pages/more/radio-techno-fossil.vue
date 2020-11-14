@@ -3,7 +3,7 @@
 
   <!-- Add logo component -->
   <div class="logo">
-    <logo-letter />
+    <LogoLetter />
     <span>oneacre.online</span>
   </div>
 
@@ -85,7 +85,7 @@
 </template>
 
 <script>
-import LogoLetter from '~/components/svg/LogoLetter.vue'
+import LogoLetter from '~/components/S2/identity/LogoLetter.vue'
 
 export default {
   components: {

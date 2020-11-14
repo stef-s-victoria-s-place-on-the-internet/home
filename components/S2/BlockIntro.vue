@@ -19,8 +19,8 @@
 
 <script>
 // TODO: Add users current time
-import IntroLogo from '~/components/IntroLogo.vue'
-import LogoDither from '~/components/svg/LogoDither.vue'
+import IntroLogo from '~/components/S2/identity/IntroLogo.vue'
+import LogoDither from '~/components/S2/identity/LogoDither.vue'
 
 export default {
   name: 'BlockIntro',
