@@ -3,14 +3,6 @@
   <!-- Logo -->
   <!-- <intro-logo /> -->
 
-  <div class="intro-header">
-    <figure>
-      <logo-dither />
-    </figure>
-    <figure>
-      <logo-dither />
-    </figure>
-  </div>
   <div class="intro-text">
     <slot />
   </div>
@@ -37,61 +29,13 @@ export default {
 
 .intro-wrapper {
     position: relative;
-    padding: 0 2rem;
+    padding: 6rem 2rem 0;
     color: $pub-color;
     background: $pub-bg;
     @include flex-center;
     flex-direction: column;
     @include respond-until($screen-xs) {
-        padding: 0 1.5rem;
-    }
-
-    .intro-header {
-        width: 100%;
-        max-width: 600px;
-        padding-bottom: 6rem;
-        pointer-events: none;
-        @include respond-until($screen-sm) {
-            padding-bottom: 4rem;
-            width: calc(100% + 4rem);
-            max-width: none;
-        }
-        @include respond-until($screen-xs) {
-            width: calc(100% + 3rem);
-            padding-bottom: 3rem;
-        }
-        figure {
-            width: 100%;
-            height: 3rem;
-            overflow: hidden;
-            margin: 0 auto;
-            border: 1px solid $pub-color;
-            border-top: 0;
-            position: relative;
-            opacity: 0.2;
-            @include respond-until($screen-sm) {
-                width: 100%;
-            }
-            @include respond-until($screen-xs) {
-                border-left: 0;
-                border-right: 0;
-            }
-
-            svg {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                display: block;
-            }
-
-            &:last-of-type {
-                height: 2rem;
-                svg {
-                    top: 0;
-                    transform: rotate(180deg);
-                }
-            }
-        }
+        padding: 3rem 1.5rem 0;
     }
 
     .intro-text {
@@ -102,17 +46,18 @@ export default {
         grid-template-rows: repeat(2, fit-content(1rem));
         align-content: flex-start;
         position: relative;
-        padding: 0 2rem 10rem;
+        padding: 4rem 2rem 10rem;
+        border-top: 1px solid rgba($pub-color,0.2);
         border-bottom: 1px solid rgba($pub-color,0.2);
         @include respond-until($screen-md) {
             grid-gap: 1rem;
-            padding: 0 1.5rem 8rem;
+            padding: 4rem 1.5rem 8rem;
         }
         @include respond-until($screen-sm) {
             align-content: flex-start;
         }
         @include respond-until($screen-xs) {
-            padding: 0 0 6rem;
+            padding: 2rem 0 6rem;
         }
 
         p {
