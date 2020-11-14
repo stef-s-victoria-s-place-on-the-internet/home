@@ -1228,7 +1228,7 @@
 
 <script>
 export default {
-  name: "LogoDither"
+  name: "DitherSVG"
 }
 </script>
 

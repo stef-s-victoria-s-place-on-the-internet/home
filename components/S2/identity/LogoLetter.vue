@@ -1,24 +1,67 @@
 <template>
-<svg version="1.1" class="logo-o" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 250 295.7" style="enable-background:new 0 0 250 295.7;" xml:space="preserve">
-  <g>
-    <path d="M243.7,50.8c2,1.7,3.5,4.1,4.7,7.2c1.1,3.1,1.7,5.8,1.7,8v141.3c0,2.3-0.6,4.9-1.7,8c-1.1,3.1-2.7,5.5-4.7,7.2l-66.8,66.8
-  		c-1.7,1.7-4,3.2-7,4.4c-3,1.3-5.7,1.9-8.2,1.9H88.8c-2.5,0-5.4-0.6-8.5-1.9c-3.1-1.3-5.5-2.7-7.2-4.4L6.3,222.5
-  		c-1.7-1.7-3.2-4.1-4.4-7.2c-1.3-3.1-1.9-5.8-1.9-8V66c0-2.3,0.6-4.9,1.9-8c1.3-3.1,2.7-5.5,4.4-7.2l44-44c2-2,4.4-3.6,7.4-4.9
-  		C60.7,0.6,63.5,0,66,0h118c2.5,0,5.4,0.6,8.5,1.9c3.1,1.3,5.5,2.9,7.2,4.9L243.7,50.8z M227.6,49.1c0-3.1-0.8-6.2-2.3-9.3
-  		c-1.6-3.1-3.6-5.9-6.1-8.5c-2.5-2.5-5.4-4.6-8.5-6.1c-3.1-1.5-6.2-2.3-9.3-2.3H49.1c-6.5,0-12.5,2.7-18,8.2
-  		c-5.5,5.5-8.2,11.5-8.2,18v175.1c0,2.5,0.6,5.3,1.9,8.2c1.3,3,2.8,5.4,4.4,7.4l27.1,26.6c1.7,2,4.1,3.6,7.2,4.9
-  		c3.1,1.3,5.8,1.9,8,1.9h107c2.5,0,5.3-0.6,8.2-1.9c3-1.3,5.4-2.9,7.4-4.9l26.6-26.6c2-2,3.6-4.4,4.9-7.4c1.3-3,1.9-5.7,1.9-8.2
-  		V49.1z" />
-  </g>
-</svg>
+  <div class="logo">
+    <LetterSVG />
+    <span>oneacre.online</span>
+  </div>
 </template>
 
 <script>
+import LetterSVG from '~/components/S2/identity/LetterSVG.vue'
+
 export default {
-  name: "LogoLetter"
+  name: 'LogoLetter',
+  components: {
+    LetterSVG,
+  },
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.logo {
+  width: 15rem;
+  height: 0;
+  position: sticky;
+  top: 2rem;
+  font-size: 3.25rem;
+  font-family: $font-nova;
+  line-height: 1em;
+  padding-bottom: 100%;
+  border: 1px solid;
+  border-radius: 50%;
+  background: $white;
+  cursor: pointer;
+  @include flex-center();
+  @include respond-until($screen-lg) {
+    width: 12.5rem;
+  }
+  @include respond-until($screen-sm) {
+    width: 100%;
+    height: auto;
+    top: 0;
+    border: 0;
+    border-bottom: 1px solid;
+    border-radius: 0;
+    padding: 1rem 0 0.5rem;
+  }
+  @include respond-until($screen-xs) {
+    font-size: 3rem;
+    padding: 0.5rem 0;
+  }
 
+  .logo-o {
+    width: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    @include respond-until($screen-sm) {
+      display: none;
+    }
+  }
+
+  span {
+    @include respond-from($screen-sm) {
+      display: none;
+    }
+  }
+}
 </style>
