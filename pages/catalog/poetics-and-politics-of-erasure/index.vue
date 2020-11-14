@@ -16,7 +16,7 @@
 
     <!-- Payment -->
     <div class="oa_payment">
-      <a href="/payment/ingrid">purchase a copy</a>
+      <NuxtLink to="payment" append>Purchase a copy</NuxtLink>
     </div>
     <!-- Wrapper -->
     <div class="oa_wrapper">
@@ -30,7 +30,7 @@
         <ul>
           <li id="oa_notes">Notes</li>
           <li>
-            <a href="/payment/ingrid">Buy this work</a>
+            <NuxtLink to="payment" append>Boy this work</NuxtLink>
           </li>
           <li id="modal_01">Newsletter</li>
         </ul>
