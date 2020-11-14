@@ -32,6 +32,7 @@
 </template>
 
 <script>
+// { name, email, adress, country, postalcode, products, redirectUrl }
 import BlockIntro from '~/components/BlockIntro.vue'
 
 export default {
