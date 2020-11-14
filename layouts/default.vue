@@ -3,6 +3,7 @@
 </template>
 
 <style lang="scss">
+@import "vue-select/src/scss/vue-select.scss";
 @import './assets/scss/fonts.scss';
 
 :root {
