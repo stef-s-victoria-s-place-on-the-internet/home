@@ -1,4 +1,4 @@
-$(window).ready(function () {
+$(window).ready(function() {
   // ------------ Logo Height ------------ //
   // var oaLogo = $('.oa_logo');
   // var oaLogoHeight = $('.oa_logo').height();
@@ -6,7 +6,7 @@ $(window).ready(function () {
 
   // ------------ reload to top ------------ //
 
-  window.onbeforeunload = function () {
+  window.onbeforeunload = function() {
     window.scrollTo(0, 0)
   }
 
@@ -32,11 +32,11 @@ $(window).ready(function () {
     return d < 10 ? '0' + d.toString() : d.toString()
   }
 
-  $(document).ready(function () {
+  $(document).ready(function() {
     // Handler for .ready() called.
     var count = 1
     console.log('loaded')
-    setTimeout(function () {
+    setTimeout(function() {
       console.log('timeout')
       // for each footnote position footnote text
       var arrayOf_oa_footnote_num = $('.oa_footnote_num')
@@ -69,38 +69,38 @@ $(window).ready(function () {
   })
 
   // ------------ Footnotes-Hover ------------ //
-  $('.oa_footnote').hover(function () {
+  $('.oa_footnote').hover(function() {
     var currentId = '#f_' + this.id.substr(3)
     $(currentId).toggleClass('oa_footnote_num_active')
   })
 
-  setTimeout(function () {
-    $('.oa_footnote_num').hover(function () {
+  setTimeout(function() {
+    $('.oa_footnote_num').hover(function() {
       var currentId = '#fe_' + this.id.substr(2)
       $(currentId).toggleClass('oa_footnote_active')
     })
   }, 500)
 
   // ------------ Preserve ------------ //
-  $(function () {
-    $('#modal_01, #modal_02').click(function (e) {
+  $(function() {
+    $('#modal_01, #modal_02').click(function(e) {
       e.preventDefault()
       $('.oa_modal_wrapper').fadeIn(300)
     })
-    $('#oa_close').click(function (e) {
+    $('#oa_close').click(function(e) {
       e.preventDefault()
       $('.oa_modal_wrapper').fadeOut(200)
     })
-    $('.oa_modal_wrapper').click(function () {
+    $('.oa_modal_wrapper').click(function() {
       $('.oa_modal_wrapper').fadeOut(200)
     })
-    $('.oa_modal').click(function (e) {
+    $('.oa_modal').click(function(e) {
       e.stopPropagation()
     })
   })
 
   // ----------------------------------- //
-  $(function () {
+  $(function() {
     if ($(window).width() <= 1020) {
       $('.oa_logo_color').empty()
     } else {
@@ -109,7 +109,7 @@ $(window).ready(function () {
     }
   })
 
-  $(window).resize(function () {
+  $(window).resize(function() {
     if ($(window).width() <= 1020) {
       $('.oa_logo_color').empty()
     } else {
@@ -119,8 +119,8 @@ $(window).ready(function () {
   })
 
   // ------------ Mobile Menu ------------ //
-  $(function () {
-    $('#oa_h_plus').click(function () {
+  $(function() {
+    $('#oa_h_plus').click(function() {
       if ($('#oa_h_plus').hasClass('rotated')) {
         $('#oa_h_plus').removeClass('rotated')
         $('.oa_mobile_menu').slideToggle()
@@ -129,7 +129,7 @@ $(window).ready(function () {
         $('.oa_mobile_menu').slideToggle()
       }
     })
-    $('#oa_notes, #oa_f_plus').click(function () {
+    $('#oa_notes, #oa_f_plus').click(function() {
       if ($('.oa_c_right').is(':visible') === true) {
         $('.oa_c_right, .oa_f_title').fadeOut()
         $('.oa_mobile_menu').hide()
@@ -142,46 +142,40 @@ $(window).ready(function () {
 
   // ------------ Fade In ------------ //
 
-  $(document).ready(function () {
-    $(function () {
-      $('.oa_title_container').animate(
-        {
-          opacity: '1',
-        },
-        4000
-      )
-      $('.oa_author, .oa_logo').delay(1000).animate(
-        {
-          opacity: '1',
-        },
-        4000
-      )
-      $('.oa_content, .oa_preserve, .oa_payment, .notice').delay(2000).animate(
-        {
-          opacity: '1',
-        },
-        4000
-      )
-      $('.oa_c_left').delay(2000).animate(
-        {
-          opacity: '1',
-        },
-        4000
-      )
-      $('.oa_c_right').delay(2000).animate(
-        {
-          opacity: '1',
-        },
-        4000
-      )
-      $('.oa_footer').delay(2000).animate(
-        {
-          opacity: '1',
-        },
-        4000
-      )
-    })
-  })
+  // $(document).ready(function() {
+  //   $(function() {
+  //     $('.oa_title_container').animate({
+  //         opacity: '1',
+  //       },
+  //       4000
+  //     )
+  //     $('.oa_author, .oa_logo').delay(1000).animate({
+  //         opacity: '1',
+  //       },
+  //       4000
+  //     )
+  //     $('.oa_content, .oa_preserve, .oa_payment, .notice').delay(2000).animate({
+  //         opacity: '1',
+  //       },
+  //       4000
+  //     )
+  //     $('.oa_c_left').delay(2000).animate({
+  //         opacity: '1',
+  //       },
+  //       4000
+  //     )
+  //     $('.oa_c_right').delay(2000).animate({
+  //         opacity: '1',
+  //       },
+  //       4000
+  //     )
+  //     $('.oa_footer').delay(2000).animate({
+  //         opacity: '1',
+  //       },
+  //       4000
+  //     )
+  //   })
+  // })
 
   // ------------ Footnote Positioning ------------ //
   // $(function (){
@@ -204,7 +198,8 @@ $(window).ready(function () {
   // });
 
   // ------------ Background Canvas ------------ //
-  ;(function () {
+  ;
+  (function() {
     var canvas = document.getElementById('canvas'),
       context = canvas.getContext('2d')
 
@@ -215,12 +210,12 @@ $(window).ready(function () {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
 
-      function drawStuff() {
+      function drawCanvas() {
         var vW = $(window).width()
         var vH = $('canvas').height()
         var pW = Math.round(Math.random() * (vW - 1) + 1)
         var pH = Math.round(Math.random() * (vH - 1) + 1)
-        context.fillStyle = 'rgba(255,255,255,0.35)'
+        context.fillStyle = 'rgba(255,255,255,0.25)'
         context.fillRect(pW, pH, 2, 2)
         context.fillRect(
           Math.round(Math.random() * (vW - 1) + 1),
@@ -246,39 +241,39 @@ $(window).ready(function () {
           1,
           1
         )
-        context.fillRect(
-          Math.round(Math.random() * (vW - 1) + 1),
-          Math.round(Math.random() * (vH - 1) + 1),
-          1,
-          1
-        )
-        context.fillRect(
-          Math.round(Math.random() * (vW - 1) + 1),
-          Math.round(Math.random() * (vH - 1) + 1),
-          1,
-          1
-        )
-        context.fillRect(
-          Math.round(Math.random() * (vW - 1) + 1),
-          Math.round(Math.random() * (vH - 1) + 1),
-          1,
-          1
-        )
-        context.fillRect(
-          Math.round(Math.random() * (vW - 1) + 1),
-          Math.round(Math.random() * (vH - 1) + 1),
-          1,
-          1
-        )
-        context.fillRect(
-          Math.round(Math.random() * (vW - 1) + 1),
-          Math.round(Math.random() * (vH - 1) + 1),
-          1,
-          1
-        )
+        // context.fillRect(
+        //   Math.round(Math.random() * (vW - 1) + 1),
+        //   Math.round(Math.random() * (vH - 1) + 1),
+        //   1,
+        //   1
+        // )
+        // context.fillRect(
+        //   Math.round(Math.random() * (vW - 1) + 1),
+        //   Math.round(Math.random() * (vH - 1) + 1),
+        //   1,
+        //   1
+        // )
+        // context.fillRect(
+        //   Math.round(Math.random() * (vW - 1) + 1),
+        //   Math.round(Math.random() * (vH - 1) + 1),
+        //   1,
+        //   1
+        // )
+        // context.fillRect(
+        //   Math.round(Math.random() * (vW - 1) + 1),
+        //   Math.round(Math.random() * (vH - 1) + 1),
+        //   1,
+        //   1
+        // )
+        // context.fillRect(
+        //   Math.round(Math.random() * (vW - 1) + 1),
+        //   Math.round(Math.random() * (vH - 1) + 1),
+        //   1,
+        //   1
+        // )
       }
-      $(window).scroll(function () {
-        drawStuff()
+      $(window).scroll(function() {
+        drawCanvas()
       })
     }
     resizeCanvas()
