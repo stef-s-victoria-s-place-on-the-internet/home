@@ -25,6 +25,12 @@ export default {
             font-size: 1.5rem;
             line-height: 1.375em;
         }
+
+        p {
+            &:not(:last-child) {
+                margin-bottom: 1.25em;
+            }
+        }
     }
 }
 </style>
