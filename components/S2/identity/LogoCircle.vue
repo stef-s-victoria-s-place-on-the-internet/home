@@ -19,9 +19,10 @@ export default {
 
 <style lang="scss" scoped>
 .logo {
-    width: 15rem;
+    width: 100%;
     height: 0;
     position: sticky;
+    align-self: flex-start;
     top: 2rem;
     font-size: 3.25rem;
     font-family: $font-nova;
@@ -32,9 +33,6 @@ export default {
     background: $white;
     cursor: pointer;
     @include flex-center();
-    @include respond-until($screen-lg) {
-        width: 12.5rem;
-    }
     @include respond-until($screen-sm) {
         width: 100%;
         height: auto;
