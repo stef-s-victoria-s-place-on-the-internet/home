@@ -5,7 +5,7 @@
       v-if="value !== undefined"
       :type="type"
       :name="label"
-      v-bind="value"
+      v-bind:value="value"
       v-on:input="$emit('update:value', $event.target.value)"
       required
     />

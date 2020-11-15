@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import isUrl from 'is-url-superb'
+
 export default {
   name: 'Form',
   props: {
@@ -15,11 +17,9 @@ export default {
     }
   },
   methods: {
-    async checkForm(val) {
-      console.log(this.submitData, val)
-      // const redirect = await this.$axios.$post('/shop/products/submit', this.submitData)
+    async checkForm() {
+      const redirect = await this.$axios.$post('/shop/products/submit', this.submitData)
       // TODO: replace mollie testing API key
-
       // When we don't recieve an url we should handle the redirect ourselves
       if (!isUrl(redirect)) {
         return this.$router.push({ path: this.path, query: { id: redirect } })
