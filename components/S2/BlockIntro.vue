@@ -31,11 +31,13 @@ export default {
     position: relative;
     padding: 6rem 2rem 0;
     color: $pub-color;
-    background: $pub-bg;
     @include flex-center;
     flex-direction: column;
+    @include respond-until($screen-sm) {
+        padding: 10rem 2rem 0;
+    }
     @include respond-until($screen-xs) {
-        padding: 3rem 1.5rem 0;
+        padding: 8rem 1.25rem 0;
     }
 
     .intro-text {
@@ -55,9 +57,8 @@ export default {
         }
         @include respond-until($screen-sm) {
             align-content: flex-start;
-        }
-        @include respond-until($screen-xs) {
-            padding: 2rem 0 6rem;
+            border-top: 0;
+            padding: 0 0 6rem;
         }
 
         p {
@@ -65,6 +66,7 @@ export default {
             max-width: 50rem;
             font-size: 1.75rem;
             line-height: 1.2em;
+            font-family: $font-univers;
             letter-spacing: 0.25px;
             opacity: 0;
             animation: fadeIn 2.5s ease;
