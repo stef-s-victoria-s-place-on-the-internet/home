@@ -16,7 +16,7 @@
 
   <!-- Payment -->
   <div class="oa_payment">
-    <NuxtLink to="payment" append>Purchase a copy</NuxtLink>
+    <NuxtLink to="/catalog/poetics-and-politics-of-erasure/payment">Purchase a copy</NuxtLink>
   </div>
   <!-- Wrapper -->
   <div class="oa_wrapper">
@@ -30,7 +30,7 @@
       <ul>
         <li id="oa_notes">Notes</li>
         <li>
-          <NuxtLink to="payment" append>Boy this work</NuxtLink>
+          <NuxtLink to="/catalog/poetics-and-politics-of-erasure/payment">Boy this work</NuxtLink>
         </li>
         <li id="modal_01">Newsletter</li>
       </ul>
