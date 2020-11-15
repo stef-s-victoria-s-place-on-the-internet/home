@@ -42,14 +42,19 @@
   <article>
     <component v-bind:is="child.component"></component>
   </article>
+
+  <BlockFooter>
+  </BlockFooter>
 </main>
 </template>
 
 <script>
 import BlockIntro from '~/components/S2/BlockIntro.vue'
+import BlockFooter from '~/components/S2/BlockFooter.vue'
 export default {
   components: {
     BlockIntro,
+    BlockFooter,
   },
   data() {
     return {
