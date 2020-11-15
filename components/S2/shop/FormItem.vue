@@ -2,14 +2,14 @@
   <div class="form-item">
     <label v-if="label" :for="label">{{ label }}:</label>
     <input
-      v-if="value"
+      v-if="value !== undefined"
       :type="type"
       :name="label"
       v-bind:value="value"
       v-on:input="$emit('update:value', $event.target.value)"
       required
     />
-    <slot v-if="!value" />
+    <slot />
   </div>
 </template>
 

@@ -29,7 +29,11 @@
         v-bind:type="form.postalcode.type"
       />
     </Form>
-    <ProductList :products="products" :country="form.country" :shippingRates="rates" />
+    <ProductList
+      :products="products"
+      :country="form.country"
+      :shippingRates="rates"
+    />
   </div>
 </template>
 
@@ -49,30 +53,29 @@ export default {
       form: {
         name: {
           label: 'Name',
-          value: 'Stef Kors',
           type: 'text',
+          value: '',
         },
         email: {
           label: 'Email',
-          value: 'stef.kors@gmail.com',
           type: 'email',
+          value: '',
         },
         adress: {
           label: 'adress',
-          value: 'Tenierstraat 13C',
           type: 'text',
+          value: '',
         },
         postalcode: {
           label: 'postalcode',
-          value: '2526NX',
           type: 'text',
+          value: '',
         },
         country: {
           label: 'Country',
           value: {
-            iso: 'NL',
-            name: 'Nederland',
-            priority: 1,
+            iso: '',
+            name: ''
           },
           type: 'vue-select',
         },
@@ -95,7 +98,6 @@ export default {
     try {
       const countries = await $axios.$get('/shop/shipping/countries')
       const rates = await $axios.$get('/shop/shipping/rates')
-
       return {
         countries,
         rates,
@@ -103,7 +105,7 @@ export default {
     } catch (err) {
       console.log(err)
     }
-  }
+  },
 }
 </script>
 
