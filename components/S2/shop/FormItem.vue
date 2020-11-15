@@ -1,8 +1,8 @@
 <template>
 <div class="form-item">
-  <label v-if="label" :for="label">{{ label }}</label>
-  <input v-if="value" :type="type" :name="label" v-bind:value="value" v-on:input="$emit('update:value', $event.target.value)" required />
-  <slot v-if="!value" />
+  <label v-if="label" :for="label">{{ label }}:</label>
+  <input v-if="value !== undefined" :type="type" :name="label" v-bind="value" v-on:input="$emit('update:value', $event.target.value)" required />
+  <slot />
 </div>
 </template>
 
@@ -11,7 +11,7 @@ import * as _ from 'lodash'
 // https://vue-select.org/
 
 export default {
-  name: 'Form',
+  name: 'FormItem',
   props: {
     label: {
       type: String,
