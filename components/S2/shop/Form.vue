@@ -1,6 +1,5 @@
 <template>
   <div class="testing">
-    <div class="form-wrapper">
       <form action="">
         <div class="form-item">
           <label for="name">Name: </label>
@@ -33,7 +32,6 @@
         </div>
         <button type="submit">Submit</button>
       </form>
-    </div>
     <div class="data">
       <pre>
       {{ form.name }}
@@ -148,9 +146,25 @@ export default {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 
-  & > div {
+  & > * {
     border: 1px solid;
     padding: 1rem;
+  }
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    row-gap: 1rem;
+
+  .form-item {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    input {
+      min-height: 1.5rem;
+    }
   }
 }
 </style>
