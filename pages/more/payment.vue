@@ -7,14 +7,14 @@
     <h1>Customer details</h1>
     <Form debug>
       <FormItem v-bind:label="form.name.label" v-bind:value.sync="form.name.value" v-bind:type="form.name.type" />
-      <FormItem v-bind:label="form.country.label">
+      <FormItem class="country" v-bind:label="form.country.label">
         <v-select label="name" v-model="form.country.value" :options="countries" />
       </FormItem>
       <FormItem v-bind:label="form.email.label" v-bind:value.sync="form.email.value" v-bind:type="form.email.type" />
       <FormItem v-bind:label="form.adress.label" v-bind:value.sync="form.adress.value" v-bind:type="form.adress.type" />
       <FormItem v-bind:label="form.postalcode.label" v-bind:value.sync="form.postalcode.value" v-bind:type="form.postalcode.type" />
+      <ProductList :products="products" :country="form.country" :shippingRates="rates" />
     </Form>
-    <ProductList :products="products" :country="form.country" :shippingRates="rates" />
   </div>
 </div>
 </template>
@@ -46,12 +46,12 @@ export default {
           value: '',
         },
         adress: {
-          label: 'adress',
+          label: 'Adress',
           type: 'text',
           value: '',
         },
         postalcode: {
-          label: 'postalcode',
+          label: 'Postal Code',
           type: 'text',
           value: '',
         },
@@ -98,7 +98,7 @@ export default {
 .shop-wrapper {
     width: 100%;
     max-width: 1600px;
-    padding: 2rem 2rem 4rem;
+    padding: 2rem 2rem 6rem;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 15rem minmax(min-content, 80rem);
@@ -113,10 +113,10 @@ export default {
     }
     @include respond-until($screen-sm) {
         grid-template-columns: 1fr;
-        padding: 0 2rem 10rem;
+        padding: 0 2rem 6rem;
     }
     @include respond-until($screen-xs) {
-        padding: 0 1rem 10rem;
+        padding: 0 1rem 6rem;
     }
 
     .shop-side {
@@ -159,7 +159,6 @@ export default {
         }
     }
     .form-content {
-        padding: 1rem;
         display: grid;
         grid-auto-rows: auto;
         grid-gap: 4rem;

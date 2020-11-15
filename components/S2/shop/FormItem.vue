@@ -57,5 +57,19 @@ export default {
         border-radius: 0.5rem;
         padding: 0.875rem 1rem 0.5rem;
     }
+
+    &.country {
+        .v-select {
+            padding: 0;
+            border: 0;
+        }
+    }
+
+    // NODE MODULE OVERRIDE
+    // .vs__dropdown-toggle {
+    //     border: 1px solid $grey;
+    //     border-radius: 0.5rem;
+    //     padding: 0.25rem 0.5rem;
+    // }
 }
 </style>

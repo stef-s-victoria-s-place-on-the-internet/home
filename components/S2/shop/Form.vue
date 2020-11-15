@@ -68,5 +68,8 @@ form {
             margin-top: 1rem;
         }
     }
+    .v-select .vs__dropdown-toggle {
+        border: 0 !important;
+    }
 }
 </style>
