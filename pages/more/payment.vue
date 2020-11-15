@@ -3,7 +3,7 @@
     <Form debug>
       <FormItem
         v-bind:label="form.name.label"
-        v-bind:value="form.name.value"
+        v-bind:value.sync="form.name.value"
         v-bind:type="form.name.type"
       />
       <FormItem v-bind:label="form.country.label">
@@ -15,17 +15,17 @@
       </FormItem>
       <FormItem
         v-bind:label="form.email.label"
-        v-bind:value="form.email.value"
+        v-bind:value.sync="form.email.value"
         v-bind:type="form.email.type"
       />
       <FormItem
         v-bind:label="form.adress.label"
-        v-bind:value="form.adress.value"
+        v-bind:value.sync="form.adress.value"
         v-bind:type="form.adress.type"
       />
       <FormItem
         v-bind:label="form.postalcode.label"
-        v-bind:value="form.postalcode.value"
+        v-bind:value.sync="form.postalcode.value"
         v-bind:type="form.postalcode.type"
       />
     </Form>
@@ -75,7 +75,7 @@ export default {
           label: 'Country',
           value: {
             iso: '',
-            name: ''
+            name: '',
           },
           type: 'vue-select',
         },

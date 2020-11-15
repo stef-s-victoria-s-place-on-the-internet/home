@@ -5,7 +5,7 @@
       v-if="value !== undefined"
       :type="type"
       :name="label"
-      v-bind:value="value"
+      v-bind="value"
       v-on:input="$emit('update:value', $event.target.value)"
       required
     />
@@ -18,7 +18,7 @@ import * as _ from 'lodash'
 // https://vue-select.org/
 
 export default {
-  name: 'Form',
+  name: 'FormItem',
   props: {
     label: {
       type: String,
