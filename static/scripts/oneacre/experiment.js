@@ -186,8 +186,9 @@ function scroll_limit() {
 function sendJSON() {
 	var line_distance = $('.distance_counter').text()
 	if (parseInt(line_distance) >= 300) {
+    // TODO: update hostname to API subdomain
 		$.ajax({
-			url: '/announcement/line',
+			url: 'https://www.oneacre.online/api/v2/announcement/line',
 			type: 'POST',
 			cache: false,
 			data: {
