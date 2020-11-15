@@ -2,11 +2,7 @@
 <div class="shop-wrapper">
   <div class="shop-side">
     <LogoCircle />
-    <div class="shop-purchase">
-      <p>Price</p>
-      <p class="price">€18</p>
-      <nuxt-link to="/">Purchase</nuxt-link>
-    </div>
+    <PurchaseButton :product="product"/>
   </div>
 
   <div class="product">
@@ -76,6 +72,7 @@ import LogoCircle from '~/components/S2/identity/LogoCircle.vue'
 import ProductDescription from '~/components/S2/shop/ProductDescription.vue'
 import ProductImages from '~/components/S2/shop/ProductImages.vue'
 import ProductSpecs from '~/components/S2/shop/ProductSpecs.vue'
+import PurchaseButton from '~/components/S2/shop/PurchaseButton.vue'
 
 export default {
   components: {
@@ -83,7 +80,17 @@ export default {
     ProductImages,
     ProductSpecs,
     LogoCircle,
+    PurchaseButton,
   },
+  data() {
+    return {
+      product: {
+        name: 'Influencers Aren’t Very Good At Influencing Anymore’',
+        price: 18,
+        quantity: 1,
+      }
+    }
+  }
 }
 </script>
 

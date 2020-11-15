@@ -13,7 +13,7 @@
       <FormItem v-bind:label="form.email.label" v-bind:value.sync="form.email.value" v-bind:type="form.email.type" />
       <FormItem v-bind:label="form.adress.label" v-bind:value.sync="form.adress.value" v-bind:type="form.adress.type" />
       <FormItem v-bind:label="form.postalcode.label" v-bind:value.sync="form.postalcode.value" v-bind:type="form.postalcode.type" />
-      <ProductList :products="products" :country="form.country" :shippingRates="rates" :pricing="pricing" />
+      <ProductList :country="form.country" :shippingRates="rates" :pricing="pricing" />
     </Form>
   </div>
 </div>
@@ -64,15 +64,6 @@ export default {
       },
       countries: [],
       rates: {},
-      products: [{
-          name: 'radio',
-          price: 5,
-        },
-        {
-          name: 'techno',
-          price: 5,
-        },
-      ],
       pricing: {
         vat: 0,
         shipping: 0,
@@ -109,6 +100,9 @@ export default {
         pricing: this.pricing,
         redirectUrl: '/more/success'
       }
+    },
+    products () {
+      return this.$store.state.shop.products
     }
   }
 }
