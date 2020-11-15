@@ -163,6 +163,7 @@ export default {
         grid-auto-rows: auto;
         grid-gap: 4rem;
         border-top: 1px solid;
+        padding-top: 0.75rem;
         @include respond-until($screen-sm) {
             border-top: 0;
             padding-top: 10vh;
