@@ -5,7 +5,7 @@
     <div class="item" v-for="(product, index) in products" :key="product.name">
       <span class="item-name">
         <span class="item-label">{{ product.name }}</span>
-        <span class="item-delete" v-on:click="removeProduct(index)">delete</span>
+        <span class="item-delete" v-on:click="removeProduct(index)">x</span>
       </span>
       <span class="item-price">{{ product.price | currency }}</span>
     </div>
@@ -60,7 +60,7 @@ export default {
     }
   },
   computed: {
-    products () {
+    products() {
       return this.$store.state.shop.products
     },
     vat() {
@@ -169,6 +169,7 @@ export default {
         .item {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            align-items: center;
             grid-gap: 2rem;
             padding-top: 0.5rem;
             @include respond-until($screen-sm) {
@@ -176,12 +177,22 @@ export default {
             }
 
             .item-name {
-              .item-delete {
-                opacity: .5;
-                display: block;
-                text-align: right;
-                display: none;
-              }
+                display: grid;
+                grid-template-columns: 1fr auto;
+                grid-gap: 1rem;
+                align-items: center;
+                .item-delete {
+                    width: 1.75rem;
+                    height: 1.75rem;
+                    line-height: 1em;
+                    @include flex-center;
+                    color: rgba($black,0.25);
+                    border: 1px solid;
+                    border-radius: 50%;
+                    background: $white;
+                    margin-bottom: 0.25rem;
+                    cursor: pointer;
+                }
             }
         }
     }

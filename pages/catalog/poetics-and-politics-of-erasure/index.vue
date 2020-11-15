@@ -481,10 +481,6 @@ export default {
         },
         {
           type: 'text/javascript',
-          src: '/scripts/oneacre/index.js',
-        },
-        {
-          type: 'text/javascript',
           src: '/scripts/ingrid/script.js',
         },
       ],
@@ -595,10 +591,24 @@ export default {
         border: 1px solid rgba($pub-color,0.2);
     }
     @include respond-until($screen-sm) {
-        width: calc(100% - 2.5rem);
+        width: 100%;
         position: fixed;
         top: 0;
+        left: 0;
         background: $pub-bg;
+        border-bottom: 0;
+
+        &:before {
+            content: '';
+            width: calc(100% - 4rem);
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+            background: $white;
+            @include respond-until($screen-xs) {
+                width: calc(100% - 2.5rem);
+            }
+        }
     }
 }
 </style>
