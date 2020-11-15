@@ -752,7 +752,12 @@ a {
   margin-bottom: 30px;
 }
 
-.oa_footer_signup {
+.newsletter a {
+  text-decoration: none;
+}
+
+.oa_footer_signup,
+.newsletter {
   font-size: 16px;
   line-height: 1em;
   padding: 8px 10px;
@@ -767,7 +772,8 @@ a {
   cursor: pointer;
 }
 
-.oa_footer_signup:hover {
+.oa_footer_signup:hover,
+.newsletter:hover {
   color: #191919;
   border: 1px solid #191919;
   background-color: #fff;

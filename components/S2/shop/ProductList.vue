@@ -2,8 +2,11 @@
 <div class="shoppinglist">
   <h4>Order summary</h4>
   <div class="item-list">
-    <div class="item" v-for="product in products" :key="product.name">
-      <span>{{ product.name }}</span>
+    <div class="item" v-for="(product, index) in products" :key="product.name">
+      <span class="item-name">
+        <span class="item-label">{{ product.name }}</span>
+        <span class="item-delete" v-on:click="removeProduct(index)">delete</span>
+      </span>
       <span class="item-price">{{ product.price | currency }}</span>
     </div>
   </div>
@@ -37,10 +40,6 @@ import {
 export default {
   name: 'ProductList',
   props: {
-    products: {
-      type: Array,
-      required: false,
-    },
     country: {
       type: Object,
       required: false,
@@ -54,7 +53,16 @@ export default {
       required: false,
     }
   },
+  methods: {
+    removeProduct(product, index) {
+      console.log('product', product)
+      this.$store.commit('removeShopItem', product)
+    }
+  },
   computed: {
+    products () {
+      return this.$store.state.shop.products
+    },
     vat() {
       const {
         iso
@@ -65,9 +73,15 @@ export default {
       return 0
     },
     totalProductPrice() {
-      const price = this.products.reduce((accumulator, product) => {
-        return accumulator.price + product.price
+      if (!this.products.length) {
+        return 0
+      }
+
+      let price = 0
+      this.products.forEach((product) => {
+        return price += product.price
       })
+
       this.pricing.productTotal = price
       return price
     },
@@ -159,6 +173,15 @@ export default {
             padding-top: 0.5rem;
             @include respond-until($screen-sm) {
                 grid-template-columns: 1fr minmax(min-content, 6.5rem);
+            }
+
+            .item-name {
+              .item-delete {
+                opacity: .5;
+                display: block;
+                text-align: right;
+                display: none;
+              }
             }
         }
     }

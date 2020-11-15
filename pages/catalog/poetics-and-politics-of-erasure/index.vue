@@ -28,9 +28,11 @@
       <ul>
         <li id="oa_notes">Notes</li>
         <li>
-          <NuxtLink to="/catalog/poetics-and-politics-of-erasure/payment">Boy this work</NuxtLink>
+          <NuxtLink to="/catalog/poetics-and-politics-of-erasure/payment">Purchase a copy</NuxtLink>
         </li>
-        <li id="modal_01">Newsletter</li>
+        <li>
+          <a href="https://online.us14.list-manage.com/subscribe?u=9473977eedf1a7da237b22b89&id=85337ef85c" target="_blank" rel="noopener noreferrer">Newsletter</a>
+        </li>
       </ul>
     </div> -->
       <!-- Title -->
