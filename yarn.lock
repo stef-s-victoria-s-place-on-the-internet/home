@@ -3827,11 +3827,6 @@ etag@^1.8.1, etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
-eu-vat-calc@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/eu-vat-calc/-/eu-vat-calc-2.0.0.tgz#f54d7d5984d86b87543c300624fd3418ad6481e9"
-  integrity sha512-IFEGGtvxqH5sJaUJjFGQoN5uJii8weq2o3GrpN3NF7c62HK4prTd/v0476Vzc3T2cUo9VAGie5PsFKu4ysaXAg==
-
 eventemitter3@^4.0.0:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"

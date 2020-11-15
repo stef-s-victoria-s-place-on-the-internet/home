@@ -6,13 +6,12 @@
     </div>
     <hr />
     total price: {{ total | currency }} <br />
-    vat: {{ vat | currency }} <br />
+    vat: {{ vat | percentage }} <br />
     shipping: {{ shipping | currency }}
   </div>
 </template>
 
 <script>
-import EUVAT from 'eu-vat-calc'
 import { isEuMember } from 'is-eu-member'
 export default {
   name: 'ProductList',
@@ -33,10 +32,8 @@ export default {
   computed: {
     vat() {
       const { iso } = this.country.value
-      // TODO: VAT for non EU purchases?
       if (isEuMember(iso)) {
-        const calculator = new EUVAT({ domesticCountry: 'NL' })
-        return calculator.getVat(iso, false).standard_rate
+        return 21
       }
       return 0
     },
@@ -64,6 +61,9 @@ export default {
         style: 'currency',
         currency: 'EUR',
       }).format(number)
+    },
+    percentage(number) {
+      return `${number}%`
     },
   },
 }
