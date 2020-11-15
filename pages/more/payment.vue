@@ -7,12 +7,12 @@
     <h1>Customer details</h1>
     <Form :submitData="submitData">
       <FormItem v-bind:label="form.name.label" v-bind:value.sync="form.name.value" v-bind:type="form.name.type" />
-      <FormItem class="country" v-bind:label="form.country.label">
-        <v-select label="name" v-model="form.country.value" :options="countries" />
-      </FormItem>
       <FormItem v-bind:label="form.email.label" v-bind:value.sync="form.email.value" v-bind:type="form.email.type" />
       <FormItem v-bind:label="form.adress.label" v-bind:value.sync="form.adress.value" v-bind:type="form.adress.type" />
       <FormItem v-bind:label="form.postalcode.label" v-bind:value.sync="form.postalcode.value" v-bind:type="form.postalcode.type" />
+      <FormItem class="country" v-bind:label="form.country.label">
+        <v-select label="name" v-model="form.country.value" :options="countries" />
+      </FormItem>
       <ProductList :country="form.country" :shippingRates="rates" :pricing="pricing" />
     </Form>
   </div>
