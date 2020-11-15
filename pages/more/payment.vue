@@ -1,6 +1,6 @@
 <template>
   <div class="testing">
-    <Form debug>
+    <Form :submitData="submitData">
       <FormItem
         v-bind:label="form.name.label"
         v-bind:value.sync="form.name.value"
@@ -33,6 +33,7 @@
       :products="products"
       :country="form.country"
       :shippingRates="rates"
+      v-bind:pricing.sync="pricing"
     />
   </div>
 </template>
@@ -41,6 +42,7 @@
 import ProductList from '~/components/S2/shop/ProductList'
 import FormItem from '~/components/S2/shop/FormItem'
 import Form from '~/components/S2/shop/Form'
+import * as _ from 'lodash'
 
 export default {
   components: {
@@ -51,35 +53,46 @@ export default {
   data() {
     return {
       form: {
-        name: {
-          label: 'Name',
-          type: 'text',
-          value: '',
-        },
-        email: {
-          label: 'Email',
-          type: 'email',
-          value: '',
-        },
-        adress: {
-          label: 'adress',
-          type: 'text',
-          value: '',
-        },
-        postalcode: {
-          label: 'postalcode',
-          type: 'text',
-          value: '',
-        },
+        name: { label: 'Name', type: 'text', value: 'Stef Kors' },
+        email: { label: 'Email', type: 'email', value: 'stef.kors@gmail.com' },
+        adress: { label: 'adress', type: 'text', value: 'Tenierstraat 13C' },
+        postalcode: { label: 'postalcode', type: 'text', value: '2526NX' },
         country: {
           label: 'Country',
-          value: {
-            iso: '',
-            name: '',
-          },
+          value: { iso: 'NL', name: 'Netherlands' },
           type: 'vue-select',
         },
       },
+      // form: {
+      //   name: {
+      //     label: 'Name',
+      //     type: 'text',
+      //     value: 'Stef Kors',
+      //   },
+      //   email: {
+      //     label: 'Email',
+      //     type: 'email',
+      //     value: 'stef.kors@gmail.com',
+      //   },
+      //   adress: {
+      //     label: 'adress',
+      //     type: 'text',
+      //     value: 'Teniersstraat 13C',
+      //   },
+      //   postalcode: {
+      //     label: 'postalcode',
+      //     type: 'text',
+      //     value: '2526NX',
+      //   },
+      //   country: {
+      //     label: 'Country',
+      //     value: {
+      //       iso: 'NL',
+      //       name: 'Netherlands',
+      //     },
+      //     type: 'vue-select',
+      //   },
+      // },
       countries: [],
       rates: {},
       products: [
@@ -92,6 +105,12 @@ export default {
           price: 5,
         },
       ],
+      pricing: {
+        vat: 0,
+        shipping: 0,
+        total: 0,
+        productTotal: 0,
+      }
     }
   },
   async asyncData({ $axios }) {
@@ -106,6 +125,22 @@ export default {
       console.log(err)
     }
   },
+  computed: {
+    submitData() {
+      const customer = {}
+
+      _.forEach(this.form, ((item, key) => {
+        customer[key] = item.value
+      }))
+
+      return {
+        ...customer,
+        products: this.products,
+        pricing: this.pricing,
+        redirectUrl: '/more/success'
+      }
+    }
+  }
 }
 </script>
 
