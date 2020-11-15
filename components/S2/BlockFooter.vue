@@ -14,7 +14,7 @@
       <p>For further contact: <a href="mailto:hi@oneacre.online">hi@oneacre.online</a></p>
     </div>
     <div class="footer-buttons">
-      <button type="button" name="button">Newsletter</button>
+      <a href="https://online.us14.list-manage.com/subscribe?u=9473977eedf1a7da237b22b89&id=85337ef85c"><button type="button" name="button">Newsletter</button></a>
       <a href="https://www.instagram.com/oneacre.online/"><button type="button" name="button">Instagram</button></a>
       <a href="https://twitter.com/oneacre_online"><button type="button" name="button">Twitter</button></a>
       <a href="https://www.facebook.com/oneacre.online"><button type="button" name="button">Facebook</button></a>
@@ -52,6 +52,9 @@ export default {
         @include respond-until($screen-sm) {
             font-size: 5rem;
         }
+        @include respond-until($screen-xs) {
+            font-size: 4rem;
+        }
     }
 
     &-content {
@@ -67,6 +70,9 @@ export default {
         @include respond-until($screen-md) {
             border: 0;
             padding: 0;
+        }
+        @include respond-until($screen-xs) {
+            font-size: 1.25rem;
         }
     }
     &-credits {
