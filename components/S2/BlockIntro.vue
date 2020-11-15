@@ -31,7 +31,6 @@ export default {
     position: relative;
     padding: 6rem 2rem 0;
     color: $pub-color;
-    background: $pub-bg;
     @include flex-center;
     flex-direction: column;
     @include respond-until($screen-xs) {
@@ -65,6 +64,7 @@ export default {
             max-width: 50rem;
             font-size: 1.75rem;
             line-height: 1.2em;
+            font-family: $font-univers;
             letter-spacing: 0.25px;
             opacity: 0;
             animation: fadeIn 2.5s ease;
