@@ -62,7 +62,7 @@
         <li>
           <p>More info</p>
           <p>
-            <nuxt-link to="http://followthegloss.online/">http://followthegloss.online/</nuxt-link>
+            <a target="_blank" href="http://followthegloss.online/">http://followthegloss.online/</a>
           </p>
         </li>
       </ul>

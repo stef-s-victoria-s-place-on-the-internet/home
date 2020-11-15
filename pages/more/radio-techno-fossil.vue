@@ -80,7 +80,7 @@
         </li>
         <li>
           <p>More info</p>
-          <p><a href="http://concreteflux.com">Concrete Flux</a></p>
+          <p><a target="_blank" href="http://concreteflux.com">http://concreteflux.com</a></p>
         </li>
         <li>
           <p>Image credit</p>
