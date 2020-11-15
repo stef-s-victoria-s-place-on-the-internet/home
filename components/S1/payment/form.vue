@@ -123,10 +123,10 @@ export default {
   },
   data() {
     return {
-      payment_amount: 99,
-      name: 'test stef',
+      payment_amount: 5,
+      name: '',
       discountcode: undefined,
-      email: 'test@example.com',
+      email: '',
       exlibris: undefined,
       path: getRedirectPublicationPath(),
     }
