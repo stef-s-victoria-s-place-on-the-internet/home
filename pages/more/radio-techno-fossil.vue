@@ -126,11 +126,11 @@ export default {
         grid-template-columns: fit-content(12.5rem) fit-content(80rem);
     }
     @include respond-until($screen-sm) {
-        padding-top: 0;
         grid-template-columns: 1fr;
+        padding: 0 2rem 10rem;
     }
     @include respond-until($screen-xs) {
-        padding: 0 1rem;
+        padding: 0 1rem 10rem;
     }
 
     .shop-side {

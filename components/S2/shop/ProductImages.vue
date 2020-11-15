@@ -18,6 +18,14 @@ export default {
             display: grid;
             grid-auto-rows: auto;
             grid-gap: 1rem;
+
+            &.portrait {
+                grid-template-columns: 1fr 1fr;
+
+                @include respond-until($screen-sm) {
+                    grid-template-columns: 1fr;
+                }
+            }
         }
         figure {
             width: 100%;
