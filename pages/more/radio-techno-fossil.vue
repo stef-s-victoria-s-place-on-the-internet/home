@@ -1,6 +1,13 @@
 <template>
 <div class="shop-wrapper">
-  <LogoCircle />
+  <div class="shop-side">
+    <LogoCircle />
+    <div class="shop-purchase">
+      <p>Price</p>
+      <p class="price">€3</p>
+      <nuxt-link to="/">Purchase</nuxt-link>
+    </div>
+  </div>
 
   <div class="product">
     <!-- Title -->
@@ -73,7 +80,7 @@
         </li>
         <li>
           <p>More info</p>
-          <p><a href="http://concreteflux.com">Concrete Flux</a></p>
+          <p><a target="_blank" href="http://concreteflux.com">http://concreteflux.com</a></p>
         </li>
         <li>
           <p>Image credit</p>
@@ -115,12 +122,91 @@ export default {
     @include respond-until($screen-lg) {
         grid-gap: 3rem;
     }
+    @include respond-until($screen-md) {
+        grid-template-columns: fit-content(12.5rem) fit-content(80rem);
+    }
     @include respond-until($screen-sm) {
-        padding-top: 0;
         grid-template-columns: 1fr;
+        padding: 0 2rem 10rem;
     }
     @include respond-until($screen-xs) {
-        padding: 0 1rem;
+        padding: 0 1rem 10rem;
+    }
+
+    .shop-side {
+        height: calc(100vh - 2rem);
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        top: 2rem;
+        padding: 0 0 2rem;
+        @include respond-until($screen-sm) {
+            top: 0;
+            height: auto;
+        }
+
+        .shop-purchase {
+            border-top: 1px solid;
+            padding-top: 0.75rem;
+            margin-top: 4rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            @include respond-until($screen-sm) {
+                width: 100%;
+                position: fixed;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                padding: 1rem 2rem 2rem;
+                border-top: 0;
+                background: $white;
+                @include respond-until($screen-xs) {
+                    padding: 1rem 1rem 2rem;
+                }
+
+                &:before {
+                    content: '';
+                    width: calc(100% - 4rem);
+                    height: 1px;
+                    background: $black;
+                    position: absolute;
+                    top: 0;
+                    @include respond-until($screen-xs) {
+                        width: calc(100% - 2rem);
+                    }
+                }
+            }
+
+            p {
+                color: rgba($black,0.4);
+                font-size: 1.375rem;
+
+                &.price {
+                    color: $black;
+                }
+            }
+
+            a {
+                width: 100%;
+                padding: 1rem 1.5rem 0.875rem;
+                line-height: 1em;
+                text-transform: uppercase;
+                color: $white;
+                background: $black;
+                letter-spacing: 2px;
+                border-radius: 0.375rem;
+                margin-top: 2rem;
+                @include flex-center;
+                @include respond-until($screen-sm) {
+                    margin-top: 1.5rem;
+                }
+                @include respond-until($screen-xs) {
+                    margin-top: 1rem;
+                }
+            }
+        }
     }
 
     .product {
