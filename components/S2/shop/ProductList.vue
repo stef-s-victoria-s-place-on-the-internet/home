@@ -49,6 +49,10 @@ export default {
       type: Object,
       required: false,
     },
+    pricing: {
+      type: Object,
+      required: false,
+    }
   },
   computed: {
     vat() {
@@ -61,12 +65,16 @@ export default {
       return 0
     },
     totalProductPrice() {
-      return this.products.reduce((accumulator, product) => {
+      const price = this.products.reduce((accumulator, product) => {
         return accumulator.price + product.price
       })
+      this.pricing.productTotal = price
+      return price
     },
     totalOrderPrice() {
-      return this.totalProductPrice * (1 + this.vat / 100) + this.shipping
+      const total = this.totalProductPrice * (1 + this.vat / 100) + this.shipping
+      this.pricing.total = total
+      return total
     },
     displayNotice() {
       const {
@@ -88,6 +96,7 @@ export default {
       return `Please contact us for shipping to ${name}`
     },
     shipping() {
+      let shippingrate = 0
       if (_.get(this, ['country', 'value'])) {
         const {
           iso,
@@ -95,11 +104,12 @@ export default {
         } = _.get(this, ['country', 'value'])
         const rate = this.shippingRates[iso]
         if (rate) {
-          return rate.singlePrice
+          shippingrate = rate.singlePrice
         }
       }
 
-      return 0
+      this.pricing.shipping = shippingrate
+      return shippingrate
     },
   },
   filters: {

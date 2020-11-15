@@ -27,7 +27,6 @@
 
 <script>
 import * as _ from 'lodash'
-import isUrl from 'is-url-superb'
 import { getPublicationRoute } from '~/helpers'
 
 export default {

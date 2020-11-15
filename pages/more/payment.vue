@@ -5,7 +5,7 @@
 
   <div class="form-content">
     <h1>Customer details</h1>
-    <Form debug>
+    <Form :submitData="submitData">
       <FormItem v-bind:label="form.name.label" v-bind:value.sync="form.name.value" v-bind:type="form.name.type" />
       <FormItem class="country" v-bind:label="form.country.label">
         <v-select label="name" v-model="form.country.value" :options="countries" />
@@ -13,7 +13,7 @@
       <FormItem v-bind:label="form.email.label" v-bind:value.sync="form.email.value" v-bind:type="form.email.type" />
       <FormItem v-bind:label="form.adress.label" v-bind:value.sync="form.adress.value" v-bind:type="form.adress.type" />
       <FormItem v-bind:label="form.postalcode.label" v-bind:value.sync="form.postalcode.value" v-bind:type="form.postalcode.type" />
-      <ProductList :products="products" :country="form.country" :shippingRates="rates" />
+      <ProductList :products="products" :country="form.country" :shippingRates="rates" :pricing="pricing" />
     </Form>
   </div>
 </div>
@@ -24,6 +24,7 @@ import LogoCircle from '~/components/S2/identity/LogoCircle.vue'
 import ProductList from '~/components/S2/shop/ProductList'
 import FormItem from '~/components/S2/shop/FormItem'
 import Form from '~/components/S2/shop/Form'
+import * as _ from 'lodash'
 
 export default {
   components: {
@@ -57,10 +58,7 @@ export default {
         },
         country: {
           label: 'Country',
-          value: {
-            iso: '',
-            name: '',
-          },
+          value: { iso: 'NL', name: 'Netherlands' },
           type: 'vue-select',
         },
       },
@@ -75,6 +73,12 @@ export default {
           price: 5,
         },
       ],
+      pricing: {
+        vat: 0,
+        shipping: 0,
+        total: 0,
+        productTotal: 0,
+      }
     }
   },
   async asyncData({
@@ -91,6 +95,22 @@ export default {
       console.log(err)
     }
   },
+  computed: {
+    submitData() {
+      const customer = {}
+
+      _.forEach(this.form, ((item, key) => {
+        customer[key] = item.value
+      }))
+
+      return {
+        ...customer,
+        products: this.products,
+        pricing: this.pricing,
+        redirectUrl: '/more/success'
+      }
+    }
+  }
 }
 </script>
 
