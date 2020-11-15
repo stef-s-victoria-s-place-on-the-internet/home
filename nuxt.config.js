@@ -1,18 +1,19 @@
 import Mode from 'frontmatter-markdown-loader/mode'
-import { markdownCustomCompiler } from './helpers/markdownCustomCompiler'
+import {
+  markdownCustomCompiler
+} from './helpers/markdownCustomCompiler'
 
 const url =
-  process.env.NODE_ENV === 'development'
-    ? process.env.API || 'http://localhost:8080'
-    : 'https://www.oneacre.online'
+  process.env.NODE_ENV === 'development' ?
+  process.env.API || 'http://localhost:8080' :
+  'https://www.oneacre.online'
 
-    console.log(url);
+console.log(url);
 
 const siteMeta = {
   title: 'oneacre.online',
-  description:
-    'oneacre.online is an experimental publication project, of size exactly equal to the area of 1 chain by 1 furlong that aims to utilise the omnidirectional website space to seed works.',
-  image: 'http://www.oneacre.online/images/ingrid/oa_meta_img.jpg',
+  description: 'oneacre.online is an experimental publication project, of size exactly equal to the area of 1 chain by 1 furlong that aims to utilise the omnidirectional website space to seed works.',
+  image: 'http://www.oneacre.online/static/oneacre-social.jpg',
 }
 
 export default {
@@ -24,9 +25,13 @@ export default {
   head: {
     title: siteMeta.title,
     titleTemplate: '%s | oneacre.online',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
       {
         hid: 'google-site-verification',
         name: 'google-site-verification',
@@ -78,13 +83,15 @@ export default {
         content: siteMeta.description,
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon_black.ico' }],
-    script: [
-      {
-        type: 'text/javascript',
-        src: '/scripts/jquery-3.2.1.min.js',
-      },
-    ],
+    link: [{
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon_black.ico'
+    }],
+    script: [{
+      type: 'text/javascript',
+      src: '/scripts/jquery-3.2.1.min.js',
+    }, ],
   },
   generate: {
     fallback: true, // if you want to use '404.html' instead of the default '200.html'
@@ -97,7 +104,9 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: {
+    color: '#fff'
+  },
   /*
    ** Global CSS
    */

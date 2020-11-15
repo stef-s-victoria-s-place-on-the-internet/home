@@ -2,9 +2,9 @@ module.exports = {
   ingrid: {
     dir: "ingrid",
     title: "Poetics and Politics of Erasure",
-    name: "Yun Ingrid Lee",
-    email_subject: `your personal url to Yun Ingrid Lee, Poetics and Politics of Erasure — a publication by oneacre.online`,
-    payment_descr: `Your personal url to Yun Ingrid Lee, Poetics and Politics of Erasure — a publication by oneacre.online`,
+    name: "Yun Lee",
+    email_subject: `your personal url to Yun Lee, Poetics and Politics of Erasure — a publication by oneacre.online`,
+    payment_descr: `Your personal url to Yun Lee, Poetics and Politics of Erasure — a publication by oneacre.online`,
     artist_discount_code: "fossils",
     image: '/images/ingrid/oa_meta_img.jpg',
   },
