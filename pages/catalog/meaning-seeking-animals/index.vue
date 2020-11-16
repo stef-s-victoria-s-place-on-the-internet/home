@@ -122,79 +122,132 @@
 
     <Posts :posts="posts" />
 
-    	<div class="ma_container_oa">
-<!-- Logo Container-->
-<div class="logo_container">
-		<!-- Logo -->
-	<div class="oa_logo">
-		<div class="oa_logo_color" id="oa_logo_p1">one acre</div>
-		<div class="scrollRange">
-			<div class="oa_logo_inner">
-				<div class="oa_logo_color" id="oa_logo_p2">.online</div>
-			</div>
-		</div>
-	</div>
-<!-- Payment button -->
-  <NuxtLink to="payment" class="oa_button" id="payment" append>Purchase a copy</NuxtLink>
-</div>
+    <div class="ma_container_oa">
+      <!-- Logo Container-->
+      <div class="logo_container">
+        <!-- Logo -->
+        <div class="oa_logo">
+          <div class="oa_logo_color" id="oa_logo_p1">one acre</div>
+          <div class="scrollRange">
+            <div class="oa_logo_inner">
+              <div class="oa_logo_color" id="oa_logo_p2">.online</div>
+            </div>
+          </div>
+        </div>
+        <!-- Payment button -->
+        <NuxtLink to="payment" class="oa_button" id="payment" append
+          >Purchase a copy</NuxtLink
+        >
+      </div>
 
-		<!-- Newsletter -->
-    <!--  Menu -->
-<div class="oa_mobile_header">
-	<span>oneacre.online</span>
-	<img id="m_menu" src="/images/lisa/oa_plus.svg" alt="">
-</div>
+      <!-- Newsletter -->
+      <!--  Menu -->
+      <div class="oa_mobile_header">
+        <span>oneacre.online</span>
+        <img id="m_menu" src="/images/lisa/oa_plus.svg" alt="" />
+      </div>
 
-<div class="oa_menu hidden">
-	<div class="oa_credits">
-		<!-- <% if (typeof name === 'string' && name) {  %> -->
-			<div class="notice">
-				<!-- <p>You are viewing this work because <%= name %> preserved the link on <%= date %></p> -->
-			</div>
-		<!-- <% } %> -->
-		<section>
-			<h2>Credits</h2>
-			<p>A publication by <a href="https://lisavancasand.nl/">Lisa van Casand</a></p>
-			<p>For the production of Meaning Seeking Animals oneacre.online would like to thank: Lucas van der Velden & Sonic Acts, Aleid de Jong, Jacob Knegtel, Marit Mihklepp, Neon & Landa and Stedelijk Museum Amsterdam.</p>
-			<p>Made by Stef Kors, Titus Knegtel, Victoria Douka-Doukopoulou with the kind support of the Creative Industries Fund NL and Stroom Den Haag.</p>
-		</section>
-		<section>
-			<h2>About</h2>
-			<p><a href="https://oneacre.online">oneacre.online</a> is an experimental publishing & distribution project that utilises an online platform to seed unprintable text-based works by emerging artists. The project explores the possibilities of hyper-publishing in a series of four commissioned publications.</p>
-			<p>Thematically <a href="https://oneacre.online">oneacre.online</a> first four commissioned publications by all female art practitioners, place themselves in the online world of constant updates and refresh buttons that, as theorist Wendy Chun observes, “exist at the bleeding edge of obsolescence. We thus forever try to catch up, updating to remain the same”. The publications use the omnidirectional online terrain and actions that are native to it — such as refreshing, instantly available to edit, easily erasable, highlighting, copy-pasting and non linear navigation — to explore and critically evaluate visions and versions of power systems by tracing the politics of technological infrastructures. Hidden in places as traditional as archives, as often used as smart phone applications, omnipresent and inescapable as the financial market and as quiet and evasive as the transfer of information in narrative structures.
-			</p>
-		</section>
-	</div>
-	 <!-- Buttons -->
-	<section class="oa_buttons">
-		<div class="fade_out">
-			<span></span>
-		</div>
-		<nav>
-      <NuxtLink to="payment" class="oa_button" id="m_payment" append>Purchase a copy</NuxtLink>
-			<a target="_blank" href="http://eepurl.com/c6jtkv" class="oa_button">
-				<span>Newsletter</span>
-			</a>
-			<a href="mailto:hi@oneacre.online" class="oa_button">
-				<span>Contact us</span>
-			</a>
-			<a target="_blank" href="https://facebook.com/oneacre.online" class="oa_button icon icon_facebook">
-			</a>
-			<a target="_blank" href="https://instagram.com/oneacre.online" class="oa_button icon icon_instagram">
-			</a>
-			<a target="_blank" href="https://twitter.com/oneacre_online" class="oa_button icon icon_twitter">
-			</a>
-		</nav>
-	</section>
-</div>
-
-	</div>
+      <div class="oa_menu hidden">
+        <div class="oa_credits">
+          <!-- <% if (typeof name === 'string' && name) {  %> -->
+          <div class="notice">
+            <!-- <p>You are viewing this work because <%= name %> preserved the link on <%= date %></p> -->
+          </div>
+          <!-- <% } %> -->
+          <section>
+            <h2>Credits</h2>
+            <p>
+              A publication by
+              <a href="https://lisavancasand.nl/">Lisa van Casand</a>
+            </p>
+            <p>
+              For the production of Meaning Seeking Animals oneacre.online would
+              like to thank: Lucas van der Velden & Sonic Acts, Aleid de Jong,
+              Jacob Knegtel, Marit Mihklepp, Neon & Landa and Stedelijk Museum
+              Amsterdam.
+            </p>
+            <p>
+              Made by Stef Kors, Titus Knegtel, Victoria Douka-Doukopoulou with
+              the kind support of the Creative Industries Fund NL and Stroom Den
+              Haag.
+            </p>
+          </section>
+          <section>
+            <h2>About</h2>
+            <p>
+              <a href="https://oneacre.online">oneacre.online</a> is an
+              experimental publishing & distribution project that utilises an
+              online platform to seed unprintable text-based works by emerging
+              artists. The project explores the possibilities of
+              hyper-publishing in a series of four commissioned publications.
+            </p>
+            <p>
+              Thematically
+              <a href="https://oneacre.online">oneacre.online</a> first four
+              commissioned publications by all female art practitioners, place
+              themselves in the online world of constant updates and refresh
+              buttons that, as theorist Wendy Chun observes, “exist at the
+              bleeding edge of obsolescence. We thus forever try to catch up,
+              updating to remain the same”. The publications use the
+              omnidirectional online terrain and actions that are native to it —
+              such as refreshing, instantly available to edit, easily erasable,
+              highlighting, copy-pasting and non linear navigation — to explore
+              and critically evaluate visions and versions of power systems by
+              tracing the politics of technological infrastructures. Hidden in
+              places as traditional as archives, as often used as smart phone
+              applications, omnipresent and inescapable as the financial market
+              and as quiet and evasive as the transfer of information in
+              narrative structures.
+            </p>
+          </section>
+        </div>
+        <!-- Buttons -->
+        <section class="oa_buttons">
+          <div class="fade_out">
+            <span></span>
+          </div>
+          <nav>
+            <NuxtLink to="payment" class="oa_button" id="m_payment" append
+              >Purchase a copy</NuxtLink
+            >
+            <a
+              target="_blank"
+              href="http://eepurl.com/c6jtkv"
+              class="oa_button"
+            >
+              <span>Newsletter</span>
+            </a>
+            <a href="mailto:hi@oneacre.online" class="oa_button">
+              <span>Contact us</span>
+            </a>
+            <a
+              target="_blank"
+              href="https://facebook.com/oneacre.online"
+              class="oa_button icon icon_facebook"
+            >
+            </a>
+            <a
+              target="_blank"
+              href="https://instagram.com/oneacre.online"
+              class="oa_button icon icon_instagram"
+            >
+            </a>
+            <a
+              target="_blank"
+              href="https://twitter.com/oneacre_online"
+              class="oa_button icon icon_twitter"
+            >
+            </a>
+          </nav>
+        </section>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { setMeta } from '~/helpers'
-import Minimap from '~/components/S1/meaning-seeking-animals/MinimapSVG'
+import Minimap from '~/components/S1/meaning-seeking-animals/Minimap'
 import Posts from '~/components/S1/meaning-seeking-animals/Posts'
 
 export default {

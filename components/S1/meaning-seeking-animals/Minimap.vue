@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import MinimapSVG from '~/components/meaning-seeking-animals/MinimapSVG'
+import MinimapSVG from '~/components/S1/meaning-seeking-animals/MinimapSVG'
 
 export default {
   components: {
