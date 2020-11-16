@@ -24,8 +24,6 @@ export default async ({ $axios, from, route }) => {
         window.$nuxt.$router.push('/catalog/announcement')
       })
     }
-
-    // redirectWindow(path, id, route)
   } catch (err) {
     console.log(`redirect error for ${route}`, err)
   }
