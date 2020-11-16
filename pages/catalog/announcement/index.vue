@@ -322,7 +322,7 @@
 
     <div class="oa_experiment">
       <div class="attempts">
-        <div class="line" v-for="line in lines" :key="line.date">
+        <div class="line" v-for="line in lines" :key="line._id">
           <span class="db_line">{{ line.line_distance }}</span>
         </div>
       </div>

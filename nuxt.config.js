@@ -103,7 +103,7 @@ export default {
   },
   // router
   router: {
-    middleware: ['authLink'],
+    middleware: ['authLink', 'redirect'],
   },
   /*
    ** Customize the progress-bar color
