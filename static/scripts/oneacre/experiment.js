@@ -188,7 +188,7 @@ function sendJSON() {
 	if (parseInt(line_distance) >= 300) {
     // TODO: update hostname to API subdomain
 		$.ajax({
-			url: 'https://www.oneacre.online/api/v2/announcement/line',
+			url: 'https://api.oneacre.online/api/v2/announcement/line',
 			type: 'POST',
 			cache: false,
 			data: {
