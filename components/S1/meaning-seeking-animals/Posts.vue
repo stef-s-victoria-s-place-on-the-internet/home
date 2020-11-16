@@ -8,7 +8,7 @@
     <div class="ma_background"></div>
 
     <!-- grid -->
-    <div class="ma_container">
+    <div class="ma_container s1_grid">
       <div
         class="ma_coordinate_wrapper"
         v-for="{ x, y } in coordinates"
@@ -25,7 +25,7 @@
     </div>
 
     <!-- posts -->
-    <div class="ma_container">
+    <div class="ma_container s1_posts">
       <!-- post -->
       <div
         :v-if="posts"
