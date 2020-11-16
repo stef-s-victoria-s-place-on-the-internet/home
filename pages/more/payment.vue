@@ -58,7 +58,7 @@ export default {
         },
         country: {
           label: 'Country',
-          value: { iso: 'NL', name: 'Netherlands' },
+          value: { iso: '', name: '' },
           type: 'vue-select',
         },
       },
