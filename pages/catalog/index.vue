@@ -15,6 +15,9 @@
 <script>
 export default {
   created() {
+    if (process.env.NODE_ENV !== 'development') {
+      return
+    }
     this.$router.options.routes.forEach((route) => {
       if (route.path.includes('catalog')) {
         this.catalog.push({
