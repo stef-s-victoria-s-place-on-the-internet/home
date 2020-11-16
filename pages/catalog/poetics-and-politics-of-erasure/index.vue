@@ -513,11 +513,7 @@ export default {
   },
   async fetch() {
     try {
-      const visitors = await this.$axios.$get('/ingrid/count') || 0
-      console.log('visitors', visitors)
-      return {
-        visitors
-      }
+      this.visitors = await this.$axios.$get('/ingrid/count') || 1400
     } catch (err) {
       console.log(err)
     }
