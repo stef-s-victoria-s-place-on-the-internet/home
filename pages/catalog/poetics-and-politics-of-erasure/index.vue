@@ -511,13 +511,9 @@ export default {
       ],
     }
   },
-  async asyncData({
-    $axios,
-    error,
-    params
-  }) {
+  async fetch() {
     try {
-      const visitors = await $axios.$get('/ingrid/count') || 0
+      const visitors = await this.$axios.$get('/ingrid/count') || 0
       console.log('visitors', visitors)
       return {
         visitors
