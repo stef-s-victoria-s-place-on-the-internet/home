@@ -12,7 +12,7 @@ const siteMeta = {
   title: 'oneacre.online',
   description:
     'oneacre.online is an experimental publication project, of size exactly equal to the area of 1 chain by 1 furlong that aims to utilise the omnidirectional website space to seed works.',
-  image: 'http://www.oneacre.online/static/oneacre-social.jpg',
+  image: 'http://www.oneacre.online/oneacre-social.jpg',
 }
 
 export default {
