@@ -58,7 +58,7 @@
           </li>
           <li>
             <p>Format</p>
-            <p>A3 Digital Print</p>
+            <p>A4 Digital Print</p>
           </li>
           <li>
             <p>Price</p>
