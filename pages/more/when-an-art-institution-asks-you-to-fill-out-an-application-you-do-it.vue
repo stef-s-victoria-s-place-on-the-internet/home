@@ -13,7 +13,7 @@
       <ProductDescription>
         <h4>Description</h4>
         <p>
-          <b>Upon the occasion of her upcoming publication</b> When an Art
+          Upon the occasion of her upcoming publication When an Art
           Institution Asks You to Fill Out an Application, You Do It , artist
           Cathleen Ownes has handcrafted a limited series of tote bags for
           oneacre.online. Gently grounded in the personal experience of a
