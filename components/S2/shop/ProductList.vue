@@ -72,8 +72,10 @@ export default {
     vat() {
       const { iso } = _.get(this, ['country', 'value'])
       if (isEuMember(iso)) {
+        this.pricing.vat = 21
         return 21
       }
+      this.pricing.vat = 0
       return 0
     },
     totalProductPrice() {

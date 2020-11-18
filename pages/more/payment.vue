@@ -14,7 +14,7 @@
       <FormItem class="country" v-bind:label="form.country.label">
         <v-select label="name" v-model="form.country.value" :options="countries" />
       </FormItem>
-      <ProductList :country="form.country" :city="form.city" :shippingRates="rates" :pricing="pricing" />
+      <ProductList :country="form.country" :city="form.city" :shippingRates="rates" v-bind:pricing.sync="pricing" />
     </Form>
   </div>
 </div>
