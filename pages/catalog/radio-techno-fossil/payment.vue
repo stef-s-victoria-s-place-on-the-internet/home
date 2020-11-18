@@ -38,7 +38,6 @@ export default {
   },
   methods: {
     handleResize: function({ width, height}) {
-      console.log('draw')
       var canvas = document.getElementById('canvas')
       var context = canvas.getContext('2d')
       canvas.width = width

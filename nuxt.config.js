@@ -138,7 +138,23 @@ export default {
     // Doc: https://github.com/nuxt-community/sitemap-module
     // Note: always declare the sitemap module at end of array
     '@nuxtjs/sitemap',
+    '@nuxtjs/auth',
   ],
+
+  auth: {
+    redirect: {
+      login: '/bizz/login',
+      logout: '/bizz',
+      callback: '/bizz/login',
+      home: '/',
+    },
+    strategies: {
+      google: {
+        client_id: process.env.CLIENT_ID,
+      },
+    },
+    plugins: ['~/plugins/auth.js'],
+  },
 
   sitemap: {
     hostname: 'https://oneacre.online',
