@@ -3,16 +3,7 @@
   <h2>Credits</h2>
   <div class="footer-content">
     <div class="footer-credits">
-      <p>Made by
-        <a href="https://www.yunlee.digital">Yun Lee</a>,
-        <a href="http://www.stefkors.com">Stef Kors</a>,
-        <a href="http://www.titusknegtel.nl">Titus Knegtel</a>,
-        <a href="http://www.dkdkpl.com">Victoria Douka-Doukopoulou</a>
-        with the kind support of the Creative Industries Fund NL. For the
-        production of Poetics and Politics of Erasure, oneacre.online would
-        like to thank: LhGWR gallery, George Knegtel, PublishingLab and Jake
-        Faber.</p>
-      <p>For further contact: <a href="mailto:hi@oneacre.online">hi@oneacre.online</a></p>
+      <slot />
     </div>
     <div class="footer-buttons">
       <a href="https://online.us14.list-manage.com/subscribe?u=9473977eedf1a7da237b22b89&id=85337ef85c"><button type="button" name="button">Newsletter</button></a>
@@ -77,6 +68,8 @@ export default {
         }
     }
     &-credits {
+      max-width: 80ch;
+
         p {
             &:not(:last-of-type) {
                 margin-bottom: 1em;

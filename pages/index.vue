@@ -57,7 +57,22 @@
       <component v-bind:is="child.component"></component>
     </article>
 
-    <BlockFooter />
+    <BlockFooter>
+      <p>
+        Made by
+        <a href="https://www.yunlee.digital">Yun Lee</a>,
+        <a href="http://www.stefkors.com">Stef Kors</a>,
+        <a href="http://www.titusknegtel.nl">Titus Knegtel</a>,
+        <a href="http://www.dkdkpl.com">Victoria Douka-Doukopoulou</a>
+        with the kind support of the Creative Industries Fund NL. For the
+        production of Poetics and Politics of Erasure, oneacre.online would like
+        to thank: LhGWR gallery, George Knegtel, PublishingLab and Jake Faber.
+      </p>
+      <p>
+        For further contact:
+        <a href="mailto:hi@oneacre.online">hi@oneacre.online</a>
+      </p>
+    </BlockFooter>
   </main>
 </template>
 
