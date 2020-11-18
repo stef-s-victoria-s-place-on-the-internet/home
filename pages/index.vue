@@ -21,14 +21,18 @@
       』はユン•リーによる「消去」に関する美学と政治を考察するマルティディシプリナリー•エッセイ。
     </p>
     <p class="en l">
+      <a href="https://youtu.be/xWncBcEBL2E" target="_blank" rel="noopener noreferrer">
       Please join us for the publication launch of Poetics and Politics of
       Erasure on Friday Nov 20 2020 at 14:30 CEST / 21:30 JST as part of the
       VIRTUAL ART BOOK FAIR of TOKYO ART BOOK FAIR.
+      </a>
     </p>
     <p class="jp l">
+      <a href="https://youtu.be/xWncBcEBL2E" target="_blank" rel="noopener noreferrer">
       2020年11月20日（金）14:30（CEST）／21:30（JST）より、VIRTUAL ART BOOK
       FAIR（TOKYO ART BOOK
       FAIRのVABF）の一環として、『消去の詩学と政治学』の出版記念イベントが開催されます。
+      </a>
     </p>
     <p class="en r">
       To purchase a copy of the publication please
