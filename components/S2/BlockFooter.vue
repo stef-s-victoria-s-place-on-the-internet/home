@@ -4,6 +4,7 @@
   <div class="footer-content">
     <div class="footer-credits">
       <p>Made by
+        <a href="https://www.yunlee.digital">Yun Lee</a>,
         <a href="http://www.stefkors.com">Stef Kors</a>,
         <a href="http://www.titusknegtel.nl">Titus Knegtel</a>,
         <a href="http://www.dkdkpl.com">Victoria Douka-Doukopoulou</a>

@@ -57,7 +57,7 @@
       <component v-bind:is="child.component"></component>
     </article>
 
-    <BlockFooter> </BlockFooter>
+    <BlockFooter />
   </main>
 </template>
 
