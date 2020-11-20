@@ -1,5 +1,5 @@
 <template>
-  <ShopWrapper>
+  <ShopWrapper :product="product">
     <!-- Title -->
     <h1>More by <span>Yun Lee</span></h1>
 

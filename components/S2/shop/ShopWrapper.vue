@@ -2,7 +2,7 @@
   <div class="shop-wrapper">
     <div class="shop-side">
       <LogoCircle />
-      <PurchaseButton :product="product" />
+      <PurchaseButton v-if="product" :product="product" />
     </div>
 
     <div class="product">
@@ -17,9 +17,6 @@ import PurchaseButton from '~/components/S2/shop/PurchaseButton.vue'
 
 export default {
   components: {
-    ProductDescription,
-    ProductImages,
-    ProductSpecs,
     LogoCircle,
     PurchaseButton,
   },
@@ -34,7 +31,7 @@ export default {
   padding: 2rem 2rem 4rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: fit-content(15rem) fit-content(80rem);
+  grid-template-columns: 15rem 1fr;
   grid-gap: 4rem;
   align-items: flex-start;
   justify-content: center;
@@ -42,14 +39,14 @@ export default {
     grid-gap: 3rem;
   }
   @include respond-until($screen-md) {
-    grid-template-columns: fit-content(12.5rem) fit-content(80rem);
+    grid-template-columns: 12.5rem 1fr;
   }
   @include respond-until($screen-sm) {
     grid-template-columns: 1fr;
     padding: 0 2rem 10rem;
   }
   @include respond-until($screen-xs) {
-    padding: 0 1rem 10rem;
+    padding: 0 2rem 10rem;
   }
 
   .shop-side {

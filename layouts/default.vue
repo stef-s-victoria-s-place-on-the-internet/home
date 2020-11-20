@@ -1,5 +1,5 @@
 <template>
-  <nuxt  />
+  <nuxt />
 </template>
 
 <style lang="scss">
@@ -31,6 +31,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $bg-color;
+  font-size: 1.375rem;
 }
 
 h1,
