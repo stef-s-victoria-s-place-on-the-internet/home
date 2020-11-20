@@ -22,7 +22,7 @@
       </p>
       <p class="en l">
         <a
-          href="https://youtu.be/xWncBcEBL2E"
+          href="https://www.youtube.com/watch?v=qI5KsbH2y6g&feature=youtu.be"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -33,7 +33,7 @@
       </p>
       <p class="jp l">
         <a
-          href="https://youtu.be/xWncBcEBL2E"
+          href="https://www.youtube.com/watch?v=qI5KsbH2y6g&feature=youtu.be"
           target="_blank"
           rel="noopener noreferrer"
         >
