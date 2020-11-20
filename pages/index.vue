@@ -27,7 +27,7 @@
           rel="noopener noreferrer"
         >
           Please join us for the publication launch of Poetics and Politics of
-          Erasure on Friday Nov 20 2020 at 14:30 CEST / 21:30 JST as part of the
+          Erasure on Friday Nov 20 2020 at 10:00 CEST / 18:00 JST as part of the
           VIRTUAL ART BOOK FAIR of TOKYO ART BOOK FAIR.
         </a>
       </p>
@@ -37,7 +37,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          2020年11月20日（金）14:30（CEST）／21:30（JST）より、VIRTUAL ART BOOK
+          2020年11月20日（金）10:00（CEST）／18:00（JST）より、VIRTUAL ART BOOK
           FAIR（TOKYO ART BOOK
           FAIRのVABF）の一環として、『消去の詩学と政治学』の出版記念イベントが開催されます。
         </a>
