@@ -1,7 +1,7 @@
 <template>
   <main class="home-wrapper">
     <!-- Intro -->
-    <block-intro>
+    <BlockIntro>
       <p class="en l">
         <a href="#">oneacre.online</a> is an experimental publishing &amp;
         distribution project based in The Hague, The Netherlands. The project
@@ -21,26 +21,15 @@
         』はユン•リーによる「消去」に関する美学と政治を考察するマルティディシプリナリー•エッセイ。
       </p>
       <p class="en l">
+        Thank you for joining us for the
         <a
-          href="https://www.youtube.com/watch?v=qI5KsbH2y6g&feature=youtu.be"
+          href="https://youtu.be/k9CCguIfLLM"
           target="_blank"
           rel="noopener noreferrer"
+          >publication launch of Poetics and Politics of Erasure</a
         >
-          Please join us for the publication launch of Poetics and Politics of
-          Erasure on Friday Nov 20 2020 at 10:00 CEST / 18:00 JST as part of the
-          VIRTUAL ART BOOK FAIR of TOKYO ART BOOK FAIR.
-        </a>
-      </p>
-      <p class="jp l">
-        <a
-          href="https://www.youtube.com/watch?v=qI5KsbH2y6g&feature=youtu.be"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          2020年11月20日（金）10:00（CEST）／18:00（JST）より、VIRTUAL ART BOOK
-          FAIR（TOKYO ART BOOK
-          FAIRのVABF）の一環として、『消去の詩学と政治学』の出版記念イベントが開催されます。
-        </a>
+        on Friday Nov 20 2020 at 14:30 CEST / 21:30 JST as part of the VIRTUAL
+        ART BOOK FAIR of TOKYO ART BOOK FAIR.
       </p>
       <p class="en r">
         To purchase a copy of the publication please
@@ -51,7 +40,7 @@
       <p class="jp r">
         出版物の購入をご希望の方は、こちらをクリックしてください。
       </p>
-    </block-intro>
+    </BlockIntro>
 
     <article>
       <component v-bind:is="child.component"></component>
