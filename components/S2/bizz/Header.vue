@@ -13,7 +13,7 @@
 export default {
   data() {
     return {
-      user: this.$auth.user,
+      user: this.$store.state.auth.user,
     }
   },
 }

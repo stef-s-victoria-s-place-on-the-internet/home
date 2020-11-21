@@ -151,6 +151,10 @@ export default {
     strategies: {
       google: {
         client_id: process.env.CLIENT_ID,
+        refreshToken: {
+          property: 'refresh_token',
+          maxAge: 60 * 60 * 24 * 30
+        },
       },
     },
     plugins: ['~/plugins/auth.js'],
