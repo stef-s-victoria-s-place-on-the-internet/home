@@ -144,9 +144,9 @@ export default {
   auth: {
     redirect: {
       login: '/bizz/login',
-      logout: '/bizz',
+      logout: '/bizz/login',
       callback: '/bizz/login',
-      home: '/',
+      home: '/bizz',
     },
     strategies: {
       google: {

@@ -12,6 +12,13 @@ export default {
   components: {
     MouseColor,
   },
+  middleware: [
+    function ({ redirect, $auth }) {
+      if ($auth.loggedIn) {
+        redirect('/bizz')
+      }
+    },
+  ],
   methods: {
     login() {
       this.$auth.loginWith('google')
