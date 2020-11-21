@@ -2,7 +2,7 @@
   <div class="shop-wrapper">
     <div class="shop-side">
       <LogoCircle />
-      <PurchaseButton :product="product" />
+      <PurchaseButton v-if="product" :product="product" />
     </div>
 
     <div class="product">

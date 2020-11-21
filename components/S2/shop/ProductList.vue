@@ -39,6 +39,14 @@
 <script>
 import * as _ from 'lodash'
 import { isEuMember } from 'is-eu-member'
+import {
+  getVat,
+  getProductSum,
+  getTotalOrderPrice,
+  getShippingPrice,
+  formatCurrency,
+  formatPercentage,
+} from '~/helpers'
 export default {
   name: 'ProductList',
   props: {
@@ -71,29 +79,20 @@ export default {
     },
     vat() {
       const { iso } = _.get(this, ['country', 'value'])
-      if (isEuMember(iso)) {
-        this.pricing.vat = 21
-        return 21
-      }
-      this.pricing.vat = 0
-      return 0
+      this.pricing.vat = getVat(iso)
+      return getVat(iso)
     },
     totalProductPrice() {
       if (!this.products.length) {
         return 0
       }
 
-      let price = 0
-      this.products.forEach((product) => {
-        return (price += product.price)
-      })
-
-      this.pricing.productTotal = price
-      return price
+      this.pricing.productTotal = getProductSum(this.products)
+      return getProductSum(this.products)
     },
     totalOrderPrice() {
-      const total =
-        this.totalProductPrice * (1 + this.vat / 100) + this.shipping
+      const { iso } = _.get(this, ['country', 'value'])
+      const total = getTotalOrderPrice(this.products, iso, this.shipping)
       this.pricing.total = total
       return total
     },
@@ -114,20 +113,13 @@ export default {
     shipping() {
       let shippingrate = 0
       if (_.get(this, ['country', 'value'])) {
-        const { iso, name } = _.get(this, ['country', 'value'])
+        const { iso } = _.get(this, ['country', 'value'])
 
-        // No shipping to The hague
-        const cityOptions = ['the hague', 'den haag']
-        const city = _.get(this, ['city', 'value'], '')
-        if (iso === 'NL' && cityOptions.includes(_.lowerCase(city))) {
-          return shippingrate
-        }
-
-        // Any other location, add shipping
-        const rate = this.shippingRates[iso]
-        if (rate) {
-          shippingrate = rate.singlePrice
-        }
+        shippingrate = getShippingPrice(
+          iso,
+          this.city.value,
+          this.shippingRates
+        )
       }
 
       this.pricing.shipping = shippingrate
@@ -136,13 +128,10 @@ export default {
   },
   filters: {
     currency(number) {
-      return new Intl.NumberFormat('nl-NL', {
-        style: 'currency',
-        currency: 'EUR',
-      }).format(number)
+      return formatCurrency(number)
     },
     percentage(number) {
-      return `${number}%`
+      return formatPercentage(number)
     },
   },
 }

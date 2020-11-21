@@ -2,6 +2,9 @@ import Vue from'vue'
 import VueScroll from 'vue-scroll'
 import VueResize from 'vue-resize'
 import vSelect from 'vue-select'
+import Clipboard from 'v-clipboard'
+
+Vue.use(Clipboard)
 
 Vue.component('v-select', vSelect)
 
