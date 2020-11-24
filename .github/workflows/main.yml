@@ -20,12 +20,14 @@ jobs:
       env: # As an environment variable
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
         CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+        BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}
 
     - name: "$: yarn generate:gh-pages"
       run: yarn generate:gh-pages
       env: # As an environment variable
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
         CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+        BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}
 
     - name: Upload Artifacts # The project is then uploaded as an artifact named 'site'.
       uses: actions/upload-artifact@v1
