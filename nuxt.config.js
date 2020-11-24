@@ -173,8 +173,11 @@ export default {
    */
   axios: {
     proxyHeaders: false,
-    credentials: false,
+    credentials: true,
     baseURL: `${url}/api/v2`,
+    headers: {
+      'Authorization': `oa_Bearer ${process.env.BEARER_TOKEN}`
+    }
   },
   /*
    ** Build configuration
