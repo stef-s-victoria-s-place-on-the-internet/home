@@ -56,7 +56,7 @@
       <!-- Buttons -->
       <div class="order-buttons">
         <button v-on:click="generateInvoice(customer)">Generate Invoice</button>
-        <button v-clipboard="customer">Copy customer</button>
+        <button v-clipboard="customerInfo(customer)">Copy customer</button>
       </div>
     </section>
   </div>
@@ -117,6 +117,7 @@ export default {
         return (emails += `${customer.name}, ${customer.email}\n`)
       }, '')
     },
+
   },
   filters: {
     currency(number) {
@@ -140,6 +141,14 @@ export default {
       // this.ip = ip
       window.open(`http://localhost:8080/api/v2/shop/customers/generate-invoice/${id}`)
     },
+    customerInfo(customer) {
+      let string = ""
+      string += `${customer.name}\n`
+      string += `${customer.address}\n`
+      string += `${customer.postalcode}\n`
+      string += `${customer.country.name}\n`
+      return string
+    }
   },
 }
 </script>
