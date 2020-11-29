@@ -7,8 +7,7 @@
       <h4>No customers found</h4>
     </section>
 
-  <button v-clipboard="customerEmails">Copy all customer emails</button>
-
+    <button v-clipboard="customerEmails">Copy all customer emails</button>
 
     <section
       class="customer-item"
@@ -18,6 +17,7 @@
       <h4>
         <span>{{ customer.name }}</span> <span>{{ customer.date }}</span>
         <button v-clipboard="customer">Copy customer</button>
+        <button v-on:click="generateInvoice(customer)">Generate Invoice</button>
       </h4>
 
       <ul>
@@ -93,6 +93,7 @@ import * as _ from 'lodash'
 import Header from '~/components/S2/bizz/Header'
 import ShopWrapper from '~/components/S2/shop/ShopWrapper'
 import { formatCurrency, formatPercentage } from '~/helpers'
+import download from 'js-file-download';
 
 export default {
   middleware: 'auth',
@@ -131,9 +132,9 @@ export default {
   computed: {
     customerEmails() {
       return this.customers.reduce((emails, customer) => {
-        return emails += `${customer.name}, ${customer.email}\n`
+        return (emails += `${customer.name}, ${customer.email}\n`)
       }, '')
-    }
+    },
   },
   filters: {
     currency(number) {
@@ -141,6 +142,17 @@ export default {
     },
     percentage(number) {
       return formatPercentage(number)
+    },
+  },
+  methods: {
+    async generateInvoice({ id }) {
+      console.log('generateInvoice', id)
+      const defaultFilename = `${id}.pdf`
+      const res = await this.$axios.$get(`/shop/customers/generate-invoice/${id}`, {}, {responseType: 'blob'})
+      console.log('res', res)
+      //  download(res.data, `${id}.pdf`, 'application/pdf');
+      // this.ip = ip
+      window.open(`http://localhost:8080/api/v2/shop/customers/generate-invoice/${id}`)
     },
   },
 }
@@ -196,8 +208,9 @@ section {
 
 button {
   border: 1px solid;
-  padding: .5rem;
+  padding: 0.5rem;
   background: white;
+  cursor: pointer;
 }
 
 .table {
