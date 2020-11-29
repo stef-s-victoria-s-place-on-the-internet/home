@@ -47,3 +47,9 @@ $screen-xl: 1600px !default;
     @content;
   }
 }
+@mixin subheader {
+  font-size: 1rem;
+  line-height: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
