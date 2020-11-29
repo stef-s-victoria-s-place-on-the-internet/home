@@ -20,6 +20,7 @@
         <li><span>Name</span><span>{{ customer.name }}</span></li>
         <li><span>Email</span><span>{{ customer.email }}</span></li>
         <li><span>Address</span><span>{{ customer.address }}</span></li>
+        <li v-if="customer.number"><span>House Number</span><span>{{ customer.number }}</span></li>
         <li><span>Postal Code</span><span> {{ customer.postalcode }}</span></li>
         <li><span>Country</span><span>{{ customer.country.iso }}, {{ customer.country.name }}</span></li>
         <li><span>Paid</span><span>{{ customer.paid }}</span></li>
