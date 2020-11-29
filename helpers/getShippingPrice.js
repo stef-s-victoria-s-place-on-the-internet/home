@@ -7,7 +7,6 @@ export const getShippingPrice = (
   shippingRates = getShippingRates()
 ) => {
   // No shipping to The Hague
-  console.log('free shipping?', iso, city);
   if (isFreeShipping(iso, city)) {
     return 0
   }
