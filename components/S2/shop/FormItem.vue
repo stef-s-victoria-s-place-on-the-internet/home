@@ -3,6 +3,7 @@
     <label v-if="label" :for="label">{{ label }}:</label>
     <input
       v-if="value !== undefined"
+      :placeholder="placeholder"
       :type="type"
       :name="label"
       v-bind:value="value"
@@ -34,49 +35,65 @@ export default {
         return ['text', 'email'].includes(type)
       },
     },
+    placeholder: {
+      type: String,
+      required: false,
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
 .form-item {
-    display: grid;
-    grid-auto-rows: auto;
-    grid-gap: 0.25rem;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-gap: 0.25rem;
+  font-size: 1.375rem;
+
+  label {
+    font-size: 1.25rem;
+    color: rgba($black, 0.4);
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  div,
+  input {
     font-size: 1.375rem;
+    font-family: $font-univers;
+    line-height: 1em;
+    min-height: 2.5rem;
+    border: 1px solid $grey;
+    border-radius: 0.5rem;
+    padding: 0.875rem 1rem 0.5rem;
 
-    label {
-        font-size: 1.25rem;
-        color: rgba($black,0.4);
-
-        &:first-letter {
-            text-transform: uppercase;
-        }
+    /* titus this might be ugly */
+    /* we need a placeholder color */
+    &::placeholder {
+      color: rgba($black, 0.6);
     }
 
-    div,
-    input {
-        font-size: 1.375rem;
-        font-family: $font-univers;
-        line-height: 1em;
-        min-height: 2.5rem;
-        border: 1px solid $grey;
-        border-radius: 0.5rem;
-        padding: 0.875rem 1rem 0.5rem;
+    /* and a focus state */
+    &:focus {
+      border: 1px solid rgba($blue, 0.4);
+      outline: none;
     }
+  }
 
-    &.country {
-        .v-select {
-            padding: 0;
-            border: 0;
-        }
+  &.country {
+    .v-select {
+      padding: 0;
+      border: 0;
     }
+  }
 
-    // NODE MODULE OVERRIDE
-    // .vs__dropdown-toggle {
-    //     border: 1px solid $grey;
-    //     border-radius: 0.5rem;
-    //     padding: 0.25rem 0.5rem;
-    // }
+  // NODE MODULE OVERRIDE
+  // .vs__dropdown-toggle {
+  //     border: 1px solid $grey;
+  //     border-radius: 0.5rem;
+  //     padding: 0.25rem 0.5rem;
+  // }
 }
 </style>
