@@ -1,8 +1,6 @@
 name: Autoapprove
 on:
-  pull_request:
-    types:
-      - dependencies
+  pull_request_target
 jobs:
   auto-approve:
     runs-on: ubuntu-latest
@@ -10,4 +8,4 @@ jobs:
     - uses: hmarr/auto-approve-action@v2.0.0
       if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
       with:
-        github-token: "${{ secrets.ACCESS_TOKEN }}"
+        github-token: "${{ secrets.GITHUB_TOKEN }}"
