@@ -1,317 +1,366 @@
 <template>
-  <div class="editor">
-    <EditorMenuBar :editor="editor" v-slot="{ commands, isActive, focused }">
-      <div class="menubar is-hidden" :class="{ 'is-focused': focused }">
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.heading({ level: 1 }) }"
-          @click="commands.heading({ level: 1 })"
-        >
-          H1
-        </button>
-
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.heading({ level: 2 }) }"
-          @click="commands.heading({ level: 2 })"
-        >
-          H2
-        </button>
-
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.heading({ level: 3 }) }"
-          @click="commands.heading({ level: 3 })"
-        >
-          H3
-        </button>
-
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.bullet_list() }"
-          @click="commands.bullet_list"
-        >
-          ul
-        </button>
-
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.ordered_list() }"
-          @click="commands.ordered_list"
-        >
-          ol
-        </button>
-
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.blockquote() }"
-          @click="commands.blockquote"
-        >
-          quote
-        </button>
-
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.code_block() }"
-          @click="commands.code_block"
-        >
-          code
-        </button>
+  <div>
+    <div class="editor" v-if="editor">
+      <menu-bar class="editor__menu" :editor="editor" />
+      <editor-content class="editor__content" :editor="editor" />
+      <div class="editor__bottom-bar">
+        <div :class="`editor__status editor__status--${status}`">
+          {{ status }}
+          <template v-if="status === 'connected'">
+            as {{ currentUser.name }},
+            {{ users.length }} user{{ users.length === 1 ? '' : 's' }} online
+          </template>
+        </div>
+        <div class="editor__actions">
+          <button @click="setName">
+            Set Name
+          </button>
+          <button @click="updateCurrentUser({ name: getRandomName() })">
+            Random Name
+          </button>
+        </div>
       </div>
-    </EditorMenuBar>
+    </div>
 
-    <EditorContent class="editor__content" :editor="editor" />
+    <div class="collaboration-users">
+      <div
+        class="collaboration-users__item"
+        :style="`background-color: ${otherUser.color}`"
+        v-for="otherUser in users"
+        :key="otherUser.clientId"
+      >
+        {{ otherUser.name }}
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
-import {
-  Blockquote,
-  BulletList,
-  CodeBlock,
-  HardBreak,
-  Heading,
-  ListItem,
-  OrderedList,
-  TodoItem,
-  TodoList,
-  Bold,
-  Code,
-  Italic,
-  Link,
-  History,
-  Focus,
-} from 'tiptap-extensions'
+import { Editor, EditorContent, defaultExtensions } from '@tiptap/vue-starter-kit'
+import Collaboration from '@tiptap/extension-collaboration'
+import CollaborationCursor from '@tiptap/extension-collaboration-cursor'
+import TaskList from '@tiptap/extension-task-list'
+import TaskItem from '@tiptap/extension-task-item'
+import Highlight from '@tiptap/extension-highlight'
+import * as Y from 'yjs'
+import { WebsocketProvider } from 'y-websocket'
+import { IndexeddbPersistence } from 'y-indexeddb'
+import MenuBar from './MenuBar.vue'
+
+const CustomTaskItem = TaskItem.extend({
+  content: 'paragraph',
+})
+
+const getRandomElement = list => {
+  return list[Math.floor(Math.random() * list.length)]
+}
 
 export default {
   components: {
     EditorContent,
-    EditorMenuBar,
+    MenuBar,
   },
+
   data() {
     return {
-      editor: new Editor({
-        extensions: [
-          new Blockquote(),
-          new BulletList(),
-          new CodeBlock(),
-          new HardBreak(),
-          new Heading({ levels: [1, 2, 3] }),
-          new ListItem(),
-          new OrderedList(),
-          new TodoItem(),
-          new TodoList(),
-          new Link(),
-          new Bold(),
-          new Code(),
-          new Italic(),
-          new History(),
-          new Focus({
-            className: 'has-focus',
-            nested: false,
-          }),
-        ],
-        autoFocus: true,
-      }),
+      currentUser: JSON.parse(localStorage.getItem('currentUser')) || {
+        name: this.getRandomName(),
+        color: this.getRandomColor(),
+      },
+      indexdb: null,
+      editor: null,
+      users: [],
+      status: 'connecting',
     }
   },
+
+  mounted() {
+    const ydoc = new Y.Doc()
+    const provider = new WebsocketProvider('ws://localhost:8080/', 'oa-collaboration-example', ydoc)
+    provider.on('status', event => {
+      console.log('event.status', event.status)
+      this.status = event.status
+    })
+
+    this.indexdb = new IndexeddbPersistence('oa-collaboration-example', ydoc)
+
+    this.editor = new Editor({
+      extensions: [
+        ...defaultExtensions().filter(extension => extension.config.name !== 'history'),
+        Highlight,
+        TaskList,
+        CustomTaskItem,
+        Collaboration.configure({
+          provider,
+        }),
+        CollaborationCursor.configure({
+          provider,
+          user: this.currentUser,
+          onUpdate: users => {
+            this.users = users
+          },
+        }),
+      ],
+    })
+
+    localStorage.setItem('currentUser', JSON.stringify(this.currentUser))
+  },
+
+  methods: {
+    setName() {
+      const name = (window.prompt('Name') || '')
+        .trim()
+        .substring(0, 32)
+
+      if (name) {
+        return this.updateCurrentUser({
+          name,
+        })
+      }
+    },
+
+    updateCurrentUser(attributes) {
+      this.currentUser = { ...this.currentUser, ...attributes }
+      this.editor.chain().focus().user(this.currentUser).run()
+
+      localStorage.setItem('currentUser', JSON.stringify(this.currentUser))
+    },
+
+    getRandomColor() {
+      return getRandomElement([
+        '#A975FF',
+        '#FB5151',
+        '#FD9170',
+        '#FFCB6B',
+        '#68CEF8',
+        '#80CBC4',
+        '#9DEF8F',
+      ])
+    },
+
+    getRandomName() {
+      return getRandomElement([
+        'Lea Thompson', 'Cyndi Lauper', 'Tom Cruise', 'Madonna', 'Jerry Hall', 'Joan Collins', 'Winona Ryder', 'Christina Applegate', 'Alyssa Milano', 'Molly Ringwald', 'Ally Sheedy', 'Debbie Harry', 'Olivia Newton-John', 'Elton John', 'Michael J. Fox', 'Axl Rose', 'Emilio Estevez', 'Ralph Macchio', 'Rob Lowe', 'Jennifer Grey', 'Mickey Rourke', 'John Cusack', 'Matthew Broderick', 'Justine Bateman', 'Lisa Bonet',
+      ])
+    },
+  },
+
   beforeDestroy() {
     this.editor.destroy()
   },
 }
 </script>
 
-<style lang="scss">
-.menubar {
-  transition: opacity 0.2s, visibility 0.2s;
-  /* border-bottom: 1px solid $grey; */
-  padding: 1rem;
+<style lang="scss" scoped>
+.editor {
+  color: black;
+  background-color: white;
+  border: 1px solid rgba(black, 0.1);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
 
-  &.is-hidden {
-    opacity: 0;
-    visibility: hidden;
+  &__menu {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0.25rem;
+    border-bottom: 1px solid rgba(black, 0.1);
   }
 
-  &.is-focused {
-    opacity: 1;
-    visibility: visible;
+  &__content {
+    padding: 1rem;
+    max-height: 30rem;
+    overflow: auto;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(black, 0.1);
+    }
   }
 
-  button {
-    @include subheader;
-    padding: 0.75rem 1rem;
-    background: $black;
-    color: $white;
-    justify-self: flex-end;
-    appearance: none;
-    border: none;
-    border-radius: 0.375rem;
-    opacity: 0.2;
-    transition: opacity 0.15s;
-    cursor: pointer;
-    &:hover {
-      opacity: 1;
+  &__bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    padding: 0.25rem 0 0.25rem 0.25rem;
+    border-top: 1px solid rgba(black, 0.1);
+  }
+
+  /* Some information about the status */
+  &__status {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 5px;
+    margin-top: 1rem;
+    padding: 0.25rem 0.5rem;
+    color: rgba(black, 0.5);
+    white-space: nowrap;
+
+    &::before {
+      content: ' ';
+      flex: 0 0 auto;
+      display: inline-block;
+      width: 0.5rem;
+      height: 0.5rem;
+      background: rgba(black, 0.5);
+      border-radius: 50%;
+      margin-right: 0.5rem;
     }
 
-    &.is-active {
-      opacity: 1;
+    &--connecting::before {
+      background: #FD9170;
+    }
+
+    &--connected::before {
+      background: #9DEF8F;
+    }
+  }
+
+  &__actions {
+    button {
+      background: none;
+      border: none;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(black, 0.5);
+      border-radius: 0.25rem;
+      padding: 0.25rem 0.5rem;
+      margin-right: 0.25rem;
+
+      &:hover {
+        color: black;
+        background-color: rgba(black, 0.05);
+      }
     }
   }
 }
+</style>
 
-.editor {
+<style lang="scss">
+/* A list of all available users */
+.collaboration-users {
+  margin-top: 0.5rem;
+
+  &__item {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+    color: white;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// .collaboration-status {
+//   border-radius: 5px;
+//   margin-top: 1rem;
+//   color: #616161;
+
+//   &::before {
+//     content: ' ';
+//     display: inline-block;
+//     width: 0.5rem;
+//     height: 0.5rem;
+//     background: #ccc;
+//     border-radius: 50%;
+//     margin-right: 0.5rem;
+//   }
+
+//   &--connecting::before {
+//     background: #fd9170;
+//   }
+
+//   &--connected::before {
+//     background: #9DEF8F;
+//   }
+// }
+
+/* Give a remote user a caret */
+.collaboration-cursor__caret {
   position: relative;
-  margin: 0 auto;
-  padding: 1rem;
-  font-family: $font-noto;
+  margin-left: -1px;
+  margin-right: -1px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  word-break: normal;
+  pointer-events: none;
+}
 
-  &__content {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
+/* Render the username above the caret */
+.collaboration-cursor__label {
+  position: absolute;
+  top: -1.4em;
+  left: -1px;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  user-select: none;
+  color: black;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px 3px 3px 0;
+  white-space: nowrap;
+}
 
-    .ProseMirror {
-      max-width: 120ch;
-      min-height: 80vh;
-      padding: 1rem;
-      position: relative;
+/* Basic editor styles */
+.ProseMirror {
+  > * + * {
+    margin-top: 0.75em;
+  }
 
-      &[contenteditable='false'] {
-        white-space: normal;
-      }
-      &[contenteditable='true'] {
-        white-space: pre-wrap;
-      }
+  ul,
+  ol {
+    padding: 0 1rem;
+  }
 
-      &[contenteditable]:focus {
-        outline: 0px solid transparent;
-      }
+  code {
+    background-color: rgba(#616161, 0.1);
+    color: #616161;
+  }
 
-      > * {
-        border-left: 1px solid transparent;
-        padding-left: 1rem;
+  pre {
+    background: #0D0D0D;
+    color: #FFF;
+    font-family: 'JetBrainsMono', monospace;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
 
-        &.has-focus {
-          border-color: $grey;
-        }
-      }
-    }
-
-    * {
-      caret-color: currentColor;
-    }
-
-    pre {
-      padding: 0.7rem 1rem;
-      border-radius: 5px;
-      background: $black;
-      color: $white;
-      font-size: 0.8rem;
-      overflow-x: auto;
-
-      code {
-        display: block;
-      }
-    }
-
-    p code {
-      padding: 0.2rem 0.4rem;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      font-weight: bold;
-      background: rgba($black, 0.1);
-      color: rgba($black, 0.8);
-    }
-
-    ul,
-    ol {
-      padding-left: 1rem;
-    }
-
-    li > p,
-    li > ol,
-    li > ul {
-      margin: 0;
-    }
-
-    a {
+    code {
       color: inherit;
+      background: none;
+      font-size: 0.8rem;
     }
+  }
 
-    blockquote {
-      border-left: 3px solid rgba($black, 0.1);
-      color: rgba($black, 0.8);
-      padding-left: 0.8rem;
-      font-style: italic;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
-      p {
-        margin: 0;
+  hr {
+    margin: 1rem 0;
+  }
+
+  blockquote {
+    padding-left: 1rem;
+    border-left: 2px solid rgba(#0D0D0D, 0.1);
+  }
+
+  ul[data-type="taskList"] {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      > input {
+        flex: 0 0 auto;
+        margin-right: 0.5rem;
       }
-    }
-
-    img {
-      max-width: 100%;
-      border-radius: 3px;
-    }
-
-    table {
-      border-collapse: collapse;
-      table-layout: fixed;
-      width: 100%;
-      margin: 0;
-      overflow: hidden;
-
-      td,
-      th {
-        min-width: 1em;
-        border: 2px solid $grey;
-        padding: 3px 5px;
-        vertical-align: top;
-        box-sizing: border-box;
-        position: relative;
-        > * {
-          margin-bottom: 0;
-        }
-      }
-
-      th {
-        font-weight: bold;
-        text-align: left;
-      }
-
-      .selectedCell:after {
-        z-index: 2;
-        position: absolute;
-        content: '';
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: rgba(200, 200, 255, 0.4);
-        pointer-events: none;
-      }
-
-      .column-resize-handle {
-        position: absolute;
-        right: -2px;
-        top: 0;
-        bottom: 0;
-        width: 4px;
-        z-index: 20;
-        background-color: #adf;
-        pointer-events: none;
-      }
-    }
-
-    .tableWrapper {
-      margin: 1em 0;
-      overflow-x: auto;
-    }
-
-    .resize-cursor {
-      cursor: ew-resize;
-      cursor: col-resize;
     }
   }
 }
