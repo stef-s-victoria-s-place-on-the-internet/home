@@ -139,7 +139,12 @@ export default {
     // Note: always declare the sitemap module at end of array
     '@nuxtjs/sitemap',
     '@nuxtjs/auth',
+    '@nuxtjs/toast',
   ],
+
+   toast: {
+       position: 'bottom-left',
+   },
 
   auth: {
     redirect: {
