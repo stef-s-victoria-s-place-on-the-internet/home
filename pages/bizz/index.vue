@@ -8,16 +8,14 @@
     <div class="filters">
       <h4>Filters</h4>
       <div class="buttons">
-        <button :class="currentStatus === 'all' && 'active'" @click="filterList('all')">All {{ customersCount }}</button>
-        <button :class="currentStatus === 'paid' && 'active'" @click="filterList('paid')">Paid {{ status.paid }}/{{ customersCount }}</button>
-        <button :class="currentStatus === 'delivered' && 'active'" @click="filterList('delivered')">
-          Delivered {{ status.delivered }}/{{ customersCount }}
-        </button>
-        <button :class="currentStatus === 'pending' && 'active'" @click="filterList('pending')">
-          Pending {{ status.pending }}/{{ customersCount }}
-        </button>
-        <button :class="currentStatus === 'unknown' && 'active'" @click="filterList('unknown')">
-          Unknown {{ status.unknown }}/{{ customersCount }}
+        <button
+          v-for="status in statuses"
+          :key="status.label"
+          :class="currentStatus === status.label && 'active'"
+          :style="{ backgroundColor: stc(status.label) }"
+          @click="filterList(status)"
+        >
+          {{ status.label }} {{ status.count }}/{{ customersCount }}
         </button>
       </div>
     </div>
@@ -28,6 +26,7 @@
         v-for="(customer, index) in GridCustomers"
         :key="customer._id"
         :index="index"
+        :statuses="statuses"
         :customer="customer"
         :customers="customers"
       />
@@ -44,7 +43,8 @@ import * as _ from 'lodash'
 import Header from '~/components/S2/bizz/Header'
 import ListItem from '~/components/S2/bizz/ListItem'
 import ShopWrapper from '~/components/S2/shop/ShopWrapper'
-import { log } from 'util'
+import { countStatus, getStatus } from '~/helpers'
+import stc from 'string-to-color'
 
 export default {
   middleware: 'auth',
@@ -58,42 +58,29 @@ export default {
   },
   async asyncData({ $axios, error, query }) {
     try {
+      const statusOptions = [
+        'all',
+        'paid',
+        'in-process',
+        'packaged',
+        'shipped',
+        'delivered',
+      ]
       const customers = await $axios.$get('/shop/customers/paid')
 
-      const getStatus = (customer) => {
-      if (customer.status) {
-        return customer.status
-      }
-
-      if (_.has(customer, ['paid'])) {
-        return customer.paid ? 'paid' : 'pending'
-      }
-
-      return 'unknown'
-    }
-
-      const countStatus = (customers, status) => {
-        const allOfStatus = customers.filter((customer) => {
-          if (status === getStatus(customer)) {
-            return true
-          }
-
-          return false
-        })
-
-        return allOfStatus.length
-      }
+      const statuses = statusOptions.map((statusOption) => {
+        return {
+          label: statusOption,
+          count: countStatus(customers, statusOption),
+        }
+      })
 
       return {
+        statusOptions,
         customersCount: customers.length,
         customers,
         currentStatus: 'all',
-        status: {
-          paid: countStatus(customers, 'paid'),
-          delivered: countStatus(customers, 'delivered'),
-          pending: countStatus(customers, 'pending'),
-          unknown: countStatus(customers, 'unknown'),
-        },
+        statuses,
       }
     } catch (err) {
       console.log(err)
@@ -125,34 +112,27 @@ export default {
     },
   },
   methods: {
-    async filterList(status) {
+    stc(label) {
+      return stc(label)
+    },
+    async filterList({label}) {
+      console.log('status', label)
       const customers = await this.$axios.$get('/shop/customers/paid')
-        if (status === 'all') {
-          this.currentStatus = status
-          this.customersCount = customers.length
-          return this.customers = customers
-        }
+      if (label === 'all') {
+        this.currentStatus = label
+        this.customersCount = customers.length
+        return (this.customers = customers)
+      }
 
       this.customers = customers.filter((customer) => {
-        if (status === this.getStatus(customer)) {
+        if (label === this.getStatus(customer)) {
           return true
         }
 
         return false
       })
 
-      this.currentStatus = status
-    },
-    countStatus(customers, status) {
-      const allOfStatus = customers.filter((customer) => {
-        if (status === this.getStatus(customer)) {
-          return true
-        }
-
-        return false
-      })
-
-      return allOfStatus.length
+      this.currentStatus = label
     },
     getStatus(customer) {
       if (customer.status) {
@@ -160,7 +140,7 @@ export default {
       }
 
       if (_.has(customer, ['paid'])) {
-        return customer.paid ? 'paid' : 'pending'
+        return customer.paid ? 'paid' : 'in-process'
       }
 
       return 'unknown'
@@ -207,15 +187,19 @@ button {
   appearance: none;
   border: none;
   border-radius: 0.375rem;
-  opacity: 0.2;
+  opacity: 1;
   transition: opacity 0.15s;
   cursor: pointer;
   &:hover {
-    opacity: 1;
+    opacity: 0.6;
   }
 
   &.active {
-    opacity: 1;
+    opacity: 0.6;
+  }
+
+  & + button {
+    margin-left: 0.2rem;
   }
 }
 </style>

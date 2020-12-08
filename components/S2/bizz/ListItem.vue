@@ -2,8 +2,8 @@
   <div>
     <div v-if="!toggle" class="small">
       <div>
-        <div :class="getStatus(customer)" class="select-item">
-          {{ getStatus(customer) }}
+        <div :style="{backgroundColor: stc(getStatus(customer))}" class="select-item">
+         {{ getStatus(customer) }}
         </div>
       </div>
       <div>
@@ -27,14 +27,14 @@
             <v-select
               class="customer-status"
               :value="getStatus(customer)"
-              :options="statusOptions"
+              :options="statuses"
               @input="(status) => updateStatus(customer, status)"
             >
               <template #option="{ label }">
-                <div :class="label" class="select-item">{{ label }}</div>
+                <div :style="{backgroundColor: stc(label)}" class="select-item">{{ label }}</div>
               </template>
               <template #selected-option="{ label }">
-                <div :class="label" class="select-item">{{ label }}</div>
+                <div :style="{backgroundColor: stc(label)}" class="select-item">{{ label }}</div>
               </template>
             </v-select>
           </span>
@@ -116,13 +116,13 @@
 import * as _ from 'lodash'
 import { formatCurrency, formatPercentage } from '~/helpers'
 import download from 'js-file-download'
+import stc from 'string-to-color'
 
 export default {
-  props: ['index', 'customer', 'customers'],
+  props: ['index', 'customer', 'customers', 'statuses'],
   data() {
     return {
       toggle: false,
-      statusOptions: ['delivered', 'paid', 'pending', 'unknown'],
     }
   },
   filters: {
@@ -134,6 +134,9 @@ export default {
     },
   },
   methods: {
+    stc(label) {
+      return stc(label)
+    },
     toggleSize() {
       this.toggle = !this.toggle
     },
@@ -143,7 +146,7 @@ export default {
       }
 
       if (_.has(customer, ['paid'])) {
-        return customer.paid ? 'paid' : 'pending'
+        return customer.paid ? 'paid' : 'in-process'
       }
 
       return 'unknown'
@@ -151,12 +154,12 @@ export default {
     async updateStatus(customer, status) {
       const newCustomer = await this.$axios.$patch(
         `/shop/customers/${customer.id}`,
-        { status }
+        { status: status.label }
       )
 
       this.$set(this.customers, this.index, newCustomer)
       this.$toast
-        .success(`Updated ${customer.name} status to ${status}`)
+        .success(`Updated ${customer.name} status to ${status.label}`)
         .goAway(1500)
     },
     async generateInvoice({ id }) {
@@ -221,22 +224,7 @@ export default {
     padding: 0rem 0.5rem;
     border-radius: 0.6rem;
     color: white;
-
-    &.delivered {
-      background-color: rgb(57, 180, 57);
-    }
-
-    &.paid {
-      background-color: rgb(196, 57, 57);
-    }
-
-    &.pending {
-      background-color: rgb(179, 135, 54);
-    }
-
-    &.unknown {
-      background-color: lightgrey;
-    }
+    background: lightgray;
   }
 
   .customer-info {
