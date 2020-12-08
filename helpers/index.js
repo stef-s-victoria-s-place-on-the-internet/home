@@ -1,3 +1,4 @@
+import { countStatus } from './countStatus'
 import { formatCurrency } from './formatCurrency'
 import { formatJSON } from './formatJSON'
 import { formatPercentage } from './formatPercentage'
@@ -6,6 +7,7 @@ import { getPublicationRoute } from './getPublicationRoute'
 import { getRedirectPublicationPath } from './getRedirectPublicationPath'
 import { getShippingPrice } from './getShippingPrice'
 import { getShippingRates } from './getShippingRates'
+import { getStatus } from './getStatus'
 import { getTotalOrderPrice } from './getTotalOrderPrice'
 import { getVat } from './getVat'
 import { getVatPercentage } from './getVatPercentage'
@@ -32,4 +34,6 @@ export {
   getShippingRates,
   formatCurrency,
   formatPercentage,
+  getStatus,
+  countStatus
 }

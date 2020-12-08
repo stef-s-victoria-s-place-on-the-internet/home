@@ -41,6 +41,7 @@
     "markdown-it-footnote": "^3.0.2",
     "nuxt": "^2.14.7",
     "prosemirror-model": "1.11.2",
+    "string-to-color": "^2.2.2",
     "tiptap": "^1.30.0",
     "tiptap-extensions": "^1.33.2",
     "v-clipboard": "^2.2.3",
