@@ -23,21 +23,24 @@ html {
 body {
   margin: 0;
   padding: 0;
-  color: $black;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: $white;
+  font-family: 'Merriweather', serif;
   // Font Rendering
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $bg-color;
-  font-size: 1.375rem;
+  background-color: $black;
+  font-size: 1.7rem;
+  line-height: 3rem;
+  font-style: italic;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-weight: normal;
+  font-family: 'Parisienne', cursive;
+  font-size: 69px;
 }
 
 a {
