@@ -1,4 +1,4 @@
-const TEAM = ['stef.kors@gmail.com', 'doukavictoria@gmail.com', 'knegtel.titus@gmail.com']
+const TEAM = ['stef.kors@gmail.com', 'doukavictoria@gmail.com']
 
 export default function({
   $auth

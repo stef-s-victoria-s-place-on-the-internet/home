@@ -1,8 +1,0 @@
-body {
-  margin: 0;
-}
-
-iframe {
-  height: calc(100vh - 2px);
-  width: calc(100vw - 2px);
-}

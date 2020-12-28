@@ -2,7 +2,7 @@ import VuexPersistence from 'vuex-persist'
 
 export default ({ store }) => {
   new VuexPersistence({
-    key: 'oneacre.online-shoppingcart',
+    key: 'stef-s-victoria-s-place-on-the-internet',
     storage: window.localStorage
   }).plugin(store);
 }

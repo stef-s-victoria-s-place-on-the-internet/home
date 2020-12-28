@@ -1,20 +1,6 @@
 import Mode from 'frontmatter-markdown-loader/mode'
 import { markdownCustomCompiler } from './helpers/markdownCustomCompiler'
 
-const url =
-  process.env.NODE_ENV === 'development'
-    ? process.env.API || 'http://localhost:8080'
-    : 'https://api.oneacre.online'
-// TODO: Should this link to a defualt product / test env?
-console.log(url)
-
-const siteMeta = {
-  title: 'oneacre.online',
-  description:
-    'oneacre.online is an experimental publication project, of size exactly equal to the area of 1 chain by 1 furlong that aims to utilise the omnidirectional website space to seed works.',
-  image: 'http://www.oneacre.online/oneacre-social.jpg',
-}
-
 export default {
   ssr: false,
   target: 'static',
@@ -22,80 +8,8 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: siteMeta.title,
-    titleTemplate: '%s | oneacre.online',
-    meta: [
-      {
-        charset: 'utf-8',
-      },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
-      },
-      {
-        hid: 'google-site-verification',
-        name: 'google-site-verification',
-        content: 'V7vbhUc7Ac1zBbL-C2C7N07OR0FbJITlzmBBigadURY',
-      },
-      {
-        hid: 'fb:page_id',
-        name: 'fb:page_id',
-        content: '1143704795732201',
-      },
-      {
-        hid: 'og:title',
-        name: 'og:title',
-        content: siteMeta.title,
-      },
-      {
-        hid: 'og:image',
-        name: 'og:image',
-        content: siteMeta.image,
-      },
-      {
-        hid: 'twitter:title',
-        name: 'twitter:title',
-        content: siteMeta.title,
-      },
-      {
-        hid: 'twitter:card',
-        name: 'twitter:card',
-        content: 'summary_large_image',
-      },
-      {
-        hid: 'twitter:site',
-        name: 'twitter:site',
-        content: '@onacre.online',
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: siteMeta.image,
-      },
-      {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: siteMeta.description,
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content: siteMeta.description,
-      },
-    ],
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon_black.ico',
-      },
-    ],
-    script: [
-      {
-        type: 'text/javascript',
-        src: '/scripts/jquery-3.2.1.min.js',
-      },
-    ],
+    title: 'home',
+    titleTemplate: '%s | stef\'s and victoria\'s place on the internets ',
   },
   generate: {
     fallback: true, // if you want to use '404.html' instead of the default '200.html'
@@ -103,13 +17,13 @@ export default {
   },
   // router
   router: {
-    middleware: ['authLink', 'redirect'],
+    middleware: [],
   },
   /*
    ** Customize the progress-bar color
    */
   loading: {
-    color: '#fff',
+    color: 'hotpink',
   },
   /*
    ** Global CSS
@@ -148,10 +62,10 @@ export default {
 
   auth: {
     redirect: {
-      login: '/bizz/login',
-      logout: '/bizz/login',
-      callback: '/bizz/login',
-      home: '/bizz',
+      login: '/private/login',
+      logout: '/private/login',
+      callback: '/private/login',
+      home: '/private',
     },
     strategies: {
       google: {
@@ -166,7 +80,7 @@ export default {
   },
 
   sitemap: {
-    hostname: 'https://oneacre.online',
+    hostname: 'https://www.stefsandvictoriasplaceontheinternet.nl',
   },
   // Doc: https://hackernoon.com/how-i-use-scss-variables-mixins-functions-globally-in-nuxt-js-projects-while-compiling-css-utilit-58bb6ff30438
   styleResources: {

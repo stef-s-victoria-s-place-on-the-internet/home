@@ -3,7 +3,6 @@
 </template>
 
 <style lang="scss">
-@import 'vue-select/src/scss/vue-select.scss';
 @import './assets/scss/fonts.scss';
 
 :root {
@@ -25,7 +24,7 @@ body {
   margin: 0;
   padding: 0;
   color: $black;
-  font-family: $font-univers;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   // Font Rendering
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
