@@ -4,12 +4,21 @@ import { markdownCustomCompiler } from './helpers/markdownCustomCompiler'
 export default {
   ssr: false,
   target: 'static',
+  components: true,
   /*
    ** Headers of the page
    */
   head: {
     title: 'home',
     titleTemplate: '%s | stef\'s and victoria\'s place on the internets ',
+    script: [
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js'
+      },
+      {
+        src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/GSDevTools3.min.js'
+      }
+    ]
   },
   generate: {
     fallback: true, // if you want to use '404.html' instead of the default '200.html'
@@ -54,7 +63,33 @@ export default {
     '@nuxtjs/sitemap',
     '@nuxtjs/auth',
     '@nuxtjs/toast',
+    'nuxt-i18n',
   ],
+
+  i18n: {
+    locales: ['en', 'nl', 'el'],
+    defaultLocale: 'en',
+    vueI18nLoader: true,
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true,  // recommended
+    },
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: {
+          welcome: 'Welcome'
+        },
+        fr: {
+          welcome: 'Bienvenue'
+        },
+        es: {
+          welcome: 'Bienvenido'
+        }
+      }
+    }
+  },
 
    toast: {
        position: 'bottom-left',

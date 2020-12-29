@@ -1,18 +1,30 @@
 <template>
-  <main class="home-wrapper">
-    <!-- <h1 class="starlight">Meep Meep</h1>
-    <h1 class="merienda">Meep Meep</h1> -->
-    <h1 class="parisienne">Meep Meep</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-      exercitationem deleniti omnis soluta eum asperiores dicta suscipit odit
-      ipsa, voluptatibus facere, quaerat expedita cum quod? Adipisci doloribus
-      delectus distinctio qui? Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Praesentium dolorum nostrum maxime rerum libero minima
-      iure nemo similique repellendus reiciendis inventore, voluptatibus odit
-      ipsum atque deleniti asperiores ut architecto quia.
-    </p>
-  </main>
+  <div class="body">
+    <main class="home-wrapper">
+      <LanguageSwitcher />
+      <Block1 />
+      <Whishes />
+      <Garland />
+      <Whishes />
+      <Goals2020 />
+      <!-- <Loader /> -->
+      <!-- <p>
+        Best whishes from our home to yours, all the best in the new year
+      </p>
+      <h1>2020</h1>
+      <h2>goals</h2>
+      <h2>not much changed, we don't go out much anyway</h2>
+      <h2>what a clusterfuck!</h2> -->
+
+      <!-- Picture of the red banner -->
+
+
+      <!-- <h2>2020  goals: not much has changed</h2> -->
+
+
+
+    </main>
+  </div>
 </template>
 
 <script>
@@ -26,16 +38,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.body {
+  background: url('~assets/images/christmas-2020/background-small.png') repeat;
+  background-size: 300px;
+  background-color: $black;
+}
+
 .home-wrapper {
-  max-width: 60ch;
-  margin: auto;
+background: url('http://c15117992.r92.cf2.rackcdn.com/lines.png') repeat-y center;
 }
 
 .starlight {
-    font-family: 'Starlight', serif;
+  font-family: 'Starlight', serif;
   font-weight: normal;
   font-size: 10em;
-  line-height: .6em;
+  line-height: 0.6em;
 }
 
 .merienda {
