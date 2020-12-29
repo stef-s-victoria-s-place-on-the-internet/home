@@ -32,7 +32,6 @@ body {
   background-color: $black;
   font-size: 1.7rem;
   line-height: 3rem;
-  /* font-style: italic; */
 }
 
 h1,
