@@ -54,6 +54,7 @@ figure {
 
 img {
   display: block;
+  width: 100%;
 }
 
 p {

@@ -1,8 +1,8 @@
 <i18n>
 {
   "en": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "body": "A few days late & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and satisfying hugs from friends and loved ones soon be on their way! Much like the rest of the globe, we hope 2021 treats us all better because 2020 didn’t play nice at all.",
+    "closing": "From the disaster year that is on its way our here are some of our favourite things, as none of us pays for Spotify premium we had to collect them manually."
   },
   "el": {
     "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
@@ -19,8 +19,9 @@
   <div class="wrapper">
     <div :class="active">
       <p class="dropcap">{{ $t('body') }}</p>
+      <p class="closing">{{ $t('closing') }}</p>
       <intersect @enter="setEnter()">
-        <p class="closing">{{ $t('closing') }}</p>
+        <img src="~/assets/images/christmas-2020/2020-52.jpg" alt="" />
       </intersect>
     </div>
   </div>
@@ -60,12 +61,17 @@ export default {
 
   .dropcap:first-letter {
     float: left;
-    font-size: 8rem;
+    font-size: 6rem;
     line-height: 0.65;
-    margin: 0.1em 0.1em 0.2em 0;
+    margin: 0.1em 0.2em 0.1em 0;
   }
 
   .closing {
+    margin-top: 2rem;
+  }
+
+  img {
+    width: 100%;
     margin-top: 2rem;
   }
 }
@@ -73,7 +79,6 @@ export default {
 .geeks {
   padding: 2rem;
   width: 100%;
-  text-align: center;
 }
 
 .geeks::before {

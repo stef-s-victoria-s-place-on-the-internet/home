@@ -5,8 +5,11 @@
       <Block1 />
       <Whishes />
       <Garland />
-      <Whishes />
+      <MvpWellies />
       <Goals2020 />
+      <SubHeader />
+      <Trees />
+        <img src="~/assets/images/christmas-2020/car-with-tree.png" alt="" />
       <!-- <Loader /> -->
       <!-- <p>
         Best whishes from our home to yours, all the best in the new year

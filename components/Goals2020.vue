@@ -2,7 +2,6 @@
 {
   "en": {
     "header": "2020",
-    "goals": "Goals: ...",
     "change": "Not much has changed",
     "cluster": "What a clusterfuck!"
   },
@@ -23,12 +22,15 @@
       <h1>{{ $t('header') }}</h1>
       <intersect @enter="setEnter()">
         <vue-typed-js
-          :strings="[$t('goals'), $t('change'), $t('cluster')]"
+          :strings="[$t('change'), $t('cluster')]"
           :loop="true"
           :typeSpeed="100"
           :backSpeed="60"
         >
-          <h2 class="typing"></h2>
+          <h2>
+            <span>Goals: </span>
+            <span class="typing"></span>
+          </h2>
         </vue-typed-js>
       </intersect>
     </div>
@@ -57,9 +59,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  h2 {
+    font-size: 3rem;
+  }
+
 .typing {
   min-height: 1rem;
-  display: block;
+  display: inline-block;
 }
 .wrapper {
   max-width: 60ch;
