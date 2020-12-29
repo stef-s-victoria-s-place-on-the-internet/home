@@ -23,9 +23,8 @@
     <div :class="active">
       <p class="dropcap">{{ $t('b1') }}</p>
       <div class="sidebyside">
-
-      <img src="~/assets/images/christmas-2020/2020-34.jpg" alt="" />
-      <img src="~/assets/images/christmas-2020/2020-65.jpg" alt="">
+        <img src="~/assets/images/christmas-2020/2020-34.jpg" alt="" />
+        <img src="~/assets/images/christmas-2020/2020-65.jpg" alt="" />
       </div>
       <intersect @enter="setEnter()">
         <p>{{ $t('b2') }}</p>
@@ -33,13 +32,20 @@
       <img src="~/assets/images/christmas-2020/2020-6.jpg" alt="" />
       <p>{{ $t('b3') }}</p>
       <p>{{ $t('b4') }}</p>
-      <p>{{ $t('b5') }}</p>
       <div class="sidebyside">
-      <img src="~/assets/images/christmas-2020/2020-45.jpg" alt="" />
-      <img src="~/assets/images/christmas-2020/2020-47.jpg" alt="" />
-      <img src="~/assets/images/christmas-2020/2020-49.jpg" alt="" />
-      <img src="~/assets/images/christmas-2020/2020-50.jpg" alt="" />
+        <img src="~/assets/images/christmas-2020/2020-2.jpg" alt="" />
+        <img src="~/assets/images/christmas-2020/2020-17.jpg" alt="" />
+        <img src="~/assets/images/christmas-2020/2020-47.jpg" alt="" />
+        <img src="~/assets/images/christmas-2020/2020-5.jpg" alt="" />
+        <img src="~/assets/images/christmas-2020/2020-18.jpg" alt="" />
+        <img src="~/assets/images/christmas-2020/2020-41.jpg" alt="" />
+        <img src="~/assets/images/christmas-2020/2020-45.jpg" alt="" />
+        <img src="~/assets/images/christmas-2020/2020-49.jpg" alt="" />
+        <img src="~/assets/images/christmas-2020/2020-50.jpg" alt="" />
       </div>
+      <p>{{ $t('b5') }}</p>
+        <img src="~/assets/images/christmas-2020/car-with-tree.png" alt="" />
+
     </div>
   </div>
 </template>

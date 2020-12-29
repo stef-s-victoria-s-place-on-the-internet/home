@@ -1,7 +1,7 @@
 <i18n>
 {
   "en": {
-    "body": "This season’s shoutout goes out to wellies! By far the best purchase of the season, they always have your toes’ back, independently of wether you are hiking a mudpath or just walking to work!"
+    "b1": "Stef has officially settled on his favorite tree, the beech tree. Although admittedly a tough decision, Stef’s really appreciates how leafy their leafs look, making the European beech tree #1 in Stef’s heart."
   },
   "el": {
     "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
@@ -16,22 +16,17 @@
 
 <template>
   <div class="container">
-    <img
-      class="tag right"
-      src="~/assets/images/christmas-2020/mvp-title.png"
-      alt=""
-    />
-    <div class="wrapper">
-      <div :class="active">
-        <p class="dropcap">{{ $t('body') }}</p>
-        <intersect @enter="setEnter()">
-          <div class="sidebyside">
-            <img src="~/assets/images/christmas-2020/2020-66.jpg" alt="" />
-            <img src="~/assets/images/christmas-2020/2020-35.jpg" alt="" />
-          </div>
-        </intersect>
+  <div class="wrapper">
+    <div :class="active">
+      <p class="dropcap">{{ $t('b1') }}</p>
+      <intersect @enter="setEnter()">
+      <div class="sidebyside">
+        <img src="~/assets/images/christmas-2020/2020-34.jpg" alt="" />
+        <img src="~/assets/images/christmas-2020/2020-65.jpg" alt="" />
       </div>
+      </intersect>
     </div>
+  </div>
   </div>
 </template>
 

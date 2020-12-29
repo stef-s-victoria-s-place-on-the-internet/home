@@ -8,8 +8,16 @@
       <MvpWellies />
       <Goals2020 />
       <SubHeader />
-      <Trees />
-        <img src="~/assets/images/christmas-2020/car-with-tree.png" alt="" />
+      <Stef />
+      <Victoria />
+      <SubHeaderHouse />
+      <Nemo />
+      <Fiat />
+      <SubHeaderForth />
+      <Park />
+      <SubHeaderHighlights />
+      <Hightlight1 />
+      <!-- <Trees /> -->
       <!-- <Loader /> -->
       <!-- <p>
         Best whishes from our home to yours, all the best in the new year
@@ -21,11 +29,7 @@
 
       <!-- Picture of the red banner -->
 
-
       <!-- <h2>2020  goals: not much has changed</h2> -->
-
-
-
     </main>
   </div>
 </template>
@@ -48,7 +52,8 @@ export default {
 }
 
 .home-wrapper {
-background: url('http://c15117992.r92.cf2.rackcdn.com/lines.png') repeat-y center;
+  background: url('~assets/images/christmas-2020/lines copy.png') repeat-y
+    center;
 }
 
 .starlight {

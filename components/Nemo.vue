@@ -1,7 +1,7 @@
 <i18n>
 {
   "en": {
-    "body": "This season’s shoutout goes out to wellies! By far the best purchase of the season, they always have your toes’ back, independently of wether you are hiking a mudpath or just walking to work!"
+    "b4": "(Land Shark, Dutch Muddog,) Nemo then nine-weeks now nine-months old Portuguese Waterdog, an occasionally ball fetcher with a soft spot for morning cuddles. Nemo has been been leading us in an exploration of the finest mud pools offered by The Hague and surrounding areas. And beta-testing all imaginable sleeping positions."
   },
   "el": {
     "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
@@ -15,22 +15,21 @@
 </i18n>
 
 <template>
-  <div class="container">
-    <img
-      class="tag right"
-      src="~/assets/images/christmas-2020/mvp-title.png"
-      alt=""
-    />
-    <div class="wrapper">
-      <div :class="active">
-        <p class="dropcap">{{ $t('body') }}</p>
-        <intersect @enter="setEnter()">
-          <div class="sidebyside">
-            <img src="~/assets/images/christmas-2020/2020-66.jpg" alt="" />
-            <img src="~/assets/images/christmas-2020/2020-35.jpg" alt="" />
-          </div>
-        </intersect>
-      </div>
+  <div class="wrapper">
+    <div :class="active">
+      <p>{{ $t('b4') }}</p>
+      <intersect @enter="setEnter()">
+        <div class="sidebyside">
+          <img src="~/assets/images/christmas-2020/2020-2.jpg" alt="" />
+          <img src="~/assets/images/christmas-2020/2020-17.jpg" alt="" />
+          <img src="~/assets/images/christmas-2020/2020-47.jpg" alt="" />
+          <img src="~/assets/images/christmas-2020/2020-5.jpg" alt="" />
+          <img src="~/assets/images/christmas-2020/2020-18.jpg" alt="" />
+          <img src="~/assets/images/christmas-2020/2020-41.jpg" alt="" />
+          <img src="~/assets/images/christmas-2020/2020-boop.gif" alt="" />
+          <img src="~/assets/images/christmas-2020/2020-sleeping-snout.gif" alt="" />
+        </div>
+      </intersect>
     </div>
   </div>
 </template>
@@ -58,37 +57,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  margin: 10rem auto;
-
-  max-width: 60ch;
-  position: relative;
-}
-$tagWidth: 300;
-$pos: $tagWidth / 2 + 0px;
-.tag {
-  position: absolute;
-  top: -$pos;
-  width: $tagWidth + 0px;
-  z-index: 10;
-
-  &.left {
-    left: -$pos;
-  }
-  &.right {
-    right: -$pos;
-  }
-}
-
 .wrapper {
-  /* max-width: 60ch;
-  margin: 10rem auto; */
+  max-width: 60ch;
+  margin: 10rem auto;
   position: relative;
-  z-index: 20;
+
   background: $black;
   display: block;
   padding: 2rem;
   /* border: 1px solid; */
+
+  p {
+    margin-top: 2rem;
+  }
 
   .dropcap:first-letter {
     float: left;
@@ -109,7 +90,7 @@ $pos: $tagWidth / 2 + 0px;
   }
 
   img {
-    /* width: 100%; */
+    width: 100%;
     margin-top: 2rem;
   }
 }
