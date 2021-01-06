@@ -1,9 +1,5 @@
 name: Automerge
 on:
-  pull_request_review:
-  # submitted - A pull request review is submitted into a non-pending state.
-    types:
-      - submitted
   check_suite:
     types:
       - completed
