@@ -110,9 +110,7 @@ export default {
   ],
   computed: {
     availableLocales() {
-      const locale = this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
-      console.log('locale', locale, this.$i18n.locales)
-      return locale
+      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
     },
   },
   mounted() {
