@@ -47,6 +47,7 @@
 
 <template>
   <div class="content">
+    <MetaTags />
     <div class="lang">
       <nuxt-link
         v-for="locale in availableLocales"
@@ -96,24 +97,6 @@
 <script>
 export default {
   layout: '13D',
-  head() {
-    return {
-      meta: [
-        {
-          hid: 'og:image',
-          name: 'og:image',
-          content:
-            'https://www.stefsandvictoriasplaceontheinternet.nl/postcard_stamp.jpg',
-        },
-        {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content:
-            'https://www.stefsandvictoriasplaceontheinternet.nl/postcard_stamp.jpg',
-        },
-      ],
-    }
-  },
   computed: {
     availableLocales() {
       return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
