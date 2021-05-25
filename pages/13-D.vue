@@ -102,13 +102,13 @@ export default {
         hid: 'og:image',
         name: 'og:image',
         content:
-          'https://www.stefsandvictoriasplaceontheinternet.nl/postcard_stamp.jpeg',
+          'https://www.stefsandvictoriasplaceontheinternet.nl/postcard_stamp.jpg',
       },
       {
         hid: 'twitter:image',
         name: 'twitter:image',
         content:
-          'https://www.stefsandvictoriasplaceontheinternet.nl/postcard_stamp.jpeg',
+          'https://www.stefsandvictoriasplaceontheinternet.nl/postcard_stamp.jpg',
       },
     ],
   },
