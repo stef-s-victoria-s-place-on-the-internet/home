@@ -96,18 +96,22 @@
 <script>
 export default {
   layout: '13D',
-  meta: [
-        {
-      hid: 'og:image',
-      name: 'og:image',
-      content: 'https://www.stefsandvictoriasplaceontheinternet.nl/postcard_stamp.jpeg',
-    },
-        {
-      hid: 'twitter:image',
-      name: 'twitter:image',
-      content: 'https://www.stefsandvictoriasplaceontheinternet.nl/postcard_stamp.jpeg',
-    },
-  ],
+  head: {
+    meta: [
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content:
+          'https://www.stefsandvictoriasplaceontheinternet.nl/postcard_stamp.jpeg',
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content:
+          'https://www.stefsandvictoriasplaceontheinternet.nl/postcard_stamp.jpeg',
+      },
+    ],
+  },
   computed: {
     availableLocales() {
       return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
@@ -128,7 +132,7 @@ Executive Borker : Nemo`,
         'font-size: 20px ;' +
         'font-family: sans-serif ;'
     )
-        console.log(
+    console.log(
       `%cFootnotes:
 Note on Poststamp: The whistling kettle [Het fluitketeltje ] Stamp Printing Plate 895.  Illustrated by Wim Bijmoer for the Annie M.G. Schmidt series of Kinderzegels 1967 ( literally translated to Children's Postage Stamps are stamps of which the surcharge, of the postal price,  is donated to children-related charities)
 
