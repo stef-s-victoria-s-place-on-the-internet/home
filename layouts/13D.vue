@@ -3,6 +3,30 @@
 </template>
 
 <style lang="scss">
+.lang {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: grid;
+  grid-template-columns: 1.5rem;
+  grid-template-rows: 1.5rem 1.5rem 1.5rem;
+  gap: .4rem;
+
+  a {
+    font-size: .8rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 100%;
+    display: block;
+    text-align: center;
+    padding: .2rem;
+
+    &.nuxt-link-active {
+      background-color: #a33a42;
+    }
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -206,6 +230,9 @@ p {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+    .lang {
+    left: 3rem;
+  }
   #image-right {
     display: grid;
     grid-area: br;
@@ -273,6 +300,9 @@ p {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+      .lang {
+    left: 1rem;
+  }
   video {
     width: 100%;
     height: 99vh;

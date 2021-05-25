@@ -128,31 +128,17 @@ Executive Borker : Nemo`,
         'font-size: 20px ;' +
         'font-family: sans-serif ;'
     )
+        console.log(
+      `%cFootnotes:
+Note on Poststamp: The whistling kettle [Het fluitketeltje ] Stamp Printing Plate 895.  Illustrated by Wim Bijmoer for the Annie M.G. Schmidt series of Kinderzegels 1967 ( literally translated to Children's Postage Stamps are stamps of which the surcharge, of the postal price,  is donated to children-related charities)
+
+More one Kinderzegels: https://nl.wikipedia.org/wiki/Kinderpostzegel
+More on the Annie M.G. Schmidt series of Kinderzegels : https://www.postzegelblog.nl/2016/09/25/kinderpostzegels-2016-1999/
+More on Wim Bijmoer: https://nl.wikipedia.org/wiki/Wim_Bijmoer`,
+      'color: #8aabd9 ; font-weight: bold ; ' +
+        'font-size: 16px ;' +
+        'font-family: sans-serif ;'
+    )
   },
 }
 </script>
-<style lang="scss" scoped>
-.lang {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  display: grid;
-  grid-template-columns: 1.5rem;
-  grid-template-rows: 1.5rem 1.5rem 1.5rem;
-  gap: .4rem;
-
-  a {
-    font-size: .8rem;
-    color: white;
-    text-decoration: none;
-    border-radius: 100%;
-    display: block;
-    text-align: center;
-    padding: .2rem;
-
-    &.nuxt-link-active {
-      background-color: #a33a42;
-    }
-  }
-}
-</style>
