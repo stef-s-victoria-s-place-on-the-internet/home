@@ -1,10 +1,4 @@
 /*!
-  * vue-router v3.4.9
-  * (c) 2020 Evan You
-  * @license MIT
-  */
-
-/*!
  * 
  *   typed.js - A JavaScript Typing Animation Library
  *   Author: Matt Boldt <me@mattboldt.com>
@@ -13,6 +7,33 @@
  *   License(s): MIT
  * 
  */
+
+/*!
+ * vue-client-only v2.0.0
+ * (c) 2019-present egoist <0x142857@gmail.com>
+ * Released under the MIT License.
+ */
+
+/*!
+ * vue-no-ssr v1.1.1
+ * (c) 2018-present egoist <0x142857@gmail.com>
+ * Released under the MIT License.
+ */
+
+/*! (c) 2020 Andrea Giammarchi */
+
+/**
+  * vue-scroll vundefined
+  * (c) 2019 Wang Pin
+  * @license MIT
+  */
+
+
+/*!
+  * vue-router v3.5.1
+  * (c) 2021 Evan You
+  * @license MIT
+  */
 
 /*!
  * JavaScript Cookie v2.2.1
@@ -36,27 +57,7 @@
  */
 
 /*!
- * vue-client-only v2.0.0
- * (c) 2019-present egoist <0x142857@gmail.com>
- * Released under the MIT License.
- */
-
-/*!
- * vue-no-ssr v1.1.1
- * (c) 2018-present egoist <0x142857@gmail.com>
- * Released under the MIT License.
- */
-
-/*!
- * vuex v3.5.1
- * (c) 2020 Evan You
+ * vuex v3.6.2
+ * (c) 2021 Evan You
  * @license MIT
  */
-
-/*! (c) 2020 Andrea Giammarchi */
-
-/**
-  * vue-scroll vundefined
-  * (c) 2019 Wang Pin
-  * @license MIT
-  */
