@@ -38,12 +38,19 @@ export default {
     padding: 10rem 1rem;
     border-radius: 100%;
     position: relative;
-    width: 20ch;
+    width: 30ch;
+    text-align: center;
 
 
     > p {
       position: absolute;
       top: 40%;
+
+      a {
+        border-bottom: 1px solid;
+        cursor: pointer;
+        color: blue;
+      }
     }
 
     .first {

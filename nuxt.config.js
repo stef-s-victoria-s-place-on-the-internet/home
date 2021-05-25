@@ -7,7 +7,7 @@ const siteMeta = {
   title: 'stef\'s and victoria\'s place on the internets',
   description:
     'stef\'s and victoria\'s place on the internets',
-  image: 'http://www.stefsandvictoriasplaceontheinternet.nl/social.jpg',
+  image: 'https://www.stefsandvictoriasplaceontheinternet.nl/social.jpg',
 }
 
 
@@ -128,17 +128,6 @@ export default {
     },
     vueI18n: {
       fallbackLocale: 'en',
-      messages: {
-        en: {
-          welcome: 'Welcome'
-        },
-        fr: {
-          welcome: 'Bienvenue'
-        },
-        es: {
-          welcome: 'Bienvenido'
-        }
-      }
     }
   },
 
