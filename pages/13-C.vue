@@ -2,7 +2,7 @@
   <div class="body">
     <main class="home-wrapper">
       <div class="redirection">
-        <p class="first">We aren't here anymore</p>
+        <p class="first">Sikes!We aren't here anymore!</p>
         <p class="second">visit us at <nuxt-link to="13-D">13-D</nuxt-link></p>
       </div>
     </main>
