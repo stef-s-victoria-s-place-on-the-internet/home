@@ -2,9 +2,9 @@ import Mode from 'frontmatter-markdown-loader/mode'
 import { markdownCustomCompiler } from './helpers/markdownCustomCompiler'
 
 const siteMeta = {
-  title: "stef's and victoria's place on the internets",
+  title: "a postcard from stef and victoria",
   description: "stef's and victoria's place on the internets",
-  image: 'https://www.stefsandvictoriasplaceontheinternet.nl/social.jpg',
+  image: 'https://www.stefsandvictoriasplaceontheinternet.nl/postcard_stamp.jpg',
 }
 
 export default {
