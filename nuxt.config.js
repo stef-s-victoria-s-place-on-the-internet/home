@@ -1,16 +1,11 @@
 import Mode from 'frontmatter-markdown-loader/mode'
 import { markdownCustomCompiler } from './helpers/markdownCustomCompiler'
 
-
-
 const siteMeta = {
-  title: 'stef\'s and victoria\'s place on the internets',
-  description:
-    'stef\'s and victoria\'s place on the internets',
+  title: "stef's and victoria's place on the internets",
+  description: "stef's and victoria's place on the internets",
   image: 'https://www.stefsandvictoriasplaceontheinternet.nl/social.jpg',
 }
-
-
 
 export default {
   ssr: false,
@@ -20,57 +15,57 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'stef\'s and victoria\'s place on the internets',
+    title: "stef's and victoria's place on the internets",
+    meta: [
+      {
+        charset: 'utf-8',
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: siteMeta.title,
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: siteMeta.image,
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: siteMeta.title,
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        hid: 'twitter:site',
+        name: 'twitter:site',
+        content: '@onacre.online',
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: siteMeta.image,
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: siteMeta.description,
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: siteMeta.description,
+      },
+    ],
   },
-  meta: [
-    {
-      charset: 'utf-8',
-    },
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1',
-    },
-    {
-      hid: 'og:title',
-      name: 'og:title',
-      content: siteMeta.title,
-    },
-    {
-      hid: 'og:image',
-      name: 'og:image',
-      content: siteMeta.image,
-    },
-    {
-      hid: 'twitter:title',
-      name: 'twitter:title',
-      content: siteMeta.title,
-    },
-    {
-      hid: 'twitter:card',
-      name: 'twitter:card',
-      content: 'summary_large_image',
-    },
-    {
-      hid: 'twitter:site',
-      name: 'twitter:site',
-      content: '@onacre.online',
-    },
-    {
-      hid: 'twitter:image',
-      name: 'twitter:image',
-      content: siteMeta.image,
-    },
-    {
-      hid: 'twitter:description',
-      name: 'twitter:description',
-      content: siteMeta.description,
-    },
-    {
-      hid: 'description',
-      name: 'description',
-      content: siteMeta.description,
-    },
-  ],
   generate: {
     fallback: true, // if you want to use '404.html' instead of the default '200.html'
     // fallback: 'my-fallback/file.html' // if your hosting needs a custom location
@@ -124,16 +119,16 @@ export default {
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
-      onlyOnRoot: true,  // recommended
+      onlyOnRoot: true, // recommended
     },
     vueI18n: {
       fallbackLocale: 'en',
-    }
+    },
   },
 
-   toast: {
-       position: 'bottom-left',
-   },
+  toast: {
+    position: 'bottom-left',
+  },
 
   auth: {
     redirect: {
@@ -147,7 +142,7 @@ export default {
         client_id: process.env.CLIENT_ID,
         refreshToken: {
           property: 'refresh_token',
-          maxAge: 60 * 60 * 24 * 30
+          maxAge: 60 * 60 * 24 * 30,
         },
       },
     },
@@ -169,8 +164,8 @@ export default {
     proxyHeaders: false,
     credentials: true,
     headers: {
-      'Authorization': `oa_Bearer ${process.env.BEARER_TOKEN}`
-    }
+      Authorization: `oa_Bearer ${process.env.BEARER_TOKEN}`,
+    },
   },
   /*
    ** Build configuration
@@ -193,5 +188,3 @@ export default {
     },
   },
 }
-
-
