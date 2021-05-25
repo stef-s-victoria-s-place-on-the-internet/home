@@ -1,12 +1,28 @@
 <template>
-<div class="13D">
-  <nuxt />
-</div>
+  <div class="13D">
+    <nuxt />
+  </div>
 </template>
 
 <script>
 export default {
-  name: "13D"
+  name: '13D',
+  head: {
+    meta: [
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content:
+          'https://www.stefsandvictoriasplaceontheinternet.nl/postcard_stamp.jpg',
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content:
+          'https://www.stefsandvictoriasplaceontheinternet.nl/postcard_stamp.jpg',
+      },
+    ],
+  },
 }
 </script>
 <style lang="scss">
@@ -17,16 +33,16 @@ export default {
   display: grid;
   grid-template-columns: 1.5rem;
   grid-template-rows: 1.5rem 1.5rem 1.5rem;
-  gap: .4rem;
+  gap: 0.4rem;
 
   a {
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: white;
     text-decoration: none;
     border-radius: 100%;
     display: block;
     text-align: center;
-    padding: .2rem;
+    padding: 0.2rem;
 
     &.nuxt-link-active {
       background-color: #a33a42;
@@ -242,7 +258,7 @@ p {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .lang {
+  .lang {
     left: 3rem;
   }
   #image-right {
@@ -312,7 +328,7 @@ p {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-      .lang {
+  .lang {
     left: 1rem;
   }
   video {
