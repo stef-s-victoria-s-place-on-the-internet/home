@@ -3,7 +3,7 @@
     <main class="home-wrapper">
       <div class="redirection">
         <p class="first">Sikes! We aren't here anymore!</p>
-        <p class="second">visit us at <nuxt-link to="13-D">13-D</nuxt-link></p>
+        <p class="second">visit us at <nuxt-link to="/13-D">13-D</nuxt-link></p>
       </div>
     </main>
   </div>
@@ -21,6 +21,10 @@ export default {
 
 <style lang="scss" scoped>
 .body {
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
   background-color: $black;
   background-image: linear-gradient(
     140deg,
@@ -47,7 +51,6 @@ export default {
       top: 40%;
 
       a {
-        border-bottom: 1px solid;
         cursor: pointer;
         color: blue;
       }

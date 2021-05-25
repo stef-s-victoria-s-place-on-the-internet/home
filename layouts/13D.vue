@@ -1,7 +1,14 @@
 <template>
+<div class="13D">
   <nuxt />
+</div>
 </template>
 
+<script>
+export default {
+  name: "13D"
+}
+</script>
 <style lang="scss">
 .lang {
   position: absolute;
@@ -38,6 +45,11 @@
     url('~assets/fonts/Gopher-MediumItalic.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
+}
+
+html {
+  margin: 0;
+  padding: 0;
 }
 
 body {
