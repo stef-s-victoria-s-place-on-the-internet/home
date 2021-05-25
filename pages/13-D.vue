@@ -1,6 +1,7 @@
 <template>
   <!-- grid areas called,they said I can call them my bitch now. -->
   <!-- ✦ cause I nailed them ✦  -->
+  <!-- Victoria said, and I quote, on the third week of working on this two-day quick & dirty project -->
 
   <!-- General Credits:  -->
 
