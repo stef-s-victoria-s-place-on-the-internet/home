@@ -18,6 +18,7 @@ export default {
   grid-template-columns: 1.5rem;
   grid-template-rows: 1.5rem 1.5rem 1.5rem;
   gap: 0.4rem;
+  z-index: 999;
 
   a {
     font-size: 0.8rem;
@@ -47,6 +48,13 @@ export default {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Gecko';
+  src: url('~assets/fonts/Gecko.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -59,6 +67,17 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+}
+
+body #lang-el {
+  font-family: 'Gecko';
+  font-weight: 400;
+  letter-spacing: 0.097em;
+  font-size: 23px;
+
+  .lang a {
+    align-self: center;
+  }
 }
 
 video {

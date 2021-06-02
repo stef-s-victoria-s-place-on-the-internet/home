@@ -46,7 +46,7 @@
 </i18n>
 
 <template>
-  <div class="content">
+  <div class="content" :id="`lang-${locale}`">
     <MetaTags />
     <div id="card">
       <div class="lang">
@@ -100,6 +100,13 @@ export default {
     availableLocales() {
       return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
     },
+  },
+  asyncData({ i18n }) {
+    const locale = i18n.locale
+
+    return {
+      locale
+    }
   },
   mounted() {
     console.log(
