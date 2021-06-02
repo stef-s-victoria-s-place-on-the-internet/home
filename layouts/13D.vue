@@ -135,6 +135,16 @@ p {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .lang {
+    grid-area: lang;
+    grid-template-rows: 1.5rem;
+    grid-template-columns: 1.5rem 1.5rem 1.5rem;
+    position: relative;
+    justify-self: center;
+    padding: 0;
+    margin: 0;
+  }
+
   video {
     width: 100%;
     height: 100%;
@@ -146,11 +156,12 @@ p {
     width: 100%;
     height: 99vh;
     grid-template-areas:
+      'lang'
       'header'
       'video'
       'to'
       'footer';
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
   }
 
   #header {

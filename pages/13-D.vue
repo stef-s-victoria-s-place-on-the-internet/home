@@ -48,16 +48,15 @@
 <template>
   <div class="content">
     <MetaTags />
-    <div class="lang">
-      <nuxt-link
-        v-for="locale in availableLocales"
-        :key="locale"
-        :to="switchLocalePath(locale)"
-        >{{ locale }}</nuxt-link
-      >
-    </div>
-
     <div id="card">
+      <div class="lang">
+        <nuxt-link
+          v-for="locale in availableLocales"
+          :key="locale"
+          :to="switchLocalePath(locale)"
+          >{{ locale }}</nuxt-link
+        >
+      </div>
       <div id="image-right"></div>
       <div id="image-left"></div>
       <div id="header">
