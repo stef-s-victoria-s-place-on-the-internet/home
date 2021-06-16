@@ -29,7 +29,7 @@
     "markdown-it": "^12.0.2",
     "markdown-it-footnote": "^3.0.2",
     "nuxt": "^2.14.7",
-    "nuxt-i18n": "^6.27.0",
+    "nuxt-i18n": "^6.27.1",
     "pure-css3-animated-border": "^1.0.0",
     "string-to-color": "^2.2.2",
     "v-clipboard": "^2.2.3",
